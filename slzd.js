@@ -5,7 +5,7 @@
 软件版本：++
 下载地址：苹果商店下载
 脚本作者:
-更新时间：2024年2月2日 10:28
+更新时间：2024年2月2日 10:50
 电报频道：https://t.me/GieGie777
 问题反馈：
 使用声明：⚠️此脚本仅供学习与交流，请在下载使用24小时内删除！请勿在中国大陆转载与贩卖！⚠️⚠️⚠️
@@ -14,8 +14,7 @@
 
 # > 三联中读,知识会员+数字刊会员
 ^https?:\/\/apis\.lifeweek\.com.cn\/vip\/loadMyVipV2.*$ url script-response-body https://raw.githubusercontent.com/WeiGiegie/666/main/slzd.js
-&ticket=[a-zA-Z0-9]+ url 302 &ticket=1706840896761jndfx
-
+&ticket=[a-zA-Z0-9]+ url 302 &ticket=1706841864730vxjjg
 [mitm] 
 hostname = apis.lifeweek.com.cn
 *

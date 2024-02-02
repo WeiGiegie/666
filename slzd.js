@@ -13,7 +13,7 @@
 [rewrite_local]
 
 # > 三联中读,知识会员+数字刊会员
-^https?:\/\/apis\.lifeweek\.com.cn\/vip\/loadMyVipV2.*$ url script-response-body https://raw.githubusercontent.com/WeiRen0/Scripts/main/slzd.js
+^https?:\/\/apis\.lifeweek\.com.cn\/vip\/loadMyVipV2.*$ url script-response-body https://raw.githubusercontent.com/WeiGiegie/666/main/slzd.js
 &ticket=[a-zA-Z0-9]+ url 302 &ticket=1706840896761jndfx
 
 [mitm] 

@@ -13,7 +13,7 @@
 [rewrite_local]
 
 # > 全民幸福舍&课程+会员解锁
-^https?:\/\/api\.qmxfs\.com\/v003\/(user\/queryAccountInfo|user\/userInfoNum|content).*$ url script-response-body qmxfs.js url script-response-body https://raw.githubusercontent.com/WeiGiegie/666/main/qmxfs.js
+^https?:\/\/api\.qmxfs\.com\/v003\/(user\/queryAccountInfo|user\/userInfoNum|content).*$ url script-response-body https://raw.githubusercontent.com/WeiGiegie/666/main/qmxfs.js
 ^https?:\/\/api\.qmxfs\.com\/v003\/subject\/subjectDetail\.json url script-request-body https://raw.githubusercontent.com/WeiGiegie/666/main/qmxfs1.js
 
 [mitm] 

@@ -5,7 +5,7 @@
 软件版本：++
 下载地址：苹果商店下载
 脚本作者：
-更新时间：2024年2月14 13:19
+更新时间：2024年2月15 18:47
 电报频道：https://t.me/GieGie777
 问题反馈：
 使用声明：此脚本仅供学习与交流，请在下载使用24小时内删除！请勿在中国大陆转载与贩卖！
@@ -14,7 +14,7 @@
 # > 知乎vip 盐选内容，
 ^https?:\/\/(api|app|www).zhihu.com\/(unlimited\/go\/my_card|people\/self|bazaar\/vip_tab|sku\/reversion_sku).*$ url script-response-body https://raw.githubusercontent.com/WeiGiegie/666/main/zhvip.js
 ^https?:\/\/((www)|(api)).zhihu.com\/(api\/v3\/books|market\/paid_magazine|market\/paid_column|market\/album|remix\/resource\/paid_magazine|appview\/v2\/answer).*$ url script-request-header https://raw.githubusercontent.com/WeiGiegie/666/main/zhtk.js
-^https?:.+v2\/resolv\?host=.*(zhimg|zhihu).*$ url reject-200
+^https?:.+v2\/resolv\?host=.*(zhimg|zhihu).*$ url reject
 ^https?://api\.zhihu\.com/commercial_api/launch_v2 url reject-dict
 ^https?://api\.zhihu\.com/commercial_api\/real_time_launch_v2 url reject-dict
 ^https?://datahub\.zhihu\.com/collector/lastn-realtime url reject-dict

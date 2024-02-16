@@ -12,7 +12,7 @@
 *******************************
 [rewrite_local]
 # > 月亮听书 解锁付费听书购买
-^https?:\/\/www.yueliangfm.com\/v4\/api\/(getUserInfo|buyBook|book\?bookId) url script-response-body yltsvip.js url script-response-body https://raw.githubusercontent.com/WeiGiegie/666/main/ylts.js
+^https?:\/\/www.yueliangfm.com\/v4\/api\/(getUserInfo|buyBook|book\?bookId) url script-response-body https://raw.githubusercontent.com/WeiGiegie/666/main/ylts.js
 ^https?:\/\/www.yueliangfm.com\/v4\/api\/(chapter\?bookId|getChapterUrl).*$ url script-request-header https://raw.githubusercontent.com/WeiGiegie/666/main/ylts1.js
 ^https?:\/\/www.yueliangfm.com\/v4\/api\/(buyChapter|batchBuyChapter|buyCard).*$ url script-request-body https://raw.githubusercontent.com/WeiGiegie/666/main/ylts2.js
 # > 去广告

@@ -16,20 +16,20 @@
 ^https?:\/\/.+((ximalaya)|(xmcdn)).+(mobile-user\/v2|mobile-web|queryCategoryPageData|discovery-feed\/v4|vip\/v1\/recommand|product\/detail\/v1|mobile\/v1\/album|playpage|album\/price\/ts).*$ url script-response-body https://raw.githubusercontent.com/WeiGiegie/666/main/xmly.js
 ^https?:\/\/.+((ximalaya)|(xmcdn)).+\/[a-z]{6}\-[a-z]{8}\/track\/(v[0-9])\/[a-zA-Z]+\/ts.*$ url script-request-header https://raw.githubusercontent.com/WeiGiegie/666/main/xmtk2.js
 # > 去广告,
-^https?:\/\/openapi\.mysteel\.com/v5/getAdv.htm url reject
-^https?.*ulogs.umeng.com url reject
-^https?.*gslbali.ximalaya.com url reject
-^https?.*adse.ximalaya.com url reject
-^https?.*gslbtx.ximalaya.com url reject
-^https?.*location.ximalaya.com url reject
-^https?.*passport.ximalaya.com url reject
-^https?.*adbehavior.ximalaya.com url reject
-^https?.*ad.ximalaya.com url reject
-^https?.*audid-api.taobao.com url reject
+^https?://openapi\.mysteel\.com/v5/getAdv.htm url reject
+^https?://.*logs.umeng.com url reject
+^https?://.*slbali.ximalaya.com url reject
+^https?://adse\.ximalaya\.com url reject
+^https?://.*gslbtx.ximalaya.com url reject
+^https?://.*location.ximalaya.com url reject
+^https?://.*assport.ximalaya.com url reject
+^https?://.*dbehavior.ximalaya.com url reject
+^https?://ad.ximalaya.com url reject
+^https?://.*audid-api.taobao.com url reject
 
 
 [mitm] 
-hostname =  61.172.194.196,180.153.*.*,*xima*,*xmcdn*,*.ximalaya.com,*.xmcdn.com,180.153.255.*,180.153.140.*,180.153.250.*,114.80.99.*,114.80.139.237,114.80.161.29,1.62.62.64,51*.com
+hostname =  *.mysteel.*,61.172.194.196,180.153.*.*,*xima*,*xmcdn*,*.ximalaya.com,*.xmcdn.com,180.153.255.*,180.153.140.*,180.153.250.*,114.80.99.*,114.80.139.237,114.80.161.29,1.62.62.64,51*.com
 
 
 

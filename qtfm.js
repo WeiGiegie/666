@@ -20,7 +20,7 @@
 ^https://adlaunch\.qtfm\.cn/launch url reject
 ^https://woqt2\.qtfm\.cn/v2/userConfig url reject
 [mitm] 
-hostname = app.qtfm.cn,user.qtfm.cn,recpage-c.qtfm.cn,entry.qtfm.cn
+hostname = app.qtfm.cn,user.qtfm.cn,recpage-c.qtfm.cn,entry.qtfm.cn,ad.qtfm.cn,ip.qtfm.cn,adlaunch.qtfm.cn,woqt2.qtfm.cn
 *
 *
 */

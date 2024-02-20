@@ -19,7 +19,6 @@
 ^https?://case-cdn\.oceanplayable\.com url reject
 ^https?://ios\.bugly\.qq\.com url reject
 ^https?://ulogs\.um.*\.com url reject
-^https?://.*toutiao.*$ url reject
 ^https?://token\.safebrowsing\.apple url reject
 ^https?://toblog\.ctobsnssdk\.com url reject
 

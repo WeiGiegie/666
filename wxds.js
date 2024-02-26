@@ -13,7 +13,7 @@
 [rewrite_local]
 # > 微信读书vip(需重新用微信登陆，无法刷新->关闭脚本进入) 
 ^https?:\/\/i.weread.qq.com\/(login|pay\/balance|user\/profile).*$ url script-response-body https://raw.githubusercontent.com/WeiGiegie/666/main/wxds.js
-^https://i\.weread\.qq\.com/updateConfig url reject
+#^https://i\.weread\.qq\.com/updateConfig url reject
 [mitm] 
 hostname = i.weread.qq.com
 *

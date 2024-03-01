@@ -17,7 +17,7 @@
 ^https://api\.kmovie\.gifshow\.com/rest/n/kmovie/app/merchant/ad/bidding url reject
 ^https://mi\.gdt\.qq\.com/gdt_mview\.fcg url reject
 [mitm]
-hostname = api.kmovie.gifshow.com,id.kwaiying.com,mi.gdt.qq.com,mi.gdt.qq.com
+hostname = api.kmovie.gifshow.com,id.kwaiying.com,mi.gdt.qq.com
 *
 *
 */

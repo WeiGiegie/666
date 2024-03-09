@@ -5,7 +5,7 @@
 软件版本：++
 下载地址：苹果商店下载
 脚本作者：
-更新时间：2024年3月9日 15:54
+更新时间：2024年3月9日 16:00
 电报频道：https://t.me/GieGie777
 问题反馈：
 使用声明：此脚本仅供学习与交流，请在下载使用24小时内删除！请勿在中国大陆转载与贩卖！
@@ -34,22 +34,22 @@ if (url.indexOf(p1) != -1) {
         },
         "model": {
             "msgRed": 0,
-            "registerTime": 1709970876504,
+            "registerTime": 1709971232525,
             "arOpen": true,
             "visitor": {
-                "uid": 2698391,
-                "ticket": "1709970876518ngkpp"
+                "uid": 2698392,
+                "ticket": "1709971232540ggbtd"
             },
             "buyZhuanlanNewArticle": 1,
             "buyMsgNum": 1,
             "userInfo": {
                 "phone": "",
-                "uid": 2698391,
+                "uid": 2698392,
                 "userVflag": 0,
                 "remark": "此脚本仅供学习与交流，请在下载使用24小时内删除！请勿在中国大陆转载与贩卖!!!作者TG频道 : https://t.me/GieGie777",
                 "pic": "https://zdimg.lifeweek.com.cn/app/20230410/16811146599505136.jpg",
                 "isVip": true,
-                "name": "by-WR6"
+                "name": "https://t.me/GieGie777"
             }
         },
         "resultMsg": "操作成功！",
@@ -75,21 +75,21 @@ if (url.indexOf(p2) != -1) {
             "vipLevel": 4,
             "vipExpiration": "2999-09-09",
             "vip": true,
-            "username": "by-WR6",
+            "username": "https://t.me/GieGie777",
             "vipValid": true
         }, {
             "userHeadPic": "https://zdimg.lifeweek.com.cn/app/20230410/16810960185662892.jpg",
             "vipLevel": 5,
             "vipExpiration": "",
             "vip": false,
-            "username": "by-WR6",
+            "username": "https://t.me/GieGie777",
             "vipValid": true
         }, {
             "userHeadPic": "https://zdimg.lifeweek.com.cn/app/20230410/16810960185662892.jpg",
             "vipLevel": 6,
             "vipExpiration": "2999-09-09",
             "vip": true,
-            "username": "by-WR6",
+            "username": "https://t.me/GieGie777",
             "vipValid": true
         }],
         "resultMsg": "操作成功！",

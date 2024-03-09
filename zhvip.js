@@ -2,7 +2,7 @@
  *
  *
 脚本功能：知乎vip++
-软件版本：++
+软件版本：++最新
 下载地址：苹果商店下载
 脚本作者：
 更新时间：2024年3月9 
@@ -12,7 +12,7 @@
 *******************************
 [rewrite_local]
 # > 知乎vip 盐选内容，
-^https?:\/\/(api|app|www).zhihu.com\/(unlimited\/go\/my_card|people\/self|bazaar\/vip_tab|sku\/reversion_sku).*$ url script-response-body https://raw.githubusercontent.com/WeiGiegie/666/main/zhvip.js
+^https?:\/\/((api|app|www).zhihu.com\/|.*resolv\?host)(unlimited\/go\/my_card|people\/self|bazaar\/vip_tab|sku\/reversion_sku|.*zhihu).*$ url script-response-body https://raw.githubusercontent.com/WeiGiegie/666/main/zhvip.js
 ^https?:\/\/((www)|(api)).zhihu.com\/(api\/v3\/books|market\/paid_magazine|market\/paid_column|market\/album|remix\/resource\/paid_magazine|appview\/v2\/answer).*$ url script-request-header https://raw.githubusercontent.com/WeiGiegie/666/main/zhtk.js
 
 ^https?://api\.zhihu\.com/commercial_api/launch_v2 url reject
@@ -30,6 +30,7 @@ hostname = api.zhihu.com,app.zhihu.com.www.zhihu.com,datahub.zhihu.com,datahub.z
 *
 *
 */
+
 
 
 

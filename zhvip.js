@@ -19,7 +19,7 @@
 ^https?://api\.zhihu\.com/commercial_api\/real_time_launch_v2 url reject-dict
 ^https?://datahub\.zhihu\.com/collector/lastn-realtime url reject
 ^https?://www\.zhihu\.com/appview/v3/zhmore url reject-200
-^https?://www\.zhihu\.com/xen/market/hybridMetaDetail/ url reject
+#^https?://www\.zhihu\.com/xen/market/hybridMetaDetail/ url reject
 ^https?:\/\/datahub\.zhihu\.com\/collector\/lastn-realtime url reject-dict
 ^https?:\/\/api\.zhihu\.com\/commercial_api\/launch_v2 url reject-dict
 ^https?://www\.zhihu\.com/appview/v3/zhmore url reject-200

@@ -11,7 +11,7 @@
 使用声明：此脚本仅供学习与交流，请在下载使用24小时内删除！请勿在中国大陆转载与贩卖！
 *******************************
 [rewrite_local]
-# > 网易云音乐黑胶vip
+# > 网易云音乐黑胶vip,高清臻音
 ^https?:\/\/.+music.+(player\/url|playlist|entrance|eapi/search|vipauth).*$  url script-request-header https://raw.githubusercontent.com/WeiGiegie/666/main/wangyiyun.js
 ^https?://.*music\.163.com/eapi/ad/ url reject
 

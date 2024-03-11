@@ -16,7 +16,7 @@
 ^https?://.*music\.163.com/eapi/ad/ url reject
 
 [mitm] 
-hostname = *music.163.com,
+hostname = *.music.163.com
 
 *
 *

@@ -12,7 +12,7 @@
 *******************************
 [rewrite_local]
 # > 网易云音乐黑胶vip,高清臻音
-^https?:\/\/.+music.+(player\/url|playlist|entrance|eapi/search|vipauth).*$  url script-request-header https://raw.githubusercontent.com/WeiGiegie/666/main/wangyiyun.js
+^https?:\/\/.+music.+(player\/url|playlist|entrance|eapi/search|vipauth).*$ url script-request-header https://raw.githubusercontent.com/WeiGiegie/666/main/wangyiyun.js
 ^https?://.*music\.163.com/eapi/ad/ url reject
 
 [mitm] 

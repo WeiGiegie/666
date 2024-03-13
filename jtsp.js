@@ -15,7 +15,7 @@
 ^https?:\/\/.+\/shorter\/(video\/longvideoinfo|resource\/adInfoPageList\?adSpaceId|user\/getUser|resource\/getWindowNotice|tabIconConfigView|user\/getVipPvg|video\/home\/list|video\/search).*$ url script-response-body https://raw.githubusercontent.com/WeiGiegie/666/main/jtsp.js
 
 [mitm] 
-hostname = y7uyqg.hl8dbl.live,qrdure.youngnoble.cn,kpoe2e.x8w7t3.live,*jttv*
+hostname = y7uyqg.hl8dbl.live,qrdure.youngnoble.cn,kpoe2e.x8w7t3.live,*jttv*,kpoe2e.x8w7t3.live
 
 
 *

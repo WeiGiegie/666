@@ -15,7 +15,7 @@
 ^https?:\/\/freeapp-api.zhangdu.com\/api\/(user\/info|book\/enter-book-after).*$ url script-response-body https://raw.githubusercontent.com/WeiGiegie/666/main/jhxs.js
 
 [mitm] 
-hostname = freeapp-api.zhangdu.com,121.40.246.38
+hostname = freeapp-api.zhangdu.com,121.40.246.38,121.41.30.120
 *
 *
 */

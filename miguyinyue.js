@@ -17,7 +17,7 @@
 ^https://app\.c\.nf\.migu\.cn/member/api/marketing/text url reject
 ^https://app\.c.nf\.migu\.cn/payment/watch-ad url reject-200
 [mitm] 
-hostname = app.pd.nf.migu.cn,c.musicapp.migu.cn,u.musicapp.migu.cn,app.c.nf.migu.cn
+hostname = app.pd.nf.migu.cn,c.musicapp.migu.cn,u.musicapp.migu.cn,app.c.nf.migu.cn,app.c.nf.migu.cn
 *
 *
 */

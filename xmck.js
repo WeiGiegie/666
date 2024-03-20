@@ -25,8 +25,6 @@
 ^https://.*dbehavior\.ximalaya\.com url reject
 ^https://ad.ximalaya\.com url reject
 ^https://.*audid-api\.taobao.com url reject
-
-;不要禁用下面的reject！否则会失效！！！！！
 ^https://passport\.ximalaya\.com/user-http-app/v1/token/refresh url reject
 
 [mitm] 

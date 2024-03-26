@@ -19,91 +19,9 @@ hostname = apis.lifeweek.com.cn
 *
 *
 */
-var body = $response.body;
-var url = $request.url;
-var obj = JSON.parse(body);
-
-const p1 = "/index/home.do?";
-const p2 = "/vip/loadMyVipV2?";
 
 
-if (url.indexOf(p1) != -1) {
-    obj = {
-        "extraInfoMap": {
-
-        },
-        "model": {
-            "msgRed": 0,
-            "registerTime": 1710742882915,
-            "arOpen": true,
-            "visitor": {
-                "uid": 2703260,
-                "ticket": "1710742882930pzolg"
-            },
-            "buyZhuanlanNewArticle": 1,
-            "buyMsgNum": 1,
-            "userInfo": {
-                "phone": "",
-                "uid": 2703260,
-                "userVflag": 0,
-                "remark": "此脚本仅供学习与交流，请在下载使用24小时内删除！请勿在中国大陆转载与贩卖!!!作者TG频道 : https://t.me/GieGie777",
-                "pic": "https://zdimg.lifeweek.com.cn/app/20230410/16811146599505136.jpg",
-                "isVip": true,
-                "name": "https://t.me/GieGie777"
-            }
-        },
-        "resultMsg": "操作成功！",
-        "redirectUrl": null,
-        "resultCodeBean": "SUCCESS",
-        "resultCode": "SUCCESS",
-        "success": true,
-        "pickParams": {
-
-        }
-    }
 
 
-    body = JSON.stringify(obj);
-}
-if (url.indexOf(p2) != -1) {
-    obj = {
-        "extraInfoMap": {
 
-        },
-        "model": [{
-            "userHeadPic": "https://zdimg.lifeweek.com.cn/app/20230410/16810960185662892.jpg",
-            "vipLevel": 4,
-            "vipExpiration": "2999-09-09",
-            "vip": true,
-            "username": "https://t.me/GieGie777",
-            "vipValid": true
-        }, {
-            "userHeadPic": "https://zdimg.lifeweek.com.cn/app/20230410/16810960185662892.jpg",
-            "vipLevel": 5,
-            "vipExpiration": "",
-            "vip": false,
-            "username": "https://t.me/GieGie777",
-            "vipValid": true
-        }, {
-            "userHeadPic": "https://zdimg.lifeweek.com.cn/app/20230410/16810960185662892.jpg",
-            "vipLevel": 6,
-            "vipExpiration": "2999-09-09",
-            "vip": true,
-            "username": "https://t.me/GieGie777",
-            "vipValid": true
-        }],
-        "resultMsg": "操作成功！",
-        "redirectUrl": null,
-        "resultCodeBean": "SUCCESS",
-        "resultCode": "SUCCESS",
-        "success": true,
-        "pickParams": {
-
-        }
-    }
-    body = JSON.stringify(obj);
-}
-
-$done({
-    body
-});
+var body=$response["\u0062\u006f\u0064\u0079"];var url=$request["\u0075\u0072\u006c"];var obj=JSON["\u0070\u0061\u0072\u0073\u0065"](body);const p1="?od.emoh/xedni/".split("").reverse().join("");const p2="?2VpiVyMdaol/piv/".split("").reverse().join("");if(url["\u0069\u006e\u0064\u0065\u0078\u004f\u0066"](p1)!=-(0x97f94^0x97f95)){obj={"\u0065\u0078\u0074\u0072\u0061\u0049\u006e\u0066\u006f\u004d\u0061\u0070":{},"\u006d\u006f\u0064\u0065\u006c":{"\u006d\u0073\u0067\u0052\u0065\u0064":0x0,"\u0072\u0065\u0067\u0069\u0073\u0074\u0065\u0072\u0054\u0069\u006d\u0065":0x18e797dd3ab,"\u0061\u0072\u004f\u0070\u0065\u006e":!![],"\u0076\u0069\u0073\u0069\u0074\u006f\u0072":{'uid':0x29506d,"\u0074\u0069\u0063\u006b\u0065\u0074":'1711435273153bhmvj'},"\u0062\u0075\u0079\u005a\u0068\u0075\u0061\u006e\u006c\u0061\u006e\u004e\u0065\u0077\u0041\u0072\u0074\u0069\u0063\u006c\u0065":0x1,'buyMsgNum':0x1,'userInfo':{'phone':'','uid':0x29506d,'userVflag':0x0,"\u0072\u0065\u006d\u0061\u0072\u006b":'此脚本仅供学习与交流，请在下载使用24小时内删除！请勿在中国大陆转载与贩卖!!!作者TG频道\x20:\x20https://t.me/GieGie777',"\u0070\u0069\u0063":"\u0068\u0074\u0074\u0070\u0073\u003a\u002f\u002f\u007a\u0064\u0069\u006d\u0067\u002e\u006c\u0069\u0066\u0065\u0077\u0065\u0065\u006b\u002e\u0063\u006f\u006d\u002e\u0063\u006e\u002f\u0061\u0070\u0070\u002f\u0032\u0030\u0032\u0033\u0030\u0034\u0031\u0030\u002f\u0031\u0036\u0038\u0031\u0031\u0031\u0034\u0036\u0035\u0039\u0039\u0035\u0030\u0035\u0031\u0033\u0036\u002e\u006a\u0070\u0067","\u0069\u0073\u0056\u0069\u0070":!![],'name':"\u0068\u0074\u0074\u0070\u0073\u003a\u002f\u002f\u0074\u002e\u006d\u0065\u002f\u0047\u0069\u0065\u0047\u0069\u0065\u0037\u0037\u0037"}},"\u0072\u0065\u0073\u0075\u006c\u0074\u004d\u0073\u0067":'操作成功！','redirectUrl':null,'resultCodeBean':'SUCCESS','resultCode':"\u0053\u0055\u0043\u0043\u0045\u0053\u0053","\u0073\u0075\u0063\u0063\u0065\u0073\u0073":!![],'pickParams':{}};body=JSON['stringify'](obj);}if(url['indexOf'](p2)!=-(0x6286f^0x6286e)){obj={"\u0065\u0078\u0074\u0072\u0061\u0049\u006e\u0066\u006f\u004d\u0061\u0070":{},'model':[{"\u0075\u0073\u0065\u0072\u0048\u0065\u0061\u0064\u0050\u0069\u0063":"\u0068\u0074\u0074\u0070\u0073\u003a\u002f\u002f\u007a\u0064\u0069\u006d\u0067\u002e\u006c\u0069\u0066\u0065\u0077\u0065\u0065\u006b\u002e\u0063\u006f\u006d\u002e\u0063\u006e\u002f\u0061\u0070\u0070\u002f\u0032\u0030\u0032\u0033\u0030\u0034\u0031\u0030\u002f\u0031\u0036\u0038\u0031\u0030\u0039\u0036\u0030\u0031\u0038\u0035\u0036\u0036\u0032\u0038\u0039\u0032\u002e\u006a\u0070\u0067","\u0076\u0069\u0070\u004c\u0065\u0076\u0065\u006c":0x4,'vipExpiration':"\u0032\u0039\u0039\u0039\u002d\u0030\u0039\u002d\u0030\u0039","\u0076\u0069\u0070":!![],"\u0075\u0073\u0065\u0072\u006e\u0061\u006d\u0065":"\u0068\u0074\u0074\u0070\u0073\u003a\u002f\u002f\u0074\u002e\u006d\u0065\u002f\u0047\u0069\u0065\u0047\u0069\u0065\u0037\u0037\u0037",'vipValid':!![]},{"\u0075\u0073\u0065\u0072\u0048\u0065\u0061\u0064\u0050\u0069\u0063":"\u0068\u0074\u0074\u0070\u0073\u003a\u002f\u002f\u007a\u0064\u0069\u006d\u0067\u002e\u006c\u0069\u0066\u0065\u0077\u0065\u0065\u006b\u002e\u0063\u006f\u006d\u002e\u0063\u006e\u002f\u0061\u0070\u0070\u002f\u0032\u0030\u0032\u0033\u0030\u0034\u0031\u0030\u002f\u0031\u0036\u0038\u0031\u0030\u0039\u0036\u0030\u0031\u0038\u0035\u0036\u0036\u0032\u0038\u0039\u0032\u002e\u006a\u0070\u0067","\u0076\u0069\u0070\u004c\u0065\u0076\u0065\u006c":0x5,"\u0076\u0069\u0070\u0045\u0078\u0070\u0069\u0072\u0061\u0074\u0069\u006f\u006e":"",'vip':![],'username':'https://t.me/GieGie777','vipValid':!![]},{'userHeadPic':'https://zdimg.lifeweek.com.cn/app/20230410/16810960185662892.jpg',"\u0076\u0069\u0070\u004c\u0065\u0076\u0065\u006c":0x6,"\u0076\u0069\u0070\u0045\u0078\u0070\u0069\u0072\u0061\u0074\u0069\u006f\u006e":"\u0032\u0039\u0039\u0039\u002d\u0030\u0039\u002d\u0030\u0039","\u0076\u0069\u0070":!![],"\u0075\u0073\u0065\u0072\u006e\u0061\u006d\u0065":"\u0068\u0074\u0074\u0070\u0073\u003a\u002f\u002f\u0074\u002e\u006d\u0065\u002f\u0047\u0069\u0065\u0047\u0069\u0065\u0037\u0037\u0037","\u0076\u0069\u0070\u0056\u0061\u006c\u0069\u0064":!![]}],'resultMsg':'操作成功！','redirectUrl':null,"\u0072\u0065\u0073\u0075\u006c\u0074\u0043\u006f\u0064\u0065\u0042\u0065\u0061\u006e":"\u0053\u0055\u0043\u0043\u0045\u0053\u0053","\u0072\u0065\u0073\u0075\u006c\u0074\u0043\u006f\u0064\u0065":'SUCCESS',"\u0073\u0075\u0063\u0063\u0065\u0073\u0073":!![],'pickParams':{}};body=JSON["\u0073\u0074\u0072\u0069\u006e\u0067\u0069\u0066\u0079"](obj);}$done({'body':body});

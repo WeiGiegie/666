@@ -13,7 +13,7 @@
 [rewrite_local]
 
 # > 神户直播(重新登陆账号->随意输入11位手机号密码=vip)
-^^https?:\/\/(gameapi.mma.dstor.cc|(pop|push).flare.com.51kuajing.net)\/index.php\/App\/(Account\/Login|User\/Info|Index\/Update).*$ url script-response-body https://raw.githubusercontent.com/WeiGiegie/666/main/Shzb.js
+^https?:\/\/(gameapi.mma.dstor.cc|(pop|push).flare.com.51kuajing.net)\/index.php\/App\/(Account\/Login|User\/Info|Index\/Update).*$ url script-response-body https://raw.githubusercontent.com/WeiGiegie/666/main/Shzb.js
 ^https://www\.shenhu\.click url 302 https://t.me/GieGie777
 
 

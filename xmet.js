@@ -19,7 +19,7 @@
 ^https?://xxm\.ximalaya\.com/mobile/album/ad/asaActivate url reject-200
 
 [mitm] 
-hostname = *.ximalaya.*,180.153.255.123,61.172.194.187
+hostname = xxm.ximalaya.com,*.ximalaya.*,180.153.255.123,61.172.194.187
 
 *
 *

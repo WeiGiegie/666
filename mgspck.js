@@ -13,10 +13,10 @@
 [rewrite_local]
 
 # > 咪咕视频Vip会员
-https?:\/\/(play|dis).*miguvideo.com\/(play|dis)(url|play)\/.*$ url script-response-body https://raw.githubusercontent.com/WeiGiegie/666/main/mgsp.js
+^https?:\/\/(play|dis).*miguvideo.com\/(play|dis)(url|play)\/.*$ url script-response-body https://raw.githubusercontent.com/WeiGiegie/666/main/mgsp.js
 ^https?:\/\/play.miguvideo.com\/playurl\/v1\/play\/playurl\?2Kvivid=true?.*=true$ url script-request-header https://raw.githubusercontent.com/WeiGiegie/666/main/mgspck.js
 # > 开屏广告
-^https://ggx06\.miguvideo\.com/request/sdk url reject-200
+^https://.*miguvideo\.com/request/sdk url reject-200
 
 [mitm] 
 hostname = *.miguvideo.com

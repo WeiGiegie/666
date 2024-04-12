@@ -17,6 +17,7 @@
 ^https?:\/\/play.miguvideo.com\/playurl\/v1\/play\/playurl\?2Kvivid=true?.*=true$ url script-request-header https://raw.githubusercontent.com/WeiGiegie/666/main/mgspck.js
 # > 开屏广告
 ^https://.*miguvideo\.com/request/sdk url reject-200
+^https://common-sc\.miguvideo\.com/task/v7/task-list/cmvideo/visitor url reject-200
 
 [mitm] 
 hostname = *.miguvideo.com

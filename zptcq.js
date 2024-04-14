@@ -16,7 +16,7 @@
 # > 开屏广告
 ^https://ad\.rhinox\.cn/client/sdk/getData url reject
 [mitm] 
-hostname = ad.rhinox.cn,standard.rhinoxlab.com.appss.rhinoxlab.com
+hostname = ad.rhinox.cn,standard.rhinoxlab.com.appss.rhinoxlab.com,appss.rhinox.cn
 *
 *
 */

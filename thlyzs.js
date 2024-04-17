@@ -12,7 +12,7 @@
 *******************************
 [rewrite_local]
 # >通话录音助手 vip
-^https?:\/\/call-recorder.xinmengmakeji.com\/api\/user url script-response-body https://raw.githubusercontent.com/WeiGiegie/666/main/thlyzs.js
+^https?:\/\/call-recorder.xinmengmakeji.com\/api\/user$ url script-response-body https://raw.githubusercontent.com/WeiGiegie/666/main/thlyzs.js
 
 [mitm] 
 hostname = call-recorder.xinmengmakeji.com

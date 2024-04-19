@@ -5,14 +5,14 @@
 软件版本：9.2.24
 下载地址：
 脚本作者：**
-更新时间：2024-3.21+
+更新时间：2024-4.19
 电报频道：https://t.me/GieGie777
 问题反馈：
 使用声明：⚠️此脚本仅供学习与交流，请在下载使用24小时内删除！请勿在中国大陆转载与贩卖！⚠️⚠️⚠️
 *******************************
 [rewrite_local]
 
-# > 喜马拉雅,会员,音效&音质,去广告,界面优化+++
+# > 喜马拉雅,会员.大师课,音效&音质,去广告,界面优化+++
 ^https?:\/\/.+((ximalaya)|(xmcdn)).+(mobile-user\/v2|mobile-web|queryCategoryPageData|discovery-feed\/v4|vip\/v1\/recommand|product\/detail\/v1|mobile\/v1\/album|playpage|album\/price\/ts).*$ url script-response-body https://raw.githubusercontent.com/WeiGiegie/666/main/xmly.js
 ^https?:\/\/.+((ximalaya)|(xmcdn)).+\/[a-z]{6}\-[a-z]{8}\/track\/(v[0-9])\/[a-zA-Z]+\/ts.*$ url script-request-header https://raw.githubusercontent.com/WeiGiegie/666/main/xmck.js
 # > 去广告,

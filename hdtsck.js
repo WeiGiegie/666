@@ -11,7 +11,7 @@
 使用声明：⚠️此脚本仅供学习与交流，请在下载使用24小时内删除！请勿在中国大陆转载与贩卖！⚠️⚠️⚠️
 *******************************
 [rewrite_local]
-# > 红豆听书 解锁付费听书购买
+# > 忙豆听书 解锁付费听书购买
 ^https?:\/\/md.liaoliaoy.com\/listen\/api\/getUserInfo url script-response-body https://raw.githubusercontent.com/WeiGiegie/666/main/hdts.js
 ^https?:\/\/md.liaoliaoy.com\/listen\/api\/(buyBookInit|buyCard|batchBuyChapter|bookChapter|getNextChapter).*$ url script-request-body https://raw.githubusercontent.com/WeiGiegie/666/main/hdtsck.js
 # > 去广告

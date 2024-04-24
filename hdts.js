@@ -13,7 +13,7 @@
 [rewrite_local]
 # > 红豆听书 解锁付费听书购买
 ^https?:\/\/md.liaoliaoy.com\/listen\/api\/getUserInfo url script-response-body https://raw.githubusercontent.com/WeiGiegie/666/main/hdts.js
-^https?:\/\/md.liaoliaoy.com\/listen\/api\/(buyBookInit|buyCard|batchBuyChapter|bookChapter).*$ url script-request-body https://raw.githubusercontent.com/WeiGiegie/666/main/hdtsck.js
+^https?:\/\/md.liaoliaoy.com\/listen\/api\/(buyBookInit|buyCard|batchBuyChapter|bookChapter|getNextChapter).*$ url script-request-body https://raw.githubusercontent.com/WeiGiegie/666/main/hdtsck.js
 # > 去广告
 ^https?://case-cdn\.oceanplayable\.com url reject
 ^https?://ios\.bugly\.qq\.com url reject

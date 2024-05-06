@@ -15,7 +15,7 @@
 ^https?:\/\/.+\/api(\/video\/report_item?|\/live\/room\/detail?|\/video\/related?|\/video\/detail|\/social\/posts_info).*$ url script-request-header https://raw.githubusercontent.com/WeiGiegie/666/main/byhz.js
 
 [mitm] 
-hostname = 103.39.222.193,yubaoyu.oss-cn-shenzhen.aliyuncs.com,*api.h8h4h.com
+hostname = 103.39.222.193,yubaoyu.oss-cn-shenzhen.aliyuncs.com,*api.h8h4h.com,42.157.129.25
 *
 *
 */

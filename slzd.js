@@ -5,7 +5,7 @@
 软件版本：++
 下载地址：苹果商店下载
 脚本作者：
-更新时间：2024年5月1日 02:19
+更新时间：2024年5月9日 11:40
 电报频道：https://t.me/GieGie777
 问题反馈：
 使用声明：此脚本仅供学习与交流，请在下载使用24小时内删除！请勿在中国大陆转载与贩卖！
@@ -34,17 +34,17 @@ if (url.indexOf(p1) != -1) {
         },
         "model": {
             "msgRed": 0,
-            "registerTime": 1714501142992,
+            "registerTime": 1715226007186,
             "arOpen": true,
             "visitor": {
-                "uid": 2723728,
-                "ticket": "1714501143006fzber"
+                "uid": 2726769,
+                "ticket": "1715226007202adyzw"
             },
             "buyZhuanlanNewArticle": 1,
             "buyMsgNum": 1,
             "userInfo": {
                 "phone": "",
-                "uid": 2723728,
+                "uid": 2726769,
                 "userVflag": 0,
                 "remark": "此脚本仅供学习与交流，请在下载使用24小时内删除！请勿在中国大陆转载与贩卖!!!作者TG频道 : https://t.me/GieGie777",
                 "pic": "https://zdimg.lifeweek.com.cn/app/20230410/16811146599505136.jpg",

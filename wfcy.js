@@ -12,10 +12,10 @@
 *******************************
 [rewrite_local]
 # > 悟饭触悦 vip
-^https?:\/\/iosv2.cjapi.5fun.com\/user\/ios_store_pay_edition\/members_login\/get_member_info url script-response-body https://raw.githubusercontent.com/WeiGiegie/666/main/wfcy.js
+^https?:\/\/iosv2.cjapi.*\/user\/ios_store_pay_edition\/members_login\/get_member_info url script-response-body https://raw.githubusercontent.com/WeiGiegie/666/main/wfcy.js
 
 [mitm] 
-hostname = iosv2.cjapi.5fun.com
+hostname = iosv2.cjapi.5fun.com,iosv2.cjapi.wufan88.com
 *
 *
 */

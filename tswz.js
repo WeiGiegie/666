@@ -12,7 +12,7 @@
 *******************************
 [rewrite_local]
 # >特殊文字-特殊字体转换app（永久会员）
-https?:\/\/fancytext.ycase.cn\/app\/(user_info|package_type) url script-response-body https://raw.githubusercontent.com/WeiGiegie/666/main/tswz.js
+^https?:\/\/fancytext.ycase.cn\/app\/(user_info|package_type) url script-response-body https://raw.githubusercontent.com/WeiGiegie/666/main/tswz.js
 
 [mitm] 
 hostname = fancytext.ycase.cn

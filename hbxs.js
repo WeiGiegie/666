@@ -1,7 +1,7 @@
 /*
  *
  *
-脚本功能：话本小说（去广告）
+脚本功能：话本小说（去广告+无限体力值）
 软件版本：6.52.0
 下载地址：
 脚本作者：
@@ -11,7 +11,7 @@
 使用声明：此脚本仅供学习与交流，请在下载使用24小时内删除！请勿在中国大陆转载与贩卖！
 *******************************
 [rewrite_local]
-# >话本小说（去广告）
+# >话本小说（去广告+无限体力值）
 ^https?:\/\/(api|user).ihuaben.com\/(user-ext|api\/userinfo\?tokenId).*$ url script-response-body https://raw.githubusercontent.com/WeiGiegie/666/main/hbxs.js
 
 [mitm] 

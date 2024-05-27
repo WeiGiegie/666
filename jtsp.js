@@ -13,7 +13,7 @@
 [rewrite_local]
 # > 加藤视频vip解锁,付费视频解锁,下载,会员线路,去广告++
 ^https?:\/\/.+\/shorter\/(video\/longvideoinfo|resource\/adInfoPageList\?adSpaceId|user\/getUser|resource\/getWindowNotice|tabIconConfigView|user\/getVipPvg|video\/home\/list|video\/search).*$ url script-response-body https://raw.githubusercontent.com/WeiGiegie/666/main/jtsp.js
-^https?://.+/shorter/resource/getAdInfoBySpaceId\?ad url reject-dict
+^https?:\/\/.+\/shorter\/resource\/getAdInfoBySpaceId\?ad url reject-dict
 
 [mitm] 
 hostname = y7uyqg.hl8dbl.live,qrdure.youngnoble.cn,kpoe2e.x8w7t3.live,*jttv*,kpoe2e.x8w7t3.live,zihjyv.jajrc1.live,fceyeg.johjxe.com

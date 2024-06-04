@@ -12,7 +12,7 @@
 *******************************
 [rewrite_local]
 # >pdf转换助手-智能pdf处理编辑软件（永久会员）
-^https?:\/\/39.107.159.85.+\/api\/user url script-response-body https://raw.githubusercontent.com/WeiGiegie/666/main/pdf.js
+^https?:\/\/pdfnew-api.shoujicad.com.+\/api\/user url script-response-body https://raw.githubusercontent.com/WeiGiegie/666/main/pdf.js
 
 [mitm] 
 hostname = 39.107.159.85

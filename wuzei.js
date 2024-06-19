@@ -15,8 +15,7 @@
 ^https?:\/\/.+Api\/(Account\/Login|App\/Splash|App\/Update).*$ url script-response-body https://raw.githubusercontent.com/WeiGiegie/666/main/wuzei.js
 ^https?://.+/newplayer/track url reject
 [mitm] 
-hostname = www.auth.open.52kuajing002.51kuajing.net,*.aliyuncs.com
-
+hostname = www.auth.open.52kuajing002.51kuajing.net,*.aliyuncs.com,videocloud.cn-hangzhou.log.aliyuncs.com
 *
 *
 */

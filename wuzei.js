@@ -13,7 +13,7 @@
 [rewrite_local]
 # >18+ 污贼直播（前神户）会员+去广告
 ^https?:\/\/.+Api\/(Account\/Login|App\/Splash|App\/Update).*$ url script-response-body https://raw.githubusercontent.com/WeiGiegie/666/main/wuzei.js
-^https?://.+/newplayer/track url reject
+^https?:\/\/videocloud.cn-hangzhou.log.aliyuncs.com\/logstores\/newplayer\/track url request-body .+ request-body {}
 [mitm] 
 hostname = www.auth.open.52kuajing002.51kuajing.net,*.aliyuncs.com,videocloud.cn-hangzhou.log.aliyuncs.com
 *

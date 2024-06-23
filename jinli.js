@@ -13,7 +13,7 @@
 [rewrite_local]
 # >18+ 锦鲤聚合 会员+
 ^http:\/\/h5.jinliapp.top\/api.php\/(user\/index|video\/detail\?id|platform|login\/login).*$ url script-response-body https://raw.githubusercontent.com/WeiGiegie/666/main/jinli.js
-
+^http://h5\.jinliapp\.top/api\.php/adv/video url reject-200
 [mitm] 
 hostname = h5.jinliapp.top
 *

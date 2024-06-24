@@ -29,6 +29,8 @@ var modifiedHeaders = $request.headers;
 modifiedHeaders['device'] = '{"name":"aVBob25l","systemName":"iOS","systemVersion":"16.2","model":"iPhone","localizedModel":"iPhone","identifierForVendor":"7E55FA15-40B1-4FBD-9B9F-A1465944C171","isPhysicalDevice":true,"bundleID":"game.squid.xy"}' ;
 modifiedHeaders['cookie'] = '' ;
 
+modifiedHeaders['auth'] = '' ;
+
 $done({headers : modifiedHeaders});
 
 

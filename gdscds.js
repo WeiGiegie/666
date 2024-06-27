@@ -1,7 +1,7 @@
 /*
  *
  *
-脚本功能：搞定素材大师（永久会员）
+脚本功能：高定素材大师（永久会员）
 软件版本：1.0.3
 下载地址：
 脚本作者：
@@ -11,7 +11,7 @@
 使用声明：此脚本仅供学习与交流，请在下载使用24小时内删除！请勿在中国大陆转载与贩卖！
 *******************************
 [rewrite_local]
-# >搞定素材大师（永久会员）需要登录！
+# >高定素材大师（永久会员）需要登录！
 ^https?:\/\/apps-api.lingege.cn\/user\/getUserInfo url script-response-body https://raw.githubusercontent.com/WeiGiegie/666/main/gdscds.js
 
 [mitm] 

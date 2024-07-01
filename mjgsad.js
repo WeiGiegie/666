@@ -12,7 +12,7 @@
 *******************************
 [rewrite_local]
 # >18+面具公社🚗
-https?:\/\/(mfjk|gnjk|buyaoda).+\.com\/(playerinfo|api\/get_advert|api\/home\/popup) url script-response-body https?:\/\/(mfjk|gnjk|buyaoda).+\.com\/(playerinfo|api\/get_advert|api\/home\/popup) url script-response-body https://raw.githubusercontent.com/WeiGiegie/666/main/mjgsad.js
+^https?:\/\/(mfjk|gnjk|buyaoda).+\.com\/(playerinfo|api\/get_advert|api\/home\/popup) url script-response-body https://raw.githubusercontent.com/WeiGiegie/666/main/mjgsad.js
 ^https?:\/\/(mfjk|gnjk|buyaoda).+\.com\/request_game\/v3\/game\/list url reject-dict
 ^https?:\/\/(mfjk|gnjk|buyaoda).+\.com\/api\/(comic|video|short_movie_info|novel|gallery|audio) url script-request-header https://raw.githubusercontent.com/WeiGiegie/666/main/mjgshd.js
 

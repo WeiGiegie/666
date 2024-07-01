@@ -12,9 +12,9 @@
 *******************************
 [rewrite_local]
 # >18+面具公社
-^https:\/\/gnjk\.eapep\.com\/(playerinfo|api\/get_advert|api\/home\/popup) url script-response-body mjgsad.js
+^https:\/\/gnjk\.eapep\.com\/(playerinfo|api\/get_advert|api\/home\/popup) url script-response-body https://raw.githubusercontent.com/WeiGiegie/666/main/mjgsad.js
 ^https:\/\/gnjk\.eapep\.com\/request_game\/v3\/game\/list url reject-dict
-^https?:\/\/(mfjk|gnjk).+\.com\/api\/(comic|video|short_movie_info|novel) url script-request-header mjgshd.js
+^https?:\/\/(mfjk|gnjk).+\.com\/api\/(comic|video|short_movie_info|novel) url script-request-header https://raw.githubusercontent.com/WeiGiegie/666/main/mjgshd.js
 
 
 [mitm]

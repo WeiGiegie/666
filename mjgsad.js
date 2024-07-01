@@ -18,7 +18,7 @@ https?:\/\/(mfjk|gnjk|buyaoda).+\.com\/(playerinfo|api\/get_advert|api\/home\/po
 
 
 [mitm]
-hostname = gnjk.*.com, mfjk.*.com
+hostname = gnjk.*.com, mfjk.*.com,buyaoda.*.com
 
 *
 *

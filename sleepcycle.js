@@ -15,7 +15,7 @@
 ^https?:\/\/ch.sleepcycle.com\/api\/v1\/subscription/get$ url script-response-body https://raw.githubusercontent.com/WeiGiegie/666/main/sleepcycle.js
 
 [mitm] 
-hostname = appss.rhinoxlab.com
+hostname = ch.sleepcycle.com
 *
 *
 */

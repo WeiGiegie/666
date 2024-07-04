@@ -14,7 +14,7 @@
 # > 666书友会 会员+付费课
 https?:\/\/app.666syh.com\/cloud\/api-(mall\/book\/(online\/getOnlineLearnDel|book\/getVideoDel)|member\/user\/memberDetail).*$ url script-response-body https://raw.githubusercontent.com/WeiGiegie/666/main/666syh.js
 
-[mitm] 
+[mitm]  
 hostname = app.666syh.com
 *
 *

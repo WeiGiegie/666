@@ -2,7 +2,7 @@
  *
  *
 脚本功能：三更视频 会员+漫画小说解锁
-软件版本：++
+软件版本：+++
 下载地址：
 脚本作者：
 更新时间：2024年,6.20
@@ -13,7 +13,7 @@
 [rewrite_local]
 
 # >18+ 三更视频 会员+漫画小说解锁
-^https?:\/\/api.*.shop\/api\/(mov\/(detail|progress|index)|novel\/(chapter|play)|comic\/chapter|clip\/index|comic\/play|user\/index) url script-request-header https://raw.githubusercontent.com/WeiGiegie/666/main/sgtk.js
+^https?:\/\/api.*.shop\/api\/(search|mov\/(detail|progress|index)|novel\/(chapter|play)|comic\/chapter|clip\/index|comic\/play|user\/index) url script-request-header https://raw.githubusercontent.com/WeiGiegie/666/main/sgtk.js
 
 [mitm] 
 hostname = api.*.shop

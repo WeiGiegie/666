@@ -1,7 +1,7 @@
 /*
  *
  *
-脚本功能：喜马拉雅,会员.大师课,音效&音质,去广告,界面优化+++
+脚本功能：喜马拉雅,会员.大师课,儿童+音效&音质,去广告,界面优化+++
 软件版本：9.2.42（兼容最新版本）
 下载地址：
 脚本作者：**
@@ -12,7 +12,7 @@
 *******************************
 [rewrite_local]
 
-# > 喜马拉雅,会员.大师课,音效&音质,去广告,界面优化+++
+# > 喜马拉雅,会员.大师课,儿童+音效&音质,去广告,界面优化+++
 ^https?:\/\/.+((ximalaya)|(xmcdn)).+(mobile-user\/v2|mobile-web|queryCategoryPageData|discovery-feed\/v4|vip\/v1\/recommand|product\/detail\/v1|mobile\/v1\/album|playpage|album\/price\/ts|mobile\/user\/member).*$ url script-response-body https://raw.githubusercontent.com/WeiGiegie/666/main/xmly.js
 ^https?:\/\/.+((ximalaya)|(xmcdn)).+\/[a-z]{6}\-[a-z]{8}\/track\/(v[0-9])\/[a-zA-Z]+\/ts.*$ url script-request-header https://raw.githubusercontent.com/WeiGiegie/666/main/xmck.js
 # > 去广告,

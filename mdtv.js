@@ -15,7 +15,7 @@
 ^https?:\/\/api.+.com\/api\/video\/(user/info|banner\?type|config\?field) url script-response-body https://raw.githubusercontent.com/WeiGiegie/666/main/mdtv.js
 
 [mitm] 
-hostname = api.*.com
+hostname = api.736136.com
 *
 *
 */

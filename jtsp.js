@@ -16,7 +16,7 @@
 ^https?:\/\/.+\/shorter\/resource\/getAdInfoBySpaceId\?ad url reject-dict
 
 [mitm] 
-hostname = bpitbu.ouxf9g.live,tjactb.xk2nsy.live,us6tp7.dkr9cv.live,qsukip.9jts57.live,wkqyx6.qdokqj.live,fqohbx.bkljtx.live,zihjyv.jajrc1.live,y7uyqg.hl8dbl.live,qrdure.youngnoble.cn,kpoe2e.x8w7t3.live,*jttv*,kpoe2e.x8w7t3.live,zihjyv.jajrc1.live,fceyeg.johjxe.com
+hostname = rdxijq.vo9ugl.xyz,bpitbu.ouxf9g.live,tjactb.xk2nsy.live,us6tp7.dkr9cv.live,qsukip.9jts57.live,wkqyx6.qdokqj.live,fqohbx.bkljtx.live,zihjyv.jajrc1.live,y7uyqg.hl8dbl.live,qrdure.youngnoble.cn,kpoe2e.x8w7t3.live,*jttv*,kpoe2e.x8w7t3.live,zihjyv.jajrc1.live,fceyeg.johjxe.com
 
 
 *

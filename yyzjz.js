@@ -3,6 +3,8 @@
  *
 脚本功能：易颜证件照-智能美颜证件照制作 （永久会员）
 软件版本：1.1.0
+脚本功能：风云学习宝-中小学试卷题库精选 试卷宝ai写作 （永久会员）
+软件版本：1.3
 下载地址：
 脚本作者：
 更新时间：2024年
@@ -12,6 +14,7 @@
 *******************************
 [rewrite_local]
 # > 易颜证件照-智能美颜证件照制作 （永久会员）
+# > 风云学习宝-中小学试卷题库精选 试卷宝ai写作 （永久会员）
 ^https?:\/\/fufei.cfcpe.com.cn\/api\/client\/info.*$ url script-response-body https://raw.githubusercontent.com/WeiGiegie/666/main/yyzjz.js
 
 [mitm] 

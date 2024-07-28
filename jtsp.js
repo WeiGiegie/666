@@ -5,7 +5,7 @@
 软件版本：3.1.3
 下载地址：
 脚本作者：**
-更新时间：2024-5.27
+更新时间：2024-7.29
 电报频道：https://t.me/GieGie777
 问题反馈：ps：小部分视频有bug无法播放
 使用声明：⚠️此脚本仅供学习与交流，请在下载使用24小时内删除！请勿在中国大陆转载与贩卖！⚠️⚠️⚠️
@@ -13,6 +13,7 @@
 [rewrite_local]
 # > 加藤视频vip解锁,付费视频解锁,下载,会员线路,去广告++
 ^https?:\/\/.+\/shorter\/(video\/longvideoinfo|resource\/adInfoPageList\?adSpaceId|user\/getUser|resource\/getWindowNotice|tabIconConfigView|user\/getVipPvg|video\/home\/list|video\/search).*$ url script-response-body https://raw.githubusercontent.com/WeiGiegie/666/main/jtsp.js
+^https?:\/\/.+\/shorter\/anime\/tbookchapter0\/info\?bookId url script-request-header https://raw.githubusercontent.com/WeiGiegie/666/main/jttk.js
 ^https?:\/\/.+\/shorter\/resource\/getAdInfoBySpaceId\?ad url reject-dict
 
 [mitm] 

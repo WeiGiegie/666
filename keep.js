@@ -12,7 +12,7 @@
 *******************************
 [rewrite_local]
 # >keep 课程预览 直播课。会员付费课跟练
-^https?:\/\/(api|kit).gotokeep\.com\/(nuocha|gerudo|athena|nuocha\/plans)\/ url script-response-body https://raw.githubusercontent.com/WeiGiegie/666/main/keep.js
+^https?:\/\/(api|kit).gotokeep\.com\/(nuocha|gerudo|athena|nuocha\/plans|suit\/v5\/smart|kprime\/v4\/suit\/sales)\/ url script-response-body https://raw.githubusercontent.com/WeiGiegie/666/main/keep.js
 
 
 

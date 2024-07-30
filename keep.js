@@ -1,7 +1,7 @@
 /*
  *
  *
-脚本功能：keep 课程预览 直播课。会员付费课跟练
+脚本功能：keep 课程预览 直播课。会员付费课跟练 会员训练计划
 软件版本：
 下载地址：8.2.30
 脚本作者：
@@ -11,7 +11,7 @@
 使用声明：⚠️此脚本仅供学习与交流，请在下载使用24小时内删除！请勿在中国大陆转载与贩卖！⚠️⚠️⚠️
 *******************************
 [rewrite_local]
-# >keep 课程预览 直播课。会员付费课跟练
+# >keep 课程预览 直播课。会员付费课跟练 会员训练计划
 ^https?:\/\/(api|kit).gotokeep\.com\/(nuocha|gerudo|athena|nuocha\/plans|suit\/v5\/smart|kprime\/v4\/suit\/sales)\/ url script-response-body https://raw.githubusercontent.com/WeiGiegie/666/main/keep.js
 
 

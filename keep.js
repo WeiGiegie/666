@@ -17,7 +17,7 @@
 
 
 [mitm]
-hostname = *.gotokeep.com
+hostname = *.gotokeep.com,42.187.199.*
 
 *
 *

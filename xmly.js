@@ -16,6 +16,7 @@
 ^https?:\/\/.+((ximalaya)|(xmcdn)).+(mobile-user\/v2|mobile-web|queryCategoryPageData|discovery-feed\/v4|vip\/v1\/recommand|product\/detail\/v1|mobile\/v1\/album|playpage|album\/price\/ts|mobile\/user\/member).*$ url script-response-body https://raw.githubusercontent.com/WeiGiegie/666/main/xmly.js
 ^https?:\/\/.+((ximalaya)|(xmcdn)).+\/[a-z]{6}\-[a-z]{8}\/track\/(v[0-9])\/[a-zA-Z]+\/ts.*$ url script-request-header https://raw.githubusercontent.com/WeiGiegie/666/main/xmck1.js
 # > 去广告,
+^https?://adse\.wsa\.ximalaya\.com url reject
 ^https?:\/\/openapi\.mysteel\.com\/v5\/getAdv\.htm url reject
 ^https?:\/\/ulogs\.umeng\.com\/unify_logs url reject
 ^https?:\/\/adse\.ximalaya\.com\/ url reject

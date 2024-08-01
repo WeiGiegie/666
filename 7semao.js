@@ -14,7 +14,7 @@
 # >18+七色猫 视频、小说、漫画、去广告、凤楼、电台、直播
 
 ^https?:\/\/jiekou.antciti.cn\/api\/(Login\/login|login\/mobile_login|index\/loufeng_info|home\/video_info|user\/info) url script-response-body https://raw.githubusercontent.com/WeiGiegie/666/main/7semao.js
-^https?:\/\/jiekou.antciti.cn\/api\/(index|home)\/(cate_list|zuire|zuixin|index|loufeng|new_zuanti|cate_list) url script-response-body https://raw.githubusercontent.com/WeiGiegie/666/main/7semaoad.js
+^https?:\/\/jiekou.antciti.cn\/api\/(index|home|ent)\/(cate_list|zuire|zuixin|index|loufeng|new_zuanti|cate_list|novel|comic|audio_no) url script-response-body https://raw.githubusercontent.com/WeiGiegie/666/main/7semaoad.js
 ^https?://jiekou\.antciti\.cn/api/home/my_ad url reject-dict
 [mitm]
 hostname = jiekou.antciti.cn

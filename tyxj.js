@@ -13,9 +13,9 @@
 [rewrite_local]
 # >甜盐相机（永久会员）
 ^https?:\/\/purchase-tianyan-api.tianyancam.com\/v1\/purchase\/subscription\/subscriber\/status url script-response-body https://raw.githubusercontent.com/WeiGiegie/666/main/tyxj.js
-
+^http://api-ad\.kajicam.com/ad/pop/rule/v2 url reject
 [mitm] 
-hostname = purchase-qingtu-api.b612kaji.com,api-qingtu.kajicam.com,purchase-tianyan-api.tianyancam.com
+hostname = purchase-qingtu-api.b612kaji.com,api-qingtu.kajicam.com,purchase-tianyan-api.tianyancam.com,api-ad.kajicam.com
 
 *
 *

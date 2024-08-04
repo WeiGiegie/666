@@ -5,7 +5,7 @@
 软件版本：++
 下载地址：
 脚本作者：
-更新时间：2024年7月28日 23:30
+更新时间：2024年8月4日 07:29
 电报频道：https://t.me/GieGie777
 问题反馈：
 使用声明：此脚本仅供学习与交流，请在下载使用24小时内删除！请勿在中国大陆转载与贩卖！
@@ -24,8 +24,8 @@ hostname = member.mkzcdn.com,comic.mkzcdn.com,base.mkzcdn.com
 
 
 var modifiedUrl = $request.url
-.replace(/(&sign=\w+)/, '&sign=34700fe91bde814c7a4459398baf70a2')
-.replace(/(&uid=\d+)/, '&uid=74316825');
+.replace(/(&sign=\w+)/, '&sign=473c254da3c1cc14a3872ceb23ae7939')
+.replace(/(&uid=\d+)/, '&uid=74512096');
 
 
 $done({

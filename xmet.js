@@ -5,7 +5,7 @@
 软件版本：5.0.0
 下载地址：
 脚本作者：**
-更新时间：2024-4.2
+更新时间：2024-8.04
 电报频道：https://t.me/GieGie777
 问题反馈：
 使用声明：⚠️此脚本仅供学习与交流，请在下载使用24小时内删除！请勿在中国大陆转载与贩卖！⚠️⚠️⚠️
@@ -14,7 +14,7 @@
 
 # > 喜马拉雅儿童版会员
 ^https?:\/\/((.+ximalaya.+)|(.+xmcdn.+))(album\/v2\/trackRecord\/queryTrackRecordsByAlbumIdAndUid|queryByParentId|mobile\/user).*$ url script-response-body https://raw.githubusercontent.com/WeiGiegie/666/main/xmet.js
-^https?:\/\/((.+ximalaya.+)|(.+xmcdn.+))(queryTrackRecordsByAlbumIdAndUid|album\/trackRecord\/querySampleTrack|album\/trackRecord\/palyTrack).*$ url script-request-header https://raw.githubusercontent.com/WeiGiegie/666/main/xmck.js
+^https?:\/\/((.+ximalaya.+)|(.+xmcdn.+))(queryTrackRecordsByAlbumIdAndUid|album\/trackRecord\/querySampleTrack|album\/trackRecord\/palyTrack).*$ url script-request-header https://raw.githubusercontent.com/WeiGiegie/666/main/xmck1.js
 # > 开屏去广告
 ^https?://xxm\.ximalaya\.com/mobile/album/ad/asaActivate url reject-200
 

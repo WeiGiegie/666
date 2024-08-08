@@ -17,6 +17,7 @@
 ^https?:\/\/.+((ximalaya)|(xmcdn)).+\/[a-z]{6}\-[a-z]{8}\/track\/(v[0-9])\/[a-zA-Z]+\/ts.*$ url script-request-header https://raw.githubusercontent.com/WeiGiegie/666/main/xmck1.js
 # > 去广告,
 ^https?://xdcs-collector\.ximalaya\.com/api/v1/realtime url reject
+^https?://.+\.ximalaya\.com/linkeye.+/checkIP\?ip.+passport.ximalaya.com url reject
 ^https?://adse\.wsa\.ximalaya\.com url reject
 ^https?://openapi\.mysteel\.com\/v5\/getAdv\.htm url reject
 ^https?://ulogs\.umeng\.com\/unify_logs url reject

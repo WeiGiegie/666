@@ -16,7 +16,7 @@
 ^https?://siajksslwiso\.anningsh\.com/report url reject-200
 
 [mitm] 
-hostname = 103.39.222.193,yubaoyu.oss-cn-shenzhen.aliyuncs.com,*api.h8h4h.com,42.157.129.25,siajksslwiso.anningsh.com
+hostname = 103.39.222.*,yubaoyu.oss-cn-shenzhen.aliyuncs.com,*api.h8h4h.com,42.157.129.25,siajksslwiso.anningsh.com
 *
 *
 */

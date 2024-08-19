@@ -12,7 +12,7 @@
 *******************************
 [rewrite_local]
 # >计步器 StepsApp（恢复购买）
-^https?:\/\/api.revenuecat.com\/v1\/subscribers\/$RCAnonymousID url script-response-body https://raw.githubusercontent.com/WeiGiegie/666/main/stepsapp.js
+^https?:\/\/api.revenuecat.com\/v1\/(receipts|subscribers).*$ url script-response-body https://raw.githubusercontent.com/WeiGiegie/666/main/stepsapp.js
 
 [mitm] 
 hostname = api.revenuecat.com

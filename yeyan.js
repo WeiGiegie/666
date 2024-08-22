@@ -12,9 +12,9 @@
 *******************************
 [rewrite_local]
 # >18+夜艳
-^https?:\/\/web\w+.yeyan\w+.xyz\/api\/(user\/personal|community\/edit|adv\/) url script-response-body https://raw.githubusercontent.com/WeiGiegie/666/main/yeyan.js
-^https?:\/\/web\w+.yeyan\w+.xyz\/api\/community\/xq_community url script-request-header https://raw.githubusercontent.com/WeiGiegie/666/main/yytk.js
-^https?:\/\/web\w+.yeyan\w+.xyz\/api/comment/gg url reject-dict
+^https?:\/\/\w+.yeyan\w+.xyz\/api\/(user\/personal|community\/edit|adv\/) url script-response-body https://raw.githubusercontent.com/WeiGiegie/666/main/yeyan.js
+^https?:\/\/\w+.yeyan\w+.xyz\/api\/community\/xq_community url script-request-header https://raw.githubusercontent.com/WeiGiegie/666/main/yytk.js
+^https?:\/\/\w+.yeyan\w+.xyz\/api/comment/gg url reject-dict
 
 [mitm]
 hostname = *yeyan*

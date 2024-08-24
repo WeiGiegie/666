@@ -12,7 +12,7 @@
 *******************************
 [rewrite_local]
 # > 咪咕音乐vip、音质、下载
-^https?:\/\/(u|c|app).(musicapp|c.nf).migu.cn.*(user\/(queryUserInfo.do|member\/center))|column\/(startup-pic-with-ad|marketing\/advertising).*$ url script-response-body https://raw.githubusercontent.com/WeiGiegie/666/main/miguyinyue.js
+^https?:\/\/(u|c|app).(musicapp|c.nf).migu.cn.*(user\/(queryUserInfo.do|member\/center))|(column\/(startup-pic-with-ad|marketing\/advertising)|\/resource\/skin\/list\/).*$ url script-response-body https://raw.githubusercontent.com/WeiGiegie/666/main/miguyinyue.js
 ^https?:\/\/app.(c|pd).nf.migu.cn\/.*\/(listen-url|music\/batchQueryMusicPolicy|download-url).*$ url script-request-header https://raw.githubusercontent.com/WeiGiegie/666/main/miguyinyue.js
 ^https://app\.c\.nf\.migu\.cn/member/api/marketing/text url reject
 ^https://app\.c.nf\.migu\.cn/payment/watch-ad url reject-200

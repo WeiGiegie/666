@@ -16,7 +16,7 @@
 # >资源搬运大师-短视频&图片（恢复购买）
 # >水印熊-视频提取&一键水印&下载助手（恢复购买）
 # >萌客ai绘画-贴纸&动漫卡通（恢复购买）
-^https?:\/\/api.revenuecat.com\/v1\/subscribers\/$RCAnonymousID url script-response-body https://raw.githubusercontent.com/WeiGiegie/666/main/junwang.js
+^https?:\/\/api.revenuecat.com\/v1\/receipts url script-response-body https://raw.githubusercontent.com/WeiGiegie/666/main/junwang.js
 
 [mitm] 
 hostname = api.revenuecat.com

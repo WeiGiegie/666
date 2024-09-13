@@ -16,7 +16,7 @@
 
 
 [mitm]
-hostname = *.tencentcs.com,settings.itranscreen.com
+hostname = *.tencentcs.com,settings.itranscreen.com,api.itranscreen.com:8080
 
 *
 *

@@ -12,7 +12,7 @@
 *******************************
 [rewrite_local]
 # >itranscreen-屏幕翻译
-^https?:\/\/.+.(itranscreen|tencentcs).com\/(settings|api\/v1\/user\/quota\?user_id).*$ url script-response-body https://raw.githubusercontent.com/WeiGiegie/666/main/iTranscreen.js
+^https?:\/\/.+.(itranscreen|tencentcs).+\/(settings|api\/v1\/user\/quota\?user_id).*$ url script-response-body https://raw.githubusercontent.com/WeiGiegie/666/main/iTranscreen.js
 
 
 [mitm]

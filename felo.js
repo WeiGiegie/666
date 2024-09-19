@@ -15,7 +15,7 @@
 ^https?:\/\/(translator|accounts).felo.me\/api\/user.*$ url script-response-body https://raw.githubusercontent.com/WeiGiegie/666/main/felo.js
 ^https?:\/\/translator.felo.me\/api\/translation\/thirdToken\?token_channel url script-request-header https://raw.githubusercontent.com/WeiGiegie/666/main/felotk.js
 [mitm] 
-hostname = accounts.felo.me,translator.felo.me
+hostname = accounts.felo.me,translator.felo.me,52.78.154.178
 
 *
 *

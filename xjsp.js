@@ -16,7 +16,7 @@
 ^https?:\/\/.+\/vod\/* url script-request-header https://raw.githubusercontent.com/ppmm5211/haisi/main/xjsp.js
 
 [mitm] 
-hostname = *.cqict.cn,
+hostname = *.cqict.cn,cwt98ehs.cqict.cn
 
 
 *

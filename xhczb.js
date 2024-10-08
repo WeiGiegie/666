@@ -1,7 +1,7 @@
 /*
  *
  *
-脚本功能：杏花村直播 搭配“SenPlayer播放器” 弹窗播放
+脚本功能：桃花村直播 搭配“SenPlayer播放器” 弹窗播放
 软件版本：
 下载地址：邀请码:T2595
 脚本作者：**
@@ -11,7 +11,7 @@
 使用声明：⚠️此脚本仅供学习与交流，请在下载使用24小时内删除！请勿在中国大陆转载与贩卖！⚠️⚠️⚠️
 *******************************
 [rewrite_local]
-# > 杏花村直播 搭配“SenPlayer播放器” 弹窗播放
+# > 桃花村直播 搭配“SenPlayer播放器” 弹窗播放
 ^^http:\/\/lb\.h12345\.net\/zb\/.*\.json url script-response-body https://raw.githubusercontent.com/WeiGiegie/666/main/xhczb.js
 
 [mitm] 

@@ -15,7 +15,7 @@
 ^https?:\/\/.+(member\/detail|user_video_async|lottery-ns) url script-response-body https://raw.githubusercontent.com/WeiGiegie/666/main/meiwu.js
 
 [mitm] 
-hostname = qq.baiduandroid.com,ws.wensan*.com
+hostname = qq.baiduan*.com,ws.wensan*.com
 *
 *
 */

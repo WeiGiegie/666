@@ -12,7 +12,7 @@
 *******************************
 [rewrite_local]
 # >魅.舞直播++
-^https?:\/\/(qq|ws).(baiduandroid|wensang.+).com url script-response-body https://raw.githubusercontent.com/WeiGiegie/666/main/meiwu.js
+^https?:\/\/.+(member\/detail|user_video_async|lottery-ns) url script-response-body https://raw.githubusercontent.com/WeiGiegie/666/main/meiwu.js
 
 [mitm] 
 hostname = qq.baiduandroid.com,ws.wensan*.com

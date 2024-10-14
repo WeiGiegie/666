@@ -12,7 +12,7 @@
 *******************************
 [rewrite_local]
 # >🔞萝莉岛
-^https?:\/\/.+\/api\/(userinfo|setapp|newstartad|newreg|Get_vod_list|dongtais).php.php url script-response-body https://raw.githubusercontent.com/WeiGiegie/666/main/luolidao.js
+^https?:\/\/.+\/api\/(userinfo|setapp|newstartad|newreg|Get_vod_list|dongtais).php url script-response-body https://raw.githubusercontent.com/WeiGiegie/666/main/luolidao.js
 
 [mitm]
 hostname = dag29jmgma1g.site,*site

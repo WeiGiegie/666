@@ -14,6 +14,7 @@
 # >QQ阅读 解锁会员
 ^https?:\/\/(commontgw|select)\.reader\.qq\.com.*(nativepage\/personal|adV3|bookCity\/index|playlet\/play) url script-response-body https://raw.githubusercontent.com/WeiGiegie/666/main/QQYD.js
 ^https?:\/\/(newminerva-tgw|commontgw|bookcommon|unitelogreport|cartoon)\.reader\.qq\.com.*(audio\/auth\?|ChapBatAuthWithPD\?bookId|community\/playlet\/sign).*$ url script-request-header https://raw.githubusercontent.com/WeiGiegie/666/main/QQYDTK.js
+^https?:\/\/(bookcommon|commontgw)\.reader\.qq\.com\/(querymediainfo|.*nativepage\/personal\?lastTime|common\/adV|.*tts(Speaker|Buy)List) url script-response-body https://raw.githubusercontent.com/WeiGiegie/666/main/qqyd.js
 [mitm] 
 hostname = *.reader.qq.com
 

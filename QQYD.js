@@ -12,7 +12,7 @@
 *******************************
 [rewrite_local]
 # >QQ阅读 解锁会员
-^https?:\/\/(bookcommon|commontgw)\.reader\.qq\.com\/ url script-response-body https://raw.githubusercontent.com/WeiGiegie/666/main/QQYD.js
+^https?:\/\/(bookcommon|commontgw)\.reader\.qq\.com.+(nativepage|adV3|bookCity|playlet|List|querymediainfo).*$ url script-response-body https://raw.githubusercontent.com/WeiGiegie/666/main/QQYD.js
 ^https?:\/\/(newminerva-tgw|commontgw|bookcommon|unitelogreport|cartoon)\.reader\.qq\.com.*(audio\/auth\?|ChapBatAuthWithPD\?bookId|community\/playlet\/sign).*$ url script-request-header https://raw.githubusercontent.com/WeiGiegie/666/main/QQYDTK.js
 
 [mitm] 

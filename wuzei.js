@@ -14,7 +14,7 @@
 [rewrite_local]
 # >18+ 污贼直播（前神户）会员+去广告
 ^https?:\/\/.+Api\/(Account\/LoginV2|App\/Splash|App\/Update|App\/PlatData|App\/homeData|Live\/Play) url script-response-body https://raw.githubusercontent.com/WeiGiegie/666/main/wuzei.js
-#^https?:\/\/.+\/Api\/Account\/LoginV2 url script-request-header https://raw.githubusercontent.com/WeiGiegie/666/main/wuzeick.js
+^https?:\/\/.+\/Api\/Account\/LoginV2 url script-request-header https://raw.githubusercontent.com/WeiGiegie/666/main/wuzeick.js
 
 [mitm] 
 hostname = www.auth.open.52kuajing002.51kuajing.net,*.aliyuncs.com,videocloud.cn-hangzhou.log.aliyuncs.com,www.auth.open.52kuajing002.51kuajing.net

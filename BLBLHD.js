@@ -16,7 +16,7 @@
 ^https?:\/\/app.bilibili.com\/bilibili.app.playerunite.v1.Player\/PlayViewUnite url script-request-header https://raw.githubusercontent.com/WeiGiegie/666/main/BLBLHD.js
 
 [mitm]
-hostname = *.bilibili.*,*.biliapi.*,111.31.33.*,111.6.167.*
+hostname = *.bilibili.*,*.biliapi.*,111.31.33.*,111.6.167.*,app.bilibili.com, api.bilibili.com, api.live.bilibili.com, grpc.biliapi.net
 
 *
 *

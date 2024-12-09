@@ -12,10 +12,10 @@
 *******************************
 [rewrite_local]
 # > 懒人听书vip
-https?:\/\/shapi.(mting.info|lanrentingshu.com)\/(yyting\/userclient\/ClientGetUserInfo|lrts\/cgi\/login\/accountLogin) url script-response-body https://raw.githubusercontent.com/WeiGiegie/666/main/lrts.js
+^https?:\/\/(shapi|gzapi).(mting.info|lanrentingshu.com)\/(yyting\/userclient\/ClientGetUserInfo|lrts\/cgi\/login\/accountLogin) url script-response-body https://raw.githubusercontent.com/WeiGiegie/666/main/lrts.js
 
 [mitm] 
-hostname = shapi.mting.info,shapi.lanrentingshu.com
+hostname = shapi.mting.info,shapi.lanrentingshu.com,gzapi.lanrentingshu.com
 *
 *
 */

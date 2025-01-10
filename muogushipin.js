@@ -5,18 +5,18 @@
 软件版本：
 下载地址：
 脚本作者：
-更新时间：2024
+更新时间：2025
 电报频道：https://t.me/GieGie777
 问题反馈：
 使用声明：此脚本仅供学习与交流，请在下载使用24小时内删除！请勿在中国大陆转载与贩卖！
 *******************************
 [rewrite_local]
 # > 🔞蘑菇视频
-^https?:\/\/wapi.koudailc.net\/api\/(ads|user\/info) url script-response-body https://raw.githubusercontent.com/WeiGiegie/666/main/muogushipin.js
-^https?:\/\/wapi.koudailc.net\/api\/vod\/vip\/ url script-request-header https://raw.githubusercontent.com/WeiGiegie/666/main/muogushipin.js
+^https?:\/\/.+\/api\/(ads|user\/info) url script-response-body https://raw.githubusercontent.com/WeiGiegie/666/main/muogushipin.js
+^https?:\/\/.+\/api\/vod\/vip\/ url script-request-header https://raw.githubusercontent.com/WeiGiegie/666/main/muogushipin.js
 
 [mitm] 
-hostname = wapi.koudailc.net
+hostname = 118.31.70.61,wapi.koudailc.net
 ce
 *
 *

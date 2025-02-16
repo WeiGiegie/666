@@ -5,7 +5,7 @@
 软件版本：
 下载地址：无法变身或者无网络拷贝右边数字符号重新打开👉~@85910590@~👈
 脚本作者：
-更新时间：2024年11.11
+更新时间：20250216
 电报频道：https://t.me/GieGie777
 问题反馈：
 使用声明：此脚本仅供学习与交流，请在下载使用24小时内删除！请勿在中国大陆转载与贩卖！
@@ -16,7 +16,7 @@
 ^https?://siajksslwiso\.anningsh\.com/report url reject-200
 
 [mitm] 
-hostname = byapi.*.com,211.99.98.*,103.39.222.*,yubaoyu.oss-cn-shenzhen.aliyuncs.com,*api.h8h4h.com,42.157.129.25,siajksslwiso.anningsh.com
+hostname = byapi.*.com,211.99.98.*,103.39.222.*,yubaoyu.oss-cn-shenzhen.aliyuncs.com,*api.h8h4h.com,42.157.129.25,siajksslwiso.anningsh.com,211.99.98.63:8001
 *
 *
 */

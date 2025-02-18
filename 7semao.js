@@ -17,7 +17,7 @@
 ^https?:\/\/.+.(cn|com)\/api\/(index|home|ent)\/(cate_list|zuire|zuixin|index|loufeng|new_zuanti|cate_list|novel|comic|audio_no) url script-response-body https://raw.githubusercontent.com/WeiGiegie/666/main/7semaoad.js
 ^https?://.+\.(cn|com)/api/home/my_ad url reject-dict
 [mitm]
-hostname = qijk.accessco.cn,jsqiapi.hspherecn.com,jiekou.antciti.cn,qiip.fushizhengli.cn,ldy.*.cn
+hostname = qijk.accessco.cn,jsqiapi.hspherecn.com,jiekou.antciti.cn,qiip.fushizhengli.cn,ldy.*.cn,ldy.yyycb.com
 
 *
 *

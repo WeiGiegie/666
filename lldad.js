@@ -1,0 +1,10 @@
+var body = $response.body; 
+let obj = JSON.parse($response.body);
+            delete obj.ad;
+            delete obj.rotation;
+            delete obj.vodad;
+            delete obj.myad;
+            delete obj.popapp;
+            delete obj.popad;
+            delete obj.msg;
+$done({body: JSON.stringify(obj)});

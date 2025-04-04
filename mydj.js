@@ -42,7 +42,7 @@
 ^https?://mobads-logs.baidu.com url reject-dict
 ^https?:\/\/api.duoyolo.cn\/play\/channel\/v1\/adevertiseConfig url reject
 [mitm]
-hostname = ioskgeyd.lmkaiger.sanwubeixin.cn,www.shutiaomh.com,mobads.baidu.com,bgg.baidu.com,sf3-fe-tos.pglstatp-toutiao.com,cmyd-10-88.getui.com,open.e.kuaishou.com,api-access.pangolin-sdk-toutiao.com,toblog.ctobsnssdk.com,log-api.pangolin-sdk-toutiao.com,api-access.pangolin-sdk-toutiao1.com,log-api.pangolin-sdk-toutiao-b.com,api-access.pangolin-sdk-toutiao-b.com,b-gy.getui.net,gy.gepush.com,mssdk.volces.com,sdk.open.talk.getui.net,gromore.pangolin-sdk-toutiao.com,sdk.open.talk.gepush.com,adservice.sigmob.cn,sdk.open.talk.getui.com,yun.tuitiger.com,mobads-pre-config.cdn.bcebos.com,mobads-logs.baidu.com
+hostname = api.duoyolo.cn,ioskgeyd.lmkaiger.sanwubeixin.cn,www.shutiaomh.com,mobads.baidu.com,bgg.baidu.com,sf3-fe-tos.pglstatp-toutiao.com,cmyd-10-88.getui.com,open.e.kuaishou.com,api-access.pangolin-sdk-toutiao.com,toblog.ctobsnssdk.com,log-api.pangolin-sdk-toutiao.com,api-access.pangolin-sdk-toutiao1.com,log-api.pangolin-sdk-toutiao-b.com,api-access.pangolin-sdk-toutiao-b.com,b-gy.getui.net,gy.gepush.com,mssdk.volces.com,sdk.open.talk.getui.net,gromore.pangolin-sdk-toutiao.com,sdk.open.talk.gepush.com,adservice.sigmob.cn,sdk.open.talk.getui.com,yun.tuitiger.com,mobads-pre-config.cdn.bcebos.com,mobads-logs.baidu.com
 *
 *
 */

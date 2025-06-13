@@ -16,7 +16,7 @@
 ^https?://siajksslwiso\.anningsh\.com/report url reject-200
 
 [mitm] 
-hostname = tu.dfgfdg.win,103.44.236.*,*.artrg.cn,vkfqb.ojyrz.com,byapi.*.com,211.99.98.*,103.39.222.*,yubaoyu.oss-cn-shenzhen.aliyuncs.com,*api.h8h4h.com,42.157.129.25,siajksslwiso.anningsh.com,211.99.98.63,111.180.204.11,88.gbvdfe.com,vkfqb.ojyrz.com,211.99.98.*,vdop.fqoas.com,ica.ooat88.com
+hostname = w1c2.ooat88.com,tu.dfgfdg.win,103.44.236.*,*.artrg.cn,vkfqb.ojyrz.com,byapi.*.com,211.99.98.*,103.39.222.*,yubaoyu.oss-cn-shenzhen.aliyuncs.com,*api.h8h4h.com,42.157.129.25,siajksslwiso.anningsh.com,211.99.98.63,111.180.204.11,88.gbvdfe.com,vkfqb.ojyrz.com,211.99.98.*,vdop.fqoas.com,ica.ooat88.com
 *
 *
 */

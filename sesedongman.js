@@ -12,7 +12,7 @@
 *******************************
 [rewrite_local]
 # > 瑟瑟动漫,解锁=视频,无需登录！
-https?:\/\/91acg.(cyou|work|monster|net|website)\/video/\d+).*$ url script-request-header https://raw.githubusercontent.com/WeiGiegie/666/main/sesedongman.js
+^https?:\/\/91acg.(cyou|work|monster|net|website)\/video/\d+.*$ url script-request-header https://raw.githubusercontent.com/WeiGiegie/666/main/sesedongman.js
 
 [mitm]
 hostname = 91acg.website,91acg.*

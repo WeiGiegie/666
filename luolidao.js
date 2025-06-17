@@ -16,7 +16,7 @@
 ^https?:\/\/.+/api\/setapp.php url script-response-body https://raw.githubusercontent.com/WeiGiegie/666/main/lldad.js
 ^https?:\/\/.+\/api\/(userinfo|setapp|newstartad|newreg|Get_vod_list|dongtais).php url script-response-body https://raw.githubusercontent.com/WeiGiegie/666/main/luolidao.js
 [mitm]
-hostname = *.cloudfront.net,dag29jmgma1g.site,*site,d1no17eycutrsi.cloudfront.net,lldajbfyobffkbg288-api.com
+hostname = *.cloudfront.net,dag29jmgma1g.site,*site,d1no17eycutrsi.cloudfront.net,lldajbfyobffkbg288-api.com,lasdasdgapi.cc
 
 *
 *

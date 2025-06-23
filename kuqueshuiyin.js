@@ -2,7 +2,9 @@
  *
  *
 脚本功能：酷雀水印管家-图片加水印-一键去消除马赛克-试卷擦除图片还原
-软件版本：1.0.0
+软件版本：1.8.1
+脚本功能：酷雀水印相机-真实时间地点经纬度拍照打卡-工作水印打卡相机
+软件版本：1.1.17
 下载地址：
 脚本作者：
 更新时间：2024年
@@ -11,7 +13,7 @@
 使用声明：此脚本仅供学习与交流，请在下载使用24小时内删除！请勿在中国大陆转载与贩卖！
 *******************************
 [rewrite_local]
-# >酷雀水印管家-图片加水印 恢复购买 
+# >酷雀水印管家+酷雀水印相机 会员
 ^https?:\/\/front-gw.kuque.com\/productAuthorizeService\/user\/auth\/query\/allAuthSimple url script-response-body https://raw.githubusercontent.com/WeiGiegie/666/main/kuqueshuiyin.js
 
 

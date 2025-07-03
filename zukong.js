@@ -12,7 +12,7 @@
 *******************************
 [rewrite_local]
 # >足控社
-https?:\/\/.+\/appapi\/(detail|buyPicture|^getUserInfo|goldBuyVideo)\/ url script-response-body https://raw.githubusercontent.com/WeiGiegie/666/main/zukong.js
+^https?:\/\/.+\/appapi\/(detail|buyPicture|getUserInfo|goldBuyVideo)\/ url script-response-body https://raw.githubusercontent.com/WeiGiegie/666/main/zukong.js
 
 
 [mitm]

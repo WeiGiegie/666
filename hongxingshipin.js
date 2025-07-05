@@ -13,7 +13,7 @@
 [rewrite_local]
 # >红杏视频🔞 解锁VIP
 ^https?:\/\/.+.com\/(addons\/dplayer|vod\/play\/id)\/ url script-request-header https://raw.githubusercontent.com/WeiGiegie/666/main/hongxingshipin.js
-
+^https://.+com/ad/wapad.js url reject
 
 [mitm]
 hostname = hxxx51.com,www.hxxxaa.com

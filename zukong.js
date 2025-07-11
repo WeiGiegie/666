@@ -16,7 +16,7 @@
 
 
 [mitm]
-hostname = suning.679134.xyz
+hostname = suning.679134.xyz,b8u1lvlb.504867.xyz
 
 *
 *

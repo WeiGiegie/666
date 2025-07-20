@@ -12,7 +12,7 @@
 *******************************
 [rewrite_local]
 # > 去广告
-^https://app.c.nf.migu.cn/strategy/listen-url/v2.5 url 302 https://app.c.nf.migu.cn/strategy/listen-url/v2.4
+^https://app\.c\.nf.migu\.cn/strategy/listen-url/v2.5 url 302 https://app.c.nf.migu.cn/strategy/listen-url/v2.4
 ^https://app\.c\.nf\.migu\.cn/member/api/marketing/text url reject
 ^https://app\.c.nf\.migu\.cn/payment/watch-ad url reject-200
 # > 咪咕音乐vip、音质

@@ -17,7 +17,7 @@ https?:\/\/(mobwsa|mpaywsa).ximalaya.com\/(fmobile-track\/fmobile\/track\/playpa
 ^https?://adse\.+ximalaya\.com/ url reject-dict
 
 [mitm]
-hostname = adse*ximalaya.com,*.ximalaya.com,mobile.ximalaya.com
+hostname = adse*ximalaya.com,*.ximalaya.com,*.ximalaya.*
 
 *
 *

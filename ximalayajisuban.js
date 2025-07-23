@@ -13,7 +13,7 @@
 [rewrite_local]
 # >喜马拉雅极速版
 ^https?:\/\/mobile.ximalaya.com\/fmobile-user\/homePage\/ url script-response-body https://raw.githubusercontent.com/WeiGiegie/666/main/ximalayajisuban.js
-https?:\/\/(mobwsa|mpaywsa).ximalaya.com\/(fmobile-track\/fmobile\/track\/playpage|mobile\/track\/pay)\/ url script-request-header https://raw.githubusercontent.com/WeiGiegie/666/main/ximalayajisuban.js
+^https?:\/\/.+ximalaya.com\/(fmobile-track\/fmobile\/track\/playpage|mobile\/track\/pay)\/ url script-request-header https://raw.githubusercontent.com/WeiGiegie/666/main/ximalayajisuban.js
 ^https?://adse\.+ximalaya\.com/ url reject-dict
 
 [mitm]

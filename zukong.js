@@ -16,7 +16,7 @@
 
 
 [mitm]
-hostname = 1zher0st.504824.xyz,s1jyc4asdr14nsa.504824.xyz,suning.679134.xyz,b8u1lvlb.504867.xyz,umcuy46v9yr3gn4.504843.xyz,*.504*.xyz
+hostname = 1zher0st.504824.xyz,s1jyc4asdr14nsa.504824.xyz,suning.679134.xyz,b8u1lvlb.504867.xyz,umcuy46v9yr3gn4.504843.xyz,*.504*.xyz,5sfc4hgy.504832.xyz
 
 *
 *

@@ -1,7 +1,7 @@
 /*
  *
  *
-脚本功能：新颜相机-ai照片创意工坊
+脚本功能：新颜相机-ai照片创意工坊 仅解锁会员模版，其他功能无法使用
 软件版本：1.2.9
 下载地址：苹果商店下载
 脚本作者：
@@ -13,7 +13,7 @@
 [rewrite_local]
 # > 新颜相机-ai照片创意工坊
 ^https?:\/\/yixiu.tuanduixiangce.com\/api\/v1\/userinfo url script-response-body https://raw.githubusercontent.com/WeiGiegie/666/main/xyxj.js
-
+^https://yixiu\.tuanduixiangce\.com/api/v1/ad/config url reject
 [mitm] 
 hostname = yixiu.tuanduixiangce.com
 *

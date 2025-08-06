@@ -12,12 +12,12 @@
 *******************************
 [rewrite_local]
 # > 有道翻译官-107种语言翻译
-^https?:\/\/dict-ai-subtitle.youdao.com\/(user\/info|vip\/user\/extra\/status) url script-response-body https://raw.githubusercontent.com/WeiGiegie/666/main/youdao.js
-^https?:\/\/dict-ai-subtitle.youdao.com\/user\/info url script-request-header https://raw.githubusercontent.com/WeiGiegie/666/main/youdaouserlogin.js
+^https?:\/\/.+youdao.com\/(user\/info|vip\/user\/extra\/status) url script-response-body https://raw.githubusercontent.com/WeiGiegie/666/main/youdao.js
+^https?:\/\/.+youdao.com\/user\/info url script-request-header https://raw.githubusercontent.com/WeiGiegie/666/main/youdaouserlogin.js
 
 
 [mitm] 
-hostname = dict-ai-subtitle.youdao.com
+hostname = dict-ai-subtitle.youdao.com,dict.youdao.com
 *
 *
 */

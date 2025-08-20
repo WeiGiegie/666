@@ -13,7 +13,7 @@
 [rewrite_local]
 # >QQ阅读 会员读书
 ^https?:\/\/(detailadr|commontgw).reader.qq.com\/(book\/queryDetailPage|.+nativepage\/personal) url script-response-body https://raw.githubusercontent.com/WeiGiegie/666/main/QQYD.js
-^https?:\/\/newminerva-tgw.reader.qq.com\/ChapBatAuthWithPD\?bookId url script-request-header https://raw.githubusercontent.com/WeiGiegie/666/main/QQYD.js
+^https?:\/\/newminerva-tgw.reader.qq.com\/ChapBatAuthWithPD url script-request-header https://raw.githubusercontent.com/WeiGiegie/666/main/QQYD.js
 
 [mitm] 
 hostname = *.reader.qq.com,newminerva-tgw.reader.qq.com,detailadr.reader.qq.com,commontgw.reader.qq.com

@@ -2,10 +2,10 @@
  *
  *
 脚本功能：喜马拉雅,会员.大师课,儿童+音效&音质,去广告,界面优化+++
-软件版本：9.2.94（兼容最新版本）
+软件版本：9.3.95（兼容最新版本）
 下载地址：
 脚本作者：**
-更新时间：2024-9.30
+更新时间：2025-
 电报频道：https://t.me/GieGie777
 问题反馈：
 使用声明：⚠️此脚本仅供学习与交流，请在下载使用24小时内删除！请勿在中国大陆转载与贩卖！⚠️⚠️⚠️
@@ -13,8 +13,8 @@
 [rewrite_local]
 
 # > 喜马拉雅,会员.大师课,儿童+音效&音质,去广告,界面优化+++
-https?:\/\/.+((ximalaya)|(xmcdn)).+(mobile-user\/v2|mobile-web|queryCategoryPageData|discovery-feed\/v4|vip\/v1\/recommand|product\/detail\/v1|mobile\/v1\/album|playpage|album\/price\/ts|mobile\/user\/member|freeListenTabStyle).*$ url script-response-body https://raw.githubusercontent.com/WeiGiegie/666/main/ximalaya.js
-^https?:\/\/.+((ximalaya)|(xmcdn)).+\/[a-z]{6}\-[a-z]{8}\/track\/(v[0-9])\/[a-zA-Z]+\/ts.*$ url script-request-header https://raw.githubusercontent.com/WeiGiegie/666/main/ximalayack.js
+^https?:\/\/.+((ximalaya)|(xmcdn)).+(mobile-user\/v2|mobile-web|queryCategoryPageData|discovery-feed\/v4|vip\/v1\/recommand|product\/detail\/v1|mobile\/v1\/album|playpage|album\/price\/ts|mobile\/user\/member|freeListenTabStyle).*$ url script-response-body https://raw.githubusercontent.com/WeiGiegie/666/main/ximalaya.js
+^https?:\/\/mobile\.ximalaya\.com\/mobile-playpage\/(playpage\/tabs\/v2\/|track\/v4\/baseInfo\/) url script-request-header https://raw.githubusercontent.com/WeiGiegie/666/main/ximalayack.js
 # > 去广告,
 ^https?://passport\.ximalaya\.com/friendship-mobile/v1/findFriendsBanner/show/ url reject
 ^https?://xdcs-collector\.ximalaya\.com/api/v1/realtime url reject

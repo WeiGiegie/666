@@ -7,7 +7,7 @@
  *******************************
  [rewrite_local]
  # > 波点音乐 解锁VIP 最高音质 + 去广告
-^https?:\/\/bd-api\.kuwo\.cn\/api\/(ucenter\/users\/pub|play\/music\/v2\/(audioUrl|checkRight)|service\/home\/module|pay\/vip\/lowPriceText) url script-response-body bdyy.js
+^https?:\/\/bd-api\.kuwo\.cn\/api\/(ucenter\/users\/pub|play\/music\/v2\/(audioUrl|checkRight)|service\/home\/module|pay\/vip\/lowPriceText) url script-response-body https://raw.githubusercontent.com/WeiGiegie/666/main/bdyy.js
 
 # > 疑似开屏AD
 ^https://ad\.tencentmusic\.com/config/uni url reject

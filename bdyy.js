@@ -1,16 +1,21 @@
 /*
  *
- * 脚本功能：波点音乐 解锁VIP + 去广告
+ * 脚本功能：波点音乐 调试会员功能 + 去广告
  * 软件版本：5.1.5appstore (实际包5.1.6)
  * 更新时间：2025年0829
  *
  *******************************
  [rewrite_local]
- # > 波点音乐 解锁VIP 最高音质 + 去广告
+ # > 波点音乐  调试会员功能 + 去广告
 ^https?:\/\/bd-api\.kuwo\.cn\/api\/(ucenter\/users\/pub|play\/music\/v2\/(audioUrl|checkRight)|service\/home\/module|pay\/vip\/lowPriceText) url script-response-body https://raw.githubusercontent.com/WeiGiegie/666/main/bdyy.js
 
-# > 开屏AD
+# > 开屏AD&其它广告？(以下数据来自“广告必须死”频道分享)
 ^https://ad\.tencentmusic\.com/config/uni url reject
+# 移除波点音乐我的页面广告banner
+^https:\/\/bd-api\.kuwo\.cn\/api\/service\/banner\/positions\? reject-dict
+# 移除搜索框热搜
+^https:\/\/bd-api\.kuwo\.cn\/api\/search\/topic\/word\/list\? reject-dict
+
  [mitm]
  hostname = bd-api.kuwo.cn,*.kuwo.*,ad.tencentmusic.com
  *

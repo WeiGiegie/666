@@ -8,7 +8,7 @@
  [rewrite_local]
  # > 哔哩哔哩 播放地址获取与调试？
 ^https?:\/\/(api.bilibili.com|api.biliapi.net)\/x\/share\/click url script-response-body https://raw.githubusercontent.com/WeiGiegie/666/main/blblplayurl.js
-^https?:\/\/(.*\.(bilivideo\.com|bilivideo\.cn)).* url script-request-header https://raw.githubusercontent.com/WeiGiegie/666/main/blblplayurl.js
+^https?:\/\/.*bilivideo\.(com|cn)(?!.*\/resolve).*\/upgcxcode\/.*\.(m4s|flv|mp4|ts).+ url script-request-header https://raw.githubusercontent.com/WeiGiegie/666/main/blblplayurl.js
 
  [mitm]
  hostname = api.bilibili.com,api.biliapi.net,*.bilivideo.com,*.bilivideo.cn

@@ -1,7 +1,7 @@
 /*
  *
  *
-脚本功能：哔哩哔哩 获取视频地址1
+脚本功能：哔哩哔哩 获取视频地址
 软件版本：
 下载地址：
 脚本作者：
@@ -23,6 +23,7 @@ hostname = api.biliapi.net, api.bilibili.com, bibz.me
 *
 *
 */
+
 
 
 
@@ -74,25 +75,41 @@ if (ENV === 'Quantumult X') {
 
 // 工具函数
 const utils = {
-    // HTTP请求 - 修复Loon环境的问题
+    // HTTP请求 - 专门为Loon环境优化
     httpRequest: (url, method = 'GET', timeout = 5000) => {
         const config = { url, method, timeout };
         
         if (ENV === 'Quantumult X') {
             return $task.fetch(config);
         } else {
-            // Loon和Surge环境使用$httpClient，但需要根据方法类型调用不同的函数
+            // Loon和Surge环境使用不同的方法
             return new Promise(resolve => {
-                const clientMethod = method.toLowerCase() === 'head' ? 'head' : 'get';
-                
-                if (clientMethod === 'head') {
-                    $httpClient.head(config, (err, response) => {
-                        resolve(err ? { error: err } : response);
-                    });
+                if (method.toUpperCase() === 'HEAD') {
+                    // Loon环境使用特定的HEAD请求方法
+                    if (typeof $httpClient !== 'undefined') {
+                        $httpClient.head(config, (err, response) => {
+                            if (err) {
+                                resolve({ error: err });
+                            } else {
+                                resolve(response);
+                            }
+                        });
+                    } else {
+                        resolve({ error: 'HTTP客户端不可用' });
+                    }
                 } else {
-                    $httpClient.get(config, (err, response, body) => {
-                        resolve(err ? { error: err } : { ...response, body });
-                    });
+                    // GET请求
+                    if (typeof $httpClient !== 'undefined') {
+                        $httpClient.get(config, (err, response, body) => {
+                            if (err) {
+                                resolve({ error: err });
+                            } else {
+                                resolve({ ...response, body });
+                            }
+                        });
+                    } else {
+                        resolve({ error: 'HTTP客户端不可用' });
+                    }
                 }
             });
         }
@@ -123,16 +140,40 @@ const utils = {
     }
 };
 
-// 解析短链接 - 使用简单的HEAD方法
+// 解析短链接 - 使用GET方法替代HEAD方法
 async function resolveShortUrl(url) {
     try {
         console.log("开始解析短链接:", url);
-        const response = await utils.httpRequest(url, 'HEAD', 3000);
+        
+        // 在Loon环境中，尝试使用GET方法而不是HEAD方法
+        const response = await utils.httpRequest(url, 'GET', 5000);
         if (response.error) throw new Error(response.error);
         
-        const location = response.headers?.Location || 
-                       response.headers?.location ||
-                       response.headers?.LOCATION;
+        // 尝试从响应头获取重定向URL
+        let location = response.headers?.Location || 
+                      response.headers?.location ||
+                      response.headers?.LOCATION;
+        
+        // 如果响应头中没有重定向信息，尝试从HTML中提取
+        if (!location && response.body) {
+            // 尝试从meta refresh标签中提取URL
+            const metaMatch = response.body.match(/<meta[^>]*http-equiv=["']?refresh["']?[^>]*content=["']?[^;]*;url=([^"'>]+)/i);
+            if (metaMatch && metaMatch[1]) {
+                location = metaMatch[1];
+            }
+            
+            // 尝试从JavaScript重定向中提取URL
+            if (!location) {
+                const jsMatch = response.body.match(/window\.location\s*\.?\s*=\s*["']([^"']+)["']/i);
+                if (jsMatch && jsMatch[1]) {
+                    location = jsMatch[1];
+                }
+            }
+        }
+        
+        if (!location) {
+            throw new Error('无法解析短链接重定向');
+        }
         
         console.log("解析到的最终URL:", location);
         return location;

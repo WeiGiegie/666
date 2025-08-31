@@ -1,7 +1,7 @@
 /*
  *
  *
-脚本功能：哔哩哔哩 获取视频地址
+脚本功能：哔哩哔哩 获取视频
 软件版本：
 下载地址：
 脚本作者：
@@ -77,39 +77,32 @@ if (ENV === 'Quantumult X') {
 const utils = {
     // HTTP请求 - 专门为Loon环境优化
     httpRequest: (url, method = 'GET', timeout = 5000) => {
-        const config = { url, method, timeout };
+        const config = { url, timeout };
         
         if (ENV === 'Quantumult X') {
+            config.method = method;
             return $task.fetch(config);
         } else {
             // Loon和Surge环境使用不同的方法
             return new Promise(resolve => {
                 if (method.toUpperCase() === 'HEAD') {
-                    // Loon环境使用特定的HEAD请求方法
-                    if (typeof $httpClient !== 'undefined') {
-                        $httpClient.head(config, (err, response) => {
-                            if (err) {
-                                resolve({ error: err });
-                            } else {
-                                resolve(response);
-                            }
-                        });
-                    } else {
-                        resolve({ error: 'HTTP客户端不可用' });
-                    }
+                    // 使用HEAD方法
+                    $httpClient.head(config, (err, response) => {
+                        if (err) {
+                            resolve({ error: err });
+                        } else {
+                            resolve(response);
+                        }
+                    });
                 } else {
-                    // GET请求
-                    if (typeof $httpClient !== 'undefined') {
-                        $httpClient.get(config, (err, response, body) => {
-                            if (err) {
-                                resolve({ error: err });
-                            } else {
-                                resolve({ ...response, body });
-                            }
-                        });
-                    } else {
-                        resolve({ error: 'HTTP客户端不可用' });
-                    }
+                    // 使用GET方法
+                    $httpClient.get(config, (err, response, body) => {
+                        if (err) {
+                            resolve({ error: err });
+                        } else {
+                            resolve({ ...response, body });
+                        }
+                    });
                 }
             });
         }
@@ -140,47 +133,120 @@ const utils = {
     }
 };
 
-// 解析短链接 - 使用GET方法替代HEAD方法
+// 解析短链接 - 使用多种方法尝试
 async function resolveShortUrl(url) {
     try {
         console.log("开始解析短链接:", url);
         
-        // 在Loon环境中，尝试使用GET方法而不是HEAD方法
-        const response = await utils.httpRequest(url, 'GET', 5000);
-        if (response.error) throw new Error(response.error);
-        
-        // 尝试从响应头获取重定向URL
-        let location = response.headers?.Location || 
-                      response.headers?.location ||
-                      response.headers?.LOCATION;
-        
-        // 如果响应头中没有重定向信息，尝试从HTML中提取
-        if (!location && response.body) {
-            // 尝试从meta refresh标签中提取URL
-            const metaMatch = response.body.match(/<meta[^>]*http-equiv=["']?refresh["']?[^>]*content=["']?[^;]*;url=([^"'>]+)/i);
-            if (metaMatch && metaMatch[1]) {
-                location = metaMatch[1];
-            }
-            
-            // 尝试从JavaScript重定向中提取URL
-            if (!location) {
-                const jsMatch = response.body.match(/window\.location\s*\.?\s*=\s*["']([^"']+)["']/i);
-                if (jsMatch && jsMatch[1]) {
-                    location = jsMatch[1];
+        // 方法1: 尝试使用HEAD方法获取重定向
+        try {
+            const response = await utils.httpRequest(url, 'HEAD', 3000);
+            if (!response.error) {
+                const location = response.headers?.Location || 
+                               response.headers?.location ||
+                               response.headers?.LOCATION;
+                
+                if (location) {
+                    console.log("通过HEAD方法解析到的最终URL:", location);
+                    return location;
                 }
             }
+        } catch (e) {
+            console.log("HEAD方法失败:", e.message);
         }
         
-        if (!location) {
-            throw new Error('无法解析短链接重定向');
+        // 方法2: 尝试使用GET方法获取重定向
+        try {
+            const response = await utils.httpRequest(url, 'GET', 5000);
+            if (!response.error) {
+                // 尝试从响应头获取重定向URL
+                let location = response.headers?.Location || 
+                              response.headers?.location ||
+                              response.headers?.LOCATION;
+                
+                // 如果响应头中没有重定向信息，尝试从HTML中提取
+                if (!location && response.body) {
+                    // 尝试从meta refresh标签中提取URL
+                    const metaMatch = response.body.match(/<meta[^>]*http-equiv=["']?refresh["']?[^>]*content=["']?[^;]*;url=([^"'>]+)/i);
+                    if (metaMatch && metaMatch[1]) {
+                        location = metaMatch[1];
+                    }
+                    
+                    // 尝试从JavaScript重定向中提取URL
+                    if (!location) {
+                        const jsMatch = response.body.match(/window\.location\s*\.?\s*=\s*["']([^"']+)["']/i);
+                        if (jsMatch && jsMatch[1]) {
+                            location = jsMatch[1];
+                        }
+                    }
+                    
+                    // 尝试从链接中提取URL
+                    if (!location) {
+                        const linkMatch = response.body.match(/<a[^>]*href=["']([^"']+)["'][^>]*>/i);
+                        if (linkMatch && linkMatch[1]) {
+                            location = linkMatch[1];
+                        }
+                    }
+                }
+                
+                if (location) {
+                    console.log("通过GET方法解析到的最终URL:", location);
+                    return location;
+                }
+            }
+        } catch (e) {
+            console.log("GET方法失败:", e.message);
         }
         
-        console.log("解析到的最终URL:", location);
-        return location;
+        // 方法3: 尝试直接访问短链接并获取最终URL
+        try {
+            // 在某些环境中，直接访问短链接可能会自动重定向
+            // 我们可以尝试使用一个简单的重定向跟踪方法
+            const finalUrl = await followRedirects(url, 3); // 最多跟踪3次重定向
+            if (finalUrl) {
+                console.log("通过重定向跟踪解析到的最终URL:", finalUrl);
+                return finalUrl;
+            }
+        } catch (e) {
+            console.log("重定向跟踪方法失败:", e.message);
+        }
+        
+        throw new Error('无法解析短链接重定向');
     } catch (error) {
         console.log("解析短链接错误:", error.message);
         throw error;
     }
+}
+
+// 跟踪重定向
+async function followRedirects(url, maxRedirects) {
+    let currentUrl = url;
+    let redirectCount = 0;
+    
+    while (redirectCount < maxRedirects) {
+        try {
+            const response = await utils.httpRequest(currentUrl, 'HEAD', 3000);
+            if (response.error) break;
+            
+            const location = response.headers?.Location || 
+                           response.headers?.location ||
+                           response.headers?.LOCATION;
+            
+            if (!location || location === currentUrl) break;
+            
+            currentUrl = location;
+            redirectCount++;
+            
+            // 如果是B站视频链接，直接返回
+            if (currentUrl.includes('bilibili.com/video/')) {
+                return currentUrl;
+            }
+        } catch (e) {
+            break;
+        }
+    }
+    
+    return currentUrl !== url ? currentUrl : null;
 }
 
 // 获取视频信息

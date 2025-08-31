@@ -30,7 +30,6 @@ hostname = api.biliapi.net, api.bilibili.com, bibz.me
 
 
 
-
 /**
  * B站短链解析优化版 - 兼容Quantumult X / Surge / Loon
  * @description 解析B站短链，获取无水印视频地址并同步到响应
@@ -81,19 +80,20 @@ const utils = {
         
         if (ENV === 'Quantumult X') {
             return $task.fetch(config);
-        } else if (ENV === 'Loon') {
-            // Loon环境使用$loon.http.request方法
-            return new Promise(resolve => {
-                $loon.http.request(config, (err, response, body) => {
-                    resolve(err ? { error: err } : { ...response, body });
-                });
-            });
         } else {
-            // Surge环境使用$httpClient
+            // Loon和Surge环境使用$httpClient，但需要根据方法类型调用不同的函数
             return new Promise(resolve => {
-                $httpClient[method.toLowerCase()](config, (err, response, body) => {
-                    resolve(err ? { error: err } : { ...response, body });
-                });
+                const clientMethod = method.toLowerCase() === 'head' ? 'head' : 'get';
+                
+                if (clientMethod === 'head') {
+                    $httpClient.head(config, (err, response) => {
+                        resolve(err ? { error: err } : response);
+                    });
+                } else {
+                    $httpClient.get(config, (err, response, body) => {
+                        resolve(err ? { error: err } : { ...response, body });
+                    });
+                }
             });
         }
     },
@@ -102,8 +102,6 @@ const utils = {
     notify: (title, subtitle, message, options = {}) => {
         if (ENV === 'Quantumult X') {
             $notify(title, subtitle, message, options);
-        } else if (ENV === 'Loon') {
-            $notification.post(title, subtitle, message, options);
         } else {
             $notification.post(title, subtitle, message, options);
         }
@@ -269,12 +267,8 @@ async function processShareClick() {
         // 确保总是返回响应
         if (ENV === 'Quantumult X') {
             $done({ body: modifiedResponse });
-        } else if (ENV === 'Loon') {
-            // Loon环境中修改响应体
-            $response.body = modifiedResponse;
-            $done($response);
         } else {
-            // Surge环境中修改响应体
+            // Loon和Surge环境中修改响应体
             $response.body = modifiedResponse;
             $done($response);
         }

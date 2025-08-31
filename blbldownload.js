@@ -133,120 +133,37 @@ const utils = {
     }
 };
 
-// 解析短链接 - 使用多种方法尝试
-async function resolveShortUrl(url) {
+// 解析短链接 - 直接使用B站API获取最终URL
+async function resolveShortUrl(shortUrl) {
     try {
-        console.log("开始解析短链接:", url);
+        console.log("开始解析短链接:", shortUrl);
         
-        // 方法1: 尝试使用HEAD方法获取重定向
-        try {
-            const response = await utils.httpRequest(url, 'HEAD', 3000);
-            if (!response.error) {
-                const location = response.headers?.Location || 
-                               response.headers?.location ||
-                               response.headers?.LOCATION;
-                
-                if (location) {
-                    console.log("通过HEAD方法解析到的最终URL:", location);
-                    return location;
-                }
-            }
-        } catch (e) {
-            console.log("HEAD方法失败:", e.message);
+        // 直接使用B站的短链接解析API
+        const apiUrl = `https://api.bilibili.com/x/share/click?build=0&buvid=&platform=web&share_id=${shortUrl.replace('https://b23.tv/', '')}&share_mode=3`;
+        
+        const response = await utils.httpRequest(apiUrl, 'GET', 5000);
+        if (response.error) throw new Error(response.error);
+
+        const result = JSON.parse(response.body);
+        if (result?.code !== 0 || !result.data?.content) {
+            throw new Error('短链接API响应无效');
         }
         
-        // 方法2: 尝试使用GET方法获取重定向
-        try {
-            const response = await utils.httpRequest(url, 'GET', 5000);
-            if (!response.error) {
-                // 尝试从响应头获取重定向URL
-                let location = response.headers?.Location || 
-                              response.headers?.location ||
-                              response.headers?.LOCATION;
-                
-                // 如果响应头中没有重定向信息，尝试从HTML中提取
-                if (!location && response.body) {
-                    // 尝试从meta refresh标签中提取URL
-                    const metaMatch = response.body.match(/<meta[^>]*http-equiv=["']?refresh["']?[^>]*content=["']?[^;]*;url=([^"'>]+)/i);
-                    if (metaMatch && metaMatch[1]) {
-                        location = metaMatch[1];
-                    }
-                    
-                    // 尝试从JavaScript重定向中提取URL
-                    if (!location) {
-                        const jsMatch = response.body.match(/window\.location\s*\.?\s*=\s*["']([^"']+)["']/i);
-                        if (jsMatch && jsMatch[1]) {
-                            location = jsMatch[1];
-                        }
-                    }
-                    
-                    // 尝试从链接中提取URL
-                    if (!location) {
-                        const linkMatch = response.body.match(/<a[^>]*href=["']([^"']+)["'][^>]*>/i);
-                        if (linkMatch && linkMatch[1]) {
-                            location = linkMatch[1];
-                        }
-                    }
-                }
-                
-                if (location) {
-                    console.log("通过GET方法解析到的最终URL:", location);
-                    return location;
-                }
-            }
-        } catch (e) {
-            console.log("GET方法失败:", e.message);
+        // 从API响应中提取最终URL
+        const content = result.data.content;
+        const finalUrlMatch = content.match(/https?:\/\/[^\s]+/);
+        
+        if (!finalUrlMatch || !finalUrlMatch[0]) {
+            throw new Error('无法从API响应中提取最终URL');
         }
         
-        // 方法3: 尝试直接访问短链接并获取最终URL
-        try {
-            // 在某些环境中，直接访问短链接可能会自动重定向
-            // 我们可以尝试使用一个简单的重定向跟踪方法
-            const finalUrl = await followRedirects(url, 3); // 最多跟踪3次重定向
-            if (finalUrl) {
-                console.log("通过重定向跟踪解析到的最终URL:", finalUrl);
-                return finalUrl;
-            }
-        } catch (e) {
-            console.log("重定向跟踪方法失败:", e.message);
-        }
-        
-        throw new Error('无法解析短链接重定向');
+        const finalUrl = finalUrlMatch[0];
+        console.log("通过API解析到的最终URL:", finalUrl);
+        return finalUrl;
     } catch (error) {
         console.log("解析短链接错误:", error.message);
         throw error;
     }
-}
-
-// 跟踪重定向
-async function followRedirects(url, maxRedirects) {
-    let currentUrl = url;
-    let redirectCount = 0;
-    
-    while (redirectCount < maxRedirects) {
-        try {
-            const response = await utils.httpRequest(currentUrl, 'HEAD', 3000);
-            if (response.error) break;
-            
-            const location = response.headers?.Location || 
-                           response.headers?.location ||
-                           response.headers?.LOCATION;
-            
-            if (!location || location === currentUrl) break;
-            
-            currentUrl = location;
-            redirectCount++;
-            
-            // 如果是B站视频链接，直接返回
-            if (currentUrl.includes('bilibili.com/video/')) {
-                return currentUrl;
-            }
-        } catch (e) {
-            break;
-        }
-    }
-    
-    return currentUrl !== url ? currentUrl : null;
 }
 
 // 获取视频信息

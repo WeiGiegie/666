@@ -1,7 +1,7 @@
 /*
  *
  *
-脚本功能：哔哩哔哩 获取视频下载地址
+脚本功能：哔哩哔哩 获取视频地址
 软件版本：
 下载地址：
 脚本作者：
@@ -23,6 +23,10 @@ hostname = api.biliapi.net, api.bilibili.com, bibz.me
 *
 *
 */
+
+
+
+
 
 
 
@@ -71,17 +75,27 @@ if (ENV === 'Quantumult X') {
 
 // 工具函数
 const utils = {
-    // HTTP请求
+    // HTTP请求 - 修复Loon环境的问题
     httpRequest: (url, method = 'GET', timeout = 5000) => {
         const config = { url, method, timeout };
-        if (ENV === 'Quantumult X') return $task.fetch(config);
         
-        return new Promise(resolve => {
-            const client = ENV === 'Loon' ? $loon : $httpClient;
-            client[method.toLowerCase()](config, (err, response, body) => {
-                resolve(err ? { error: err } : { ...response, body });
+        if (ENV === 'Quantumult X') {
+            return $task.fetch(config);
+        } else if (ENV === 'Loon') {
+            // Loon环境使用$loon.http.request方法
+            return new Promise(resolve => {
+                $loon.http.request(config, (err, response, body) => {
+                    resolve(err ? { error: err } : { ...response, body });
+                });
             });
-        });
+        } else {
+            // Surge环境使用$httpClient
+            return new Promise(resolve => {
+                $httpClient[method.toLowerCase()](config, (err, response, body) => {
+                    resolve(err ? { error: err } : { ...response, body });
+                });
+            });
+        }
     },
     
     // 发送通知
@@ -254,23 +268,13 @@ async function processShareClick() {
     } finally {
         // 确保总是返回响应
         if (ENV === 'Quantumult X') {
-            // 在Quantumult X中，尝试不同的响应修改方式
-            try {
-                // 方法1: 直接返回修改后的响应体
-                $done({ body: modifiedResponse });
-            } catch (e) {
-                console.log("方法1失败，尝试方法2");
-                // 方法2: 返回完整的响应对象
-                $done({
-                    response: {
-                        status: 200,
-                        headers: $response.headers || {},
-                        body: modifiedResponse
-                    }
-                });
-            }
+            $done({ body: modifiedResponse });
+        } else if (ENV === 'Loon') {
+            // Loon环境中修改响应体
+            $response.body = modifiedResponse;
+            $done($response);
         } else {
-            // 在Loon和Surge中，直接修改$response.body
+            // Surge环境中修改响应体
             $response.body = modifiedResponse;
             $done($response);
         }

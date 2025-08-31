@@ -25,4 +25,257 @@ hostname = api.biliapi.net, api.bilibili.com, bibz.me
 */
 
 
-const $http=typeof $task!=="\x75\x6e\x64\x65\x66\x69\x6e\x65\x64"?$task:$httpClient;const $notifyFn=$notify?$notify:(title,subtitle,body,options)=>{console['\x6c\x6f\x67'](title,subtitle,body,options)};const $prefsFn=$prefs||{valueForKey:k=>typeof $persistentStore!=="\x75\x6e\x64\x65\x66\x69\x6e\x65\x64"?$persistentStore['\x72\x65\x61\x64'](k):null,setValueForKey:(v,k)=>typeof $persistentStore!=="\x75\x6e\x64\x65\x66\x69\x6e\x65\x64"?$persistentStore['\x77\x72\x69\x74\x65'](v,k):null};const respBody=$response?['\x62\x6f\x64\x79']||"\x7b\x7d";let dataObj;try{dataObj=JSON['\x70\x61\x72\x73\x65'](respBody)}catch(e){dataObj={}}const shareUrl=dataObj?['\x64\x61\x74\x61']?['\x63\x6f\x6e\x74\x65\x6e\x74']?['\x6d\x61\x74\x63\x68'](/https:\/\/b23\.tv\/\S+/)?.[0];if(!shareUrl){console['\x6c\x6f\x67']("\u672a\u627e\u5230\u5206\u4eab\u94fe\u63a5");$done({})}else{console['\x6c\x6f\x67']("\u5339\u914d\u5230\u5206\u4eab\u94fe\u63a5\x3a "+shareUrl);const linkCheckReq={url:"\x68\x74\x74\x70\x73\x3a\x2f\x2f\x62\x69\x62\x7a\x2e\x6d\x65\x2f\x61\x70\x69\x2f\x6c\x69\x6e\x6b\x2d\x63\x68\x65\x63\x6b",method:"\x50\x4f\x53\x54",headers:{"\x43\x6f\x6e\x74\x65\x6e\x74\x2d\x54\x79\x70\x65":"\x61\x70\x70\x6c\x69\x63\x61\x74\x69\x6f\x6e\x2f\x6a\x73\x6f\x6e","\x55\x73\x65\x72\x2d\x41\x67\x65\x6e\x74":"\x4d\x6f\x7a\x69\x6c\x6c\x61\x2f\x35\x2e\x30"},body:JSON['\x73\x74\x72\x69\x6e\x67\x69\x66\x79']({url:shareUrl})};$http['\x66\x65\x74\x63\x68'](linkCheckReq)['\x74\x68\x65\x6e'](linkCheckResp=>{let finalUrl;try{finalUrl=JSON['\x70\x61\x72\x73\x65'](linkCheckResp['\x62\x6f\x64\x79'])?['\x66\x69\x6e\x61\x6c\x55\x72\x6c']}catch(e){console['\x6c\x6f\x67'](e)}if(!finalUrl){$done({});return}console['\x6c\x6f\x67']("\u83b7\u53d6\u5230 \x66\x69\x6e\x61\x6c\x55\x72\x6c\x3a "+finalUrl);const extractorReq={url:"\x68\x74\x74\x70\x73\x3a\x2f\x2f\x62\x69\x62\x7a\x2e\x6d\x65\x2f\x61\x70\x69\x2f\x76\x69\x64\x65\x6f\x2d\x65\x78\x74\x72\x61\x63\x74\x6f\x72",method:"\x50\x4f\x53\x54",headers:{"\x43\x6f\x6e\x74\x65\x6e\x74\x2d\x54\x79\x70\x65":"\x61\x70\x70\x6c\x69\x63\x61\x74\x69\x6f\x6e\x2f\x6a\x73\x6f\x6e","\x55\x73\x65\x72\x2d\x41\x67\x65\x6e\x74":"\x4d\x6f\x7a\x69\x6c\x6c\x61\x2f\x35\x2e\x30"},body:JSON['\x73\x74\x72\x69\x6e\x67\x69\x66\x79']({inputValue:finalUrl,quality:"\x68\x69\x67\x68\x65\x73\x74"})};$http['\x66\x65\x74\x63\x68'](extractorReq)['\x74\x68\x65\x6e'](extractorResp=>{let videoUrl,title,quality,thumbnail,videoId;try{const obj=JSON['\x70\x61\x72\x73\x65'](extractorResp['\x62\x6f\x64\x79']);const info=obj?['\x66\x6f\x72\x6d\x61\x74\x73']?.[0];videoUrl=info?['\x76\x69\x64\x65\x6f\x55\x72\x6c'];title=obj?['\x74\x69\x74\x6c\x65']||"\u89e3\u6790\u7ed3\u679c";quality=info?['\x71\x75\x61\x6c\x69\x74\x79\x4c\x61\x62\x65\x6c']||info?['\x71\x75\x61\x6c\x69\x74\x79']||"\u672a\u77e5";thumbnail=obj?['\x74\x68\x75\x6d\x62\x6e\x61\x69\x6c']||"";videoId=obj?['\x64\x65\x74\x65\x63\x74\x65\x64\x49\x64']||videoUrl}catch(e){console['\x6c\x6f\x67'](e)}if(!videoUrl){$done({});return}let seen=$prefsFn['\x76\x61\x6c\x75\x65\x46\x6f\x72\x4b\x65\x79']("\x62\x69\x6c\x69\x5f\x73\x65\x65\x6e\x5f\x76\x69\x64\x65\x6f\x73")||"\x7b\x7d";try{seen=JSON['\x70\x61\x72\x73\x65'](seen)}catch(e){seen={}}const now=window["\x44\x61\x74\x65"]['\x6e\x6f\x77']();const lastTime=seen[videoId]||0;if(now-lastTime<60000){console['\x6c\x6f\x67']("\u89c6\u9891\x31\u5206\u949f\u5185\u5df2\u901a\u77e5\u8fc7\uff0c\u8df3\u8fc7\uff1a"+videoId);$done({});return}seen[videoId]=now;$prefsFn['\x73\x65\x74\x56\x61\x6c\x75\x65\x46\x6f\x72\x4b\x65\x79'](JSON['\x73\x74\x72\x69\x6e\x67\x69\x66\x79'](seen),"\x62\x69\x6c\x69\x5f\x73\x65\x65\x6e\x5f\x76\x69\x64\x65\x6f\x73");const proxyUrl=`https:$notifyFn("\x42\u7ad9\u89e3\u6790\u6210\u529f",`${title}[${quality}]`,"\ud83d\udc49\u70b9\u51fb\u4e0b\u8f7d\ud83d\udc48",{"\x6f\x70\x65\x6e\x2d\x75\x72\x6c":proxyUrl,"\x6d\x65\x64\x69\x61\x2d\x75\x72\x6c":thumbnail});$done({})},err=>{console['\x6c\x6f\x67']("\x76\x69\x64\x65\x6f\x2d\x65\x78\x74\x72\x61\x63\x74\x6f\x72 \u8bf7\u6c42\u5931\u8d25",err);$done({})})},err=>{console['\x6c\x6f\x67']("\x6c\x69\x6e\x6b\x2d\x63\x68\x65\x63\x6b \u8bf7\u6c42\u5931\u8d25",err);$done({})})}
+
+
+/**
+ * B站短链解析优化版 - 兼容Quantumult X / Surge / Loon
+ * @description 解析B站短链，获取无水印视频地址并同步到响应
+ */
+
+// 环境检测
+const ENV = (() => {
+    if (typeof $loon !== 'undefined') return 'Loon';
+    if (typeof $httpClient !== 'undefined') return 'Surge';
+    if (typeof $task !== 'undefined') return 'Quantumult X';
+    return 'Unknown';
+})();
+
+console.log(`运行环境: ${ENV}`);
+
+// 检查是否是/x/share/click请求
+const isShareClickRequest = () => {
+    if (ENV === 'Quantumult X') {
+        return $request && $request.url && $request.url.includes('/x/share/click');
+    } else {
+        return typeof $request !== 'undefined' && $request.url && $request.url.includes('/x/share/click');
+    }
+};
+
+// 如果不是/share/click请求，直接放行
+if (!isShareClickRequest()) {
+    if (ENV === 'Quantumult X') {
+        $done({});
+    } else {
+        $done($response);
+    }
+    return;
+}
+
+// 获取当前请求的响应体
+let responseBody;
+if (ENV === 'Quantumult X') {
+    responseBody = $response.body;
+} else {
+    responseBody = $response.body;
+}
+
+// 工具函数
+const utils = {
+    // HTTP请求
+    httpRequest: (url, method = 'GET', timeout = 5000) => {
+        const config = { url, method, timeout };
+        if (ENV === 'Quantumult X') return $task.fetch(config);
+        
+        return new Promise(resolve => {
+            const client = ENV === 'Loon' ? $loon : $httpClient;
+            client[method.toLowerCase()](config, (err, response, body) => {
+                resolve(err ? { error: err } : { ...response, body });
+            });
+        });
+    },
+    
+    // 发送通知
+    notify: (title, subtitle, message, options = {}) => {
+        if (ENV === 'Quantumult X') {
+            $notify(title, subtitle, message, options);
+        } else if (ENV === 'Loon') {
+            $notification.post(title, subtitle, message, options);
+        } else {
+            $notification.post(title, subtitle, message, options);
+        }
+    },
+    
+    // 格式化时长
+    formatDuration: (seconds) => {
+        const hours = Math.floor(seconds / 3600);
+        const minutes = Math.floor((seconds % 3600) / 60);
+        const secs = seconds % 60;
+        
+        if (hours > 0) return `${hours}:${minutes.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')}`;
+        return `${minutes}:${secs.toString().padStart(2, '0')}`;
+    },
+    
+    // 截断文本
+    truncateText: (text, maxLength = 40) => {
+        return text.length <= maxLength ? text : text.substring(0, maxLength - 1) + '…';
+    }
+};
+
+// 解析短链接 - 使用简单的HEAD方法
+async function resolveShortUrl(url) {
+    try {
+        console.log("开始解析短链接:", url);
+        const response = await utils.httpRequest(url, 'HEAD', 3000);
+        if (response.error) throw new Error(response.error);
+        
+        const location = response.headers?.Location || 
+                       response.headers?.location ||
+                       response.headers?.LOCATION;
+        
+        console.log("解析到的最终URL:", location);
+        return location;
+    } catch (error) {
+        console.log("解析短链接错误:", error.message);
+        throw error;
+    }
+}
+
+// 获取视频信息
+async function fetchVideoInfo(bvid) {
+    try {
+        console.log("获取视频信息:", bvid);
+        const apiUrl = `https://api.bilibili.com/x/player/pagelist?bvid=${bvid}&jsonp=jsonp`;
+        const response = await utils.httpRequest(apiUrl);
+        if (response.error) throw new Error(response.error);
+
+        const result = JSON.parse(response.body);
+        if (result?.code !== 0 || !result.data?.length) {
+            throw new Error('视频信息无效');
+        }
+
+        return result.data[0];
+    } catch (error) {
+        console.log("获取视频信息错误:", error.message);
+        throw error;
+    }
+}
+
+// 获取无水印播放地址
+async function fetchPlayUrl(bvid, cid) {
+    try {
+        console.log("获取播放地址:", bvid, cid);
+        const apiUrl = `https://api.bilibili.com/x/player/playurl?bvid=${bvid}&cid=${cid}&qn=80&fnval=1`;
+        const response = await utils.httpRequest(apiUrl);
+        if (response.error) throw new Error(response.error);
+
+        const result = JSON.parse(response.body);
+        if (result?.code !== 0 || !result.data?.durl?.length) {
+            throw new Error('播放地址无效');
+        }
+
+        // 获取无水印播放URL
+        const playUrl = result.data.durl[0].url || 
+                       (result.data.durl[0].backup_url?.[0]);
+        
+        if (!playUrl) throw new Error('未找到播放URL');
+        
+        console.log("获取到的播放URL长度:", playUrl.length);
+        return playUrl;
+    } catch (error) {
+        console.log("获取播放地址错误:", error.message);
+        throw error;
+    }
+}
+
+// 发送成功通知
+function sendNotification(title, videoInfo, bvid) {
+    const displayTitle = utils.truncateText(title);
+    
+    const message = [
+        `🎬 ${displayTitle}`,
+        `⏰ 时长: ${utils.formatDuration(videoInfo.duration)}`,
+        `🖼️ 分辨率: ${videoInfo.dimension.width}x${videoInfo.dimension.height}`,
+        `🔗 BV号: ${bvid}`
+    ].join('\n');
+
+    const notifyOptions = {
+        'media-url': videoInfo.first_frame || 'https://example.com/default-cover.jpg'
+    };
+
+    utils.notify('✅ B站视频解析成功', '', message, notifyOptions);
+}
+
+// 发送错误通知
+function sendErrorNotification(reason) {
+    utils.notify('❌ B站解析失败', '', `解析失败: ${reason}\n\n请检查链接有效性或稍后重试`);
+}
+
+// 主处理函数
+async function processShareClick() {
+    let modifiedResponse = responseBody;
+    
+    try {
+        // 解析初始响应
+        const result = JSON.parse(responseBody);
+        if (result?.code !== 0 || !result.data?.content) {
+            throw new Error('无效的响应数据');
+        }
+
+        // 保存原始内容
+        const originalContent = result.data.content;
+        
+        // 提取短链接
+        const shortUrl = originalContent.match(/https?:\/\/b23\.tv\/[a-zA-Z0-9]+/)?.[0];
+        if (!shortUrl) throw new Error('未找到短链接');
+
+        // 清理标题
+        const title = originalContent.replace(shortUrl, '')
+                                .replace(/[-—]\s*哔哩哔哩$/, '')
+                                .trim();
+        
+        // 解析短链接获取最终URL
+        const finalUrl = await resolveShortUrl(shortUrl);
+        if (!finalUrl) throw new Error('无法解析短链接');
+        
+        // 提取BV号
+        const bvid = finalUrl.match(/\/(BV[0-9A-Za-z]{10,12})/)?.[1];
+        if (!bvid) throw new Error('无法解析视频ID');
+
+        // 获取视频详细信息
+        const videoInfo = await fetchVideoInfo(bvid);
+        if (!videoInfo) throw new Error('无法获取视频信息');
+
+        // 获取无水印播放地址
+        const playUrl = await fetchPlayUrl(bvid, videoInfo.cid);
+        if (!playUrl) throw new Error('无法获取播放地址');
+
+        // 修改响应内容
+        result.data.content = playUrl;
+        modifiedResponse = JSON.stringify(result);
+        
+        console.log("响应已修改，播放地址已同步");
+        
+        // 发送通知
+        sendNotification(title, videoInfo, bvid);
+        
+    } catch (error) {
+        console.log(`处理失败: ${error.message}`);
+        sendErrorNotification(error.message);
+    } finally {
+        // 确保总是返回响应
+        if (ENV === 'Quantumult X') {
+            // 在Quantumult X中，尝试不同的响应修改方式
+            try {
+                // 方法1: 直接返回修改后的响应体
+                $done({ body: modifiedResponse });
+            } catch (e) {
+                console.log("方法1失败，尝试方法2");
+                // 方法2: 返回完整的响应对象
+                $done({
+                    response: {
+                        status: 200,
+                        headers: $response.headers || {},
+                        body: modifiedResponse
+                    }
+                });
+            }
+        } else {
+            // 在Loon和Surge中，直接修改$response.body
+            $response.body = modifiedResponse;
+            $done($response);
+        }
+    }
+}
+
+// 开始处理
+processShareClick();

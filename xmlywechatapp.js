@@ -1,7 +1,7 @@
 /*
  *
  *
-脚本功能：喜马拉雅小程序
+脚本功能：@喜马拉雅小程序
 软件版本：
 下载地址：
 脚本作者：
@@ -13,7 +13,7 @@
 [rewrite_local]
 # >喜马拉雅极速版
 ^https?:\/\/.+ximalaya.com\/(revision\/user\/basic|.+track\/queryMPTrackPage)\/ url script-response-body https://raw.githubusercontent.com/WeiGiegie/666/main/xmlywechatapp.js
-^https?:\/\/.*ximalaya.com\/(mobile-playpage\/track\/v3\/baseInfo|.+queryAlbumTrackRecordsByPage) url script-request-header https://raw.githubusercontent.com/WeiGiegie/666/main/xmlywechatapp.js
+^https?:\/\/.+ximalaya.com\/(mobile-playpage\/track\/v3\/baseInfo|.+queryAlbumTrackRecordsByPage) url script-request-header https://raw.githubusercontent.com/WeiGiegie/666/main/xmlywechatapp.js
 ^https?://adse\.wsa\.ximalaya\.com/ url reject-dict
 
 [mitm]

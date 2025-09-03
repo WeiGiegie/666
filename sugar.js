@@ -14,7 +14,7 @@
 ^https?:\/\/tx.*.com\/h5\/(user\/info|system\/info|movie\/detail) url script-response-body https://raw.githubusercontent.com/WeiGiegie/666/main/sugar.js
 
 [mitm]
-hostname = tx.*.com,tx.*.cn,txh057.com,txh*.com
+hostname = tx.*.com,tx.*.cn,txh057.com,txh*.com,txh066.com
 *
 *
 */

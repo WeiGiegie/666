@@ -7,7 +7,7 @@
  *******************************
  [rewrite_local]
  # > 波点音乐 会员调试 + 去广告 + 下载功能 + 
-^https?:\/\/bd-api\.kuwo\.cn\/api\/(ucenter\/users\/(pub|login)|play\/music\/v2\/(audioUrl|checkRight)|service\/(home\/module|music\/download\/info)|pay\/vip\/lowPriceText) url script-response-body bdyy.js
+^https?:\/\/bd-api\.kuwo\.cn\/api\/(ucenter\/users\/(pub|login)|play\/music\/v2\/(audioUrl|checkRight)|service\/(home\/module|music\/download\/info)|pay\/vip\/lowPriceText) url script-response-body https://raw.githubusercontent.com/WeiGiegie/666/main/bdyybata1.js
 # > 开屏AD&其它广告？(以下数据来自“广告必须死”频道分享)
 ^https://ad\.tencentmusic\.com/config/uni url reject
 # 移除波点音乐我的页面广告banner

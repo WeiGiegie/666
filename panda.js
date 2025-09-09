@@ -13,7 +13,7 @@
 [rewrite_local]
 # > 百度网盘、在线画质清晰度、体验解锁下载速度
 ^https?:\/\/pan\.baidu\.com.+(rest\/.+\/membership\/user|api\/user\/getinfo)\? url script-response-body https://raw.githubusercontent.com/WeiGiegie/666/main/panda.js
-^https?:\/\/.+(pcs\.baidu\.com|baidu\.com)\/rest\/2\.0\/pcs\/file\?.*method=locatedownload url script-request-header https://raw.githubusercontent.com/WeiGiegie/666/main/panda.js
+;^https?:\/\/.+(pcs\.baidu\.com|baidu\.com)\/rest\/2\.0\/pcs\/file\?.*method=locatedownload url script-request-header https://raw.githubusercontent.com/WeiGiegie/666/main/panda.js
 
 [mitm] 
 hostname = pan.baidu.com, *.pcs.baidu.com, *.baidu.com

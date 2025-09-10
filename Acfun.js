@@ -12,7 +12,7 @@
 *******************************
 [rewrite_local]
 # >Acfun最高画质
-^https?:\/\/.+\/rest\/app\/douga/info url script-request-header https://raw.githubusercontent.com/WeiGiegie/666/main/Acfun.js
+^https?:\/\/.+\/rest\/app\/douga/info url script-response-body https://raw.githubusercontent.com/WeiGiegie/666/main/Acfun.js
 
 [mitm] 
 hostname = api-ipv6.acfunchina.com,api-ipv6.app.acfun.cn

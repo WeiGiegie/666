@@ -23,7 +23,7 @@
 
 
 [mitm]
-hostname = bd-api.kuwo.cn,*.kuwo.*,ad.tencentmusic.com,*.l.qq.com,39.156.123.46:443,bd-api.kuwo.com,39.156.123.46,39.156.12*.*:443
+hostname = bd-api.kuwo.cn,*.kuwo.*,ad.tencentmusic.com,*.l.qq.com,39.156.123.46:443,bd-api.kuwo.com,39.156.123.46,39.156.12*.*:443,h5app.kuwo.cn, bodianimgcdn.kuwo.cn
 
 *
 *

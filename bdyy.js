@@ -16,7 +16,7 @@
 ^https?:\/\/h5s.kuwo.cn\/m\/bd_launch_popup\/index url reject
 
 [mitm]
-hostname = bd-api.kuwo.cn,*.kuwo.*,ad.tencentmusic.com,*.l.qq.com,39.156.123.46:443,bd-api.kuwo.com,39.156.123.46,39.156.12*.*:443,h5app.kuwo.cn,bodianimgcdn.kuwo.cn,h5s.kuwo.cn,39.156.121.20:443,111.30.171.170:443,39.156.121.21:443,h5s.kuwo.cn,39.156.121.20:443
+hostname = bd-api.kuwo.cn,*.kuwo.*,ad.tencentmusic.com,*.l.qq.com,39.156.123.46:443,bd-api.kuwo.com,39.156.123.46,39.156.12*.*:443,h5app.kuwo.cn,bodianimgcdn.kuwo.cn,h5s.kuwo.cn,39.156.121.20:443,111.30.171.170:443,39.156.121.21:443,h5s.kuwo.cn,39.156.121.20:443,101.42.133.54:443
 *
 *
 */

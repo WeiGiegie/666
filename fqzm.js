@@ -12,7 +12,7 @@
 *******************************
 [rewrite_local]
 # > 番茄助眠
-^https:\/\/www\.asmr\.red\/api\/v1\/login-new url script-response-body https://raw.githubusercontent.com/WeiGiegie/666/main/fqzm.json
+^https:\/\/www\.asmr\.red\/api\/v1\/login-new url script-response-body https://raw.githubusercontent.com/WeiGiegie/666/main/fqzm.js
 
 
 [mitm]

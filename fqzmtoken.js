@@ -1,7 +1,7 @@
 // ëV©¡ú¨÷ö„Token
-// ÷÷öô: 2025-09-18T07:06:15.375Z
-//°ÿ±: ripifo7774@walakato.com
-//{Æ: 33583211
+// ÷÷öô: 2025-09-18T08:19:04.309Z
+//°ÿ±: rafedof468@vnziu.com
+//{Æ: 61835430
 
-const token = "Xfo4kl6dFbbZRa-fDPxGkyknfHD_A_NU_1758179175";
+const token = "FprI1Yx9H8QOZqSI1WRd9c8zkpAeCWSE_1758183544";
 module.exports = token;

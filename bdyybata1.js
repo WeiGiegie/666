@@ -1,1 +1,1 @@
-console.log("Hello from Quantumult X");
+1");

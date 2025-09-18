@@ -1,7 +1,5 @@
 // ëV©¡ú¨÷ö„Token
-// ÷÷öô: 2025-09-18T08:19:04.309Z
-//°ÿ±: rafedof468@vnziu.com
-//{Æ: 61835430
+// ÷÷öô: 2025-09-18T08:29:22.708Z
 
-const token = "FprI1Yx9H8QOZqSI1WRd9c8zkpAeCWSE_1758183544";
+const token = "XUWcLfvnbpRU0NwD7Rx6AS96Kd9IDwlb_1758184162";
 module.exports = token;

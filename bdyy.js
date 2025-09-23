@@ -2,7 +2,7 @@
  *
  *
 脚本功能：波点音乐 会员调试 + 去广告 + 下载歌曲(珍藏下载支持导出) + 付费专辑 + 
-软件版本：5.2.0
+软件版本：5.2.5
 下载地址：
 脚本作者：
 更新时间：2025年
@@ -12,7 +12,7 @@
 *******************************
 [rewrite_local]
 # > 波点音乐 会员调试 + 去广告 + 下载功能 + 付费专辑 + 
-^https?:\/\/(?:.+?(?:\/api\/)?(ucenter\/users|rec\/feed|play\/music\/v2|service\/music\/download|service|play\/advert\/info|pay\/vip\/invitation|pay\/sp\/actVip|pay\/audition\/url|advert\/free\/config|pay\/vip\/lowPriceText|popup\/start\/info|abtest\/ui\/info|search)|us\.l\.qq\.com\/exapp\?adposcount) url script-response-body https://raw.githubusercontent.com/WeiGiegie/666/main/bdyy.js
+^https?:\/\/(?:ab-bodian\.kuwo\.cn\/abtest\/ui\/info|.+?(?:\/api\/)(ucenter\/users|rec\/feed|play\/music\/v2|service\/music\/download|service|play\/advert\/info|pay\/vip\/invitation|pay\/sp\/actVip|pay\/audition\/url|advert\/free\/config|pay\/vip\/lowPriceText|popup\/start\/info|abtest\/ui\/info|search)|us\.l\.qq\.com\/exapp\?adposcount) url script-response-body https://raw.githubusercontent.com/WeiGiegie/666/main/bdyy.js
 ;^https?:\/\/h5s.kuwo.cn\/m\/bd_launch_popup\/ url reject
 
 [mitm]

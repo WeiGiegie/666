@@ -13,7 +13,7 @@
 [rewrite_local]
 # > 波点音乐 会员调试 + 去广告 + 下载功能 + 付费专辑 + 
 ^https?:\/\/(?:ab-bodian\.kuwo\.cn\/abtest\/ui\/info|.+?(?:\/api\/)(ucenter\/users|rec\/feed|play\/music\/v2|service\/music\/download|service|play\/advert\/info|pay\/vip\/invitation|pay\/sp\/actVip|pay\/audition\/url|advert\/free\/config|pay\/vip\/lowPriceText|popup\/start\/info|abtest\/ui\/info|search)|us\.l\.qq\.com\/exapp\?adposcount|xs.gdt.qq.com\/style_factory) url script-response-body https://raw.githubusercontent.com/WeiGiegie/666/main/bdyy.js
-^https?:\/\/h5s.kuwo.cn\/m\/bd_launch_popup\/ url reject
+;^https?:\/\/h5s.kuwo.cn\/m\/bd_launch_popup\/ url reject
 
 [mitm]
 hostname = bd-api.kuwo.cn,*.kuwo.*,ad.tencentmusic.com,*.l.qq.com,39.156.123.46:443,bd-api.kuwo.com,39.156.123.46,39.156.12*.*:443,h5app.kuwo.cn,bodianimgcdn.kuwo.cn,h5s.kuwo.cn,39.156.121.20:443,111.30.171.170:443,39.156.121.21:443,h5s.kuwo.cn,39.156.121.20:443,101.42.133.54:443,ab-bodian.kuwo.cn,39.156.121.65:443,39.156.121.*:443,bd-api.kuwo.cn:443,ab-bodian.kuwo.cn:443,39.156.121.60:80,xs.gdt.qq.com

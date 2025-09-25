@@ -1,7 +1,7 @@
 /*
  *
  *
-脚本功能：himalaya ui
+脚本功能：himalaya vip
 软件版本：h5
 下载地址：
 脚本作者：
@@ -11,11 +11,12 @@
 使用声明：此脚本仅供学习与交流，请在下载使用24小时内删除！请勿在中国大陆转载与贩卖！
 *******************************
 [rewrite_local]
-# > himalaya ui
-^https:\/\/www\.himalaya\.com\/courses\/\d+ url script-response-body https://raw.githubusercontent.com/WeiGiegie/666/main/himalayaui.js
+# > himalaya vip 
+^https?:\/\/apisg.himalaya.com\/himalaya-portal\/(track\/urlEncode\?trackId|v1\/course\?courseId) url script-request-header https://raw.githubusercontent.com/WeiGiegie/666/main/himalayck.js
+^https?:\/\/www\.himalaya\.com\/courses\/\d+ url script-response-body https://raw.githubusercontent.com/WeiGiegie/666/main/himalayaui.js
 
 [mitm]
-hostname = www.himalaya.com
+hostname = www.himalaya.com,apisg.himalaya.com
 *
 *
 */

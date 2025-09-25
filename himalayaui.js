@@ -16,7 +16,7 @@
 ^https?:\/\/www\.himalaya\.com\/courses\/\d+ url script-response-body https://raw.githubusercontent.com/WeiGiegie/666/main/himalayaui.js
 
 [mitm]
-hostname = www.himalaya.com,apisg.himalaya.com,183.232.157.73:13037
+hostname = www.himalaya.com,apisg.himalaya.com,183.232.157.73:13037,cdn.himalaya.com:443,*.himalaya.*
 *
 *
 */

@@ -24,27 +24,16 @@ hostname = www.himalaya.com,apisg.himalaya.com
 const body = $response.body;
 let hm = body;
 
-// 移除顶部
-hm = hm.replace(/<div class="header-box">[\s\S]*?<\/div>/, '');
-
-// 新的底部“打开APP收听”
-// <section> 标签
-hm = hm.replace(/<section class="index_m_anchorBox__.*?">[\s\S]*?<div class="index_m_downloadTips__.*?">[\s\S]*?<\/div>/, '<section class="index_m_anchorBox__">');
-
-// "index_m_downloadWrapper__"
-// class "index_m_downloadWrapper__
-// 空白
-hm = hm.replace(/<div class="index_m_downloadWrapper__.*?">[\s\S]*?<\/div>/, '');
-
-// 空白CSS
+// 无效
+hm = hm.replace(/"p97":"[^"]*"/g, '"p97":""')
+       .replace(/"p98":"[^"]*"/g, '"p98":""')
+       .replace(/"p99":"[^"]*"/g, '"p99":""');
+// 底栏
 const cssInjection = `
 <style>
-  div[class*="index_m_downloadWrapper__"],
-  div.header-box {
-    display: none !important;
-    visibility: hidden !important;
-  }
+  div[class*="index_m_downloadWrapper__"] { display: none !important; }
 </style>
 `;
 hm = hm.replace('</head>', `${cssInjection}</head>`);
+
 $done({body: hm});

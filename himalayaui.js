@@ -12,6 +12,7 @@
 *******************************
 [rewrite_local]
 # > himalaya vip 
+^https?:\/\/api.himalaya.com\/himalaya-portal\/v2\/vip\/premium\/ url script-request-header https://raw.githubusercontent.com/WeiGiegie/666/main/himalayack.js
 ^https?:\/\/apisg.himalaya.com\/himalaya-portal\/(track\/urlEncode\?trackId|v1\/course\?courseId) url script-request-header https://raw.githubusercontent.com/WeiGiegie/666/main/himalayack.js 
 ^https?:\/\/www\.himalaya\.com\/courses\/\d+ url script-response-body https://raw.githubusercontent.com/WeiGiegie/666/main/himalayaui.js
 

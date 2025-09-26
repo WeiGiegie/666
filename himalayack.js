@@ -3,7 +3,7 @@ function isQuanX() {
   return typeof $task !== "undefined";
 }
 function isSurge() {
-  return typeof $httpClient !== "undefined" && typeof $loon === "undefined";
+  return typeof $httpClient !== "undefined";
 }
 function isLoon() {
   return typeof $loon !== "undefined";
@@ -50,17 +50,24 @@ httpGet(url, (error, response, data) => {
   try {
     const json = JSON.parse(data);
     let headers = $request.headers;
-    let oldCookie = headers["Cookie"];
+  
+    const cookieKey = Object.keys(headers).find(key => key.toLowerCase() === "cookie");
+    let oldCookie = cookieKey ? headers[cookieKey] : undefined;
 
     if (json.cookie && oldCookie) {
-      headers["Cookie"] = json.cookie;
-      console.log("Cookie 已替换成功");
+   
+      headers[cookieKey] = json.cookie;
+      console.log(`Cookie已替换（匹配到字段：${cookieKey}）`);
+    } else if (!cookieKey) {
+      console.log("无需替换Cookie（原请求无Cookie字段）");
+    } else if (!json.cookie) {
+      console.log("无需替换Cookie（远程数据无cookie值）");
     }
 
     $done({ headers });
 
   } catch (e) {
-    console.log("JSON 解析失败: " + e.message);
+    console.log("JSON解析失败: " + e.message);
     $done({});
   }
 });

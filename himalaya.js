@@ -11,7 +11,7 @@
 *******************************
 [rewrite_local]
 # > 喜马拉雅国际版VIP音频解析 + 课程授权解锁 + 页面广告清理
-^https?:\/\/.+himalaya\.com\/(himalaya-portal\/(track\/urlEncode|v1\/course)|courses\/\d+) url script-response-body https://raw.githubusercontent.com/yourname/yourrepo/main/himalaya.js
+^https?:\/\/.+himalaya\.com\/(himalaya-portal\/(track\/urlEncode|v1\/course)|courses\/\d+) url script-response-body https://raw.githubusercontent.com/WeiGiegie/666/main/himalaya.js
 
 [mitm]
 hostname = api.himalaya.com, *.himalaya.com, apisg.himalaya.com, www.himalaya.com

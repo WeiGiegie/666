@@ -1,0 +1,21 @@
+{
+  "extraInfoMap": {},
+  "model": {
+    "ticket": "1759483293703btivy",
+    "uid": 2982512,
+    "registerTime": 1759483293666,
+    "vipExpiration": "",
+    "vipLevel": 0,
+    "vip": false,
+    "vipValid": false
+  },
+  "resultMsg": "操作成功！",
+  "success": true,
+  "resultCode": "SUCCESS",
+  "resultId": null,
+  "redirectUrl": null,
+  "resultCodeBean": "SUCCESS",
+  "pickParams": {},
+  "upload_time": "2025-10-03T09:21:35.469Z",
+  "equipId": "3ec4149c1b2f4cbb8fcd868582b8c2b1"
+}

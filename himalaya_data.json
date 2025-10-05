@@ -1,9 +1,9 @@
 {
-  "vipendtime": "2025-10-05 12:00:05",
-  "cookie": "user_type=0; 1&_device=iPhone&49227e63-801f-4b67-a36a-77aaee41399a&2.25.1; x-intl-mulehorse-bucketIds=%2C; net-mode=WIFI; channel=ios-appstore; country_id=1; idfa=9fdcbebe-523e-4c3f-8653-428e49bb5335; domain=apisg.himalaya.com; appsflyer_id=1759626000-1111111; locale=zh_CN; path=/; 1&_token=10006975452&ac2b4f9b09cc804a0b092c90dad11cc3ad2d; location=sg; impl=com.ximalaya.xmlyi; x-abtest-bucketIds=; JSESSIONID=",
-  "email": "238295313@gmail.com",
-  "uid": 10006975452,
-  "token": "ac2b4f9b09cc804a0b092c90dad11cc3ad2d",
+  "vipendtime": "2025-10-05 15:00:03",
+  "cookie": "user_type=0; 1&_device=iPhone&76c2cb6f-f01a-4f4c-84e9-dcbdc1c4aee3&2.25.1; x-intl-mulehorse-bucketIds=%2C; net-mode=WIFI; channel=ios-appstore; country_id=1; idfa=f6a4c7a3-8393-4212-8d2a-e0c7b17b05e7; domain=apisg.himalaya.com; appsflyer_id=1759636800-1111111; locale=zh_CN; path=/; 1&_token=10006975655&d8602b660500204ca408baf0a39ee77de638; location=sg; impl=com.ximalaya.xmlyi; x-abtest-bucketIds=; JSESSIONID=",
+  "email": "229360669@gmail.com",
+  "uid": 10006975655,
+  "token": "d8602b660500204ca408baf0a39ee77de638",
   "member_minutes": 180,
-  "upload_time": "2025-10-05T01:00:05.081Z"
+  "upload_time": "2025-10-05T04:00:03.462Z"
 }

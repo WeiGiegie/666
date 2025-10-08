@@ -2,23 +2,23 @@
   "errorCode": 0,
   "msg": "登录成功",
   "data": {
-    "token": "beI3Uz96W7nqtriAt4lFQNWhL8HTBgnb_1759874415",
+    "token": "YuzTRJOb8PRCYtYAxahQdyH6LgkQksec_1759896044",
     "user": {
-      "id": 134049,
+      "id": 134070,
       "nickname": "",
       "mobile": "",
-      "email": "c79e6u7z@snapbx.com",
+      "email": "hz199ct@snapbx.com",
       "gender": "男",
       "location": "",
       "birthday": null,
       "birth_sign": "",
       "avatar": "",
-      "code": "wCfkGd",
+      "code": "DCvLBa",
       "total_money": "0.00",
-      "expire_at": "2025-10-09 06:00:15",
+      "expire_at": "2025-10-09 12:00:41",
       "is_vip": true
     }
   },
-  "upload_time": "2025-10-07T22:00:16.820Z",
-  "email": "c79e6u7z@snapbx.com"
+  "upload_time": "2025-10-08T04:00:47.636Z",
+  "email": "hz199ct@snapbx.com"
 }

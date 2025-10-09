@@ -13,7 +13,8 @@
 [rewrite_local]
 # > 酷我音乐 会员调试  
 ^https?:\/\/(?:musicpay|nmobi|vip1|audiobookpay|tingshu|anymatch|mobilebasedata|rich|mobilead|wapi)\.kuwo\.cn\/(?:music\.pay\?newver=\d+|mobi.s\?f=kwxs|vip\/(?:enc\/user\/vip\?op=ui&uid=|v2\/theme\?op=gd)|a\.p|v2\/api\/pay\/user\/info|api\/music\/info|AdService\/kaiping\/adinfo|EcomResourceServer\/adEarnGuajian\/adinfo|openapi\/v1\/operate\/homePage|commercia\/(?:vipTab\/myTab\/base|userAssets\/downloadCoupon\/reduce)) url script-response-body https://raw.githubusercontent.com/WeiGiegie/666/main/kuwo.js
-
+#个人页面活动广告
+^http://mobilead\.kuwo\.cn/EcomResourceServer/getMotor\.do url reject
 [mitm]
 hostname = anymatch.kuwo.cn,musicpay.kuwo.cn,mobilebasedata.kuwo.cn,vip1.kuwo.cn,rich.kuwo.cn,mobilead.kuwo.cn,*.kuwo.cn
 *

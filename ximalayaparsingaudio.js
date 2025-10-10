@@ -12,7 +12,7 @@
 *******************************
 [rewrite_local]
 # > 喜马拉雅音频地址解析
-^https?:\/\/mobile\.ximalaya\.com\/thirdparty-share\/share\/content url script-response-body https://raw.githubusercontent.com/WeiGiegie/666/main/ximalayaparsingaudio.js
+^https?:\/\/(?:mobile|mobwsa)\.ximalaya\.com\/thirdparty-share\/share\/content url script-response-body https://raw.githubusercontent.com/WeiGiegie/666/main/ximalayaparsingaudio.js
 # > 去广告,
 ^https?://passport\.ximalaya\.com/friendship-mobile/v1/findFriendsBanner/show/ url reject
 ^https?://xdcs-collector\.ximalaya\.com/api/v1/realtime url reject

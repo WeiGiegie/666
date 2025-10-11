@@ -16,7 +16,7 @@
 
 
 [mitm]
-hostname = apis.lifeweek.com.cn
+hostname = apis.lifeweek.com.cn,apis.lifeweek.com.cn:443
 *
 *
 */

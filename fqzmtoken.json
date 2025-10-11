@@ -2,23 +2,23 @@
   "errorCode": 0,
   "msg": "登录成功",
   "data": {
-    "token": "jt4FuSTdyJ4mIC1O7GdM_mVeodM-TFme_1760158817",
+    "token": "ui8u9rnrZCViXaI8gT7n9xuLl5byBy4C_1760180428",
     "user": {
-      "id": 134477,
+      "id": 134515,
       "nickname": "",
       "mobile": "",
-      "email": "lpdyl005@temailz.com",
+      "email": "f2mtk88@snapbx.com",
       "gender": "男",
       "location": "",
       "birthday": null,
       "birth_sign": "",
       "avatar": "",
-      "code": "ido52o",
+      "code": "IscTNA",
       "total_money": "0.00",
-      "expire_at": "2025-10-12 13:00:16",
+      "expire_at": "2025-10-12 19:00:27",
       "is_vip": true
     }
   },
-  "upload_time": "2025-10-11T05:00:22.729Z",
-  "email": "lpdyl005@temailz.com"
+  "upload_time": "2025-10-11T11:00:29.258Z",
+  "email": "f2mtk88@snapbx.com"
 }

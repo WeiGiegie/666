@@ -2,23 +2,23 @@
   "errorCode": 0,
   "msg": "登录成功",
   "data": {
-    "token": "ui8u9rnrZCViXaI8gT7n9xuLl5byBy4C_1760180428",
+    "token": "eh0mGXuDWC4YR6RSEC2JLFONPIuVRTKt_1760220016",
     "user": {
-      "id": 134515,
+      "id": 134607,
       "nickname": "",
       "mobile": "",
-      "email": "f2mtk88@snapbx.com",
+      "email": "47slvn24@snapbx.com",
       "gender": "男",
       "location": "",
       "birthday": null,
       "birth_sign": "",
       "avatar": "",
-      "code": "IscTNA",
+      "code": "VV3Cwc",
       "total_money": "0.00",
-      "expire_at": "2025-10-12 19:00:27",
+      "expire_at": "2025-10-13 06:00:15",
       "is_vip": true
     }
   },
-  "upload_time": "2025-10-11T11:00:29.258Z",
-  "email": "f2mtk88@snapbx.com"
+  "upload_time": "2025-10-11T22:00:16.813Z",
+  "email": "47slvn24@snapbx.com"
 }

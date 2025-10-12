@@ -16,7 +16,7 @@
 # > 酷我音乐 播放器解锁
 ^https?:\/\/vip1\.kuwo\.cn\/commercia\/vip\/player\/getStyleListByModel url script-request-header https://raw.githubusercontent.com/WeiGiegie/666/main/kuwo.js
 # > 底部弹窗 测试会弹空白页
-^https?:\/\/h5s.kuwo.cn\/pay\/vip_recall_popup\/ url reject
+;^https?:\/\/h5s.kuwo.cn\/pay\/vip_recall_popup\/ url reject
 [mitm]
 hostname = h5s.kuwo.cn,anymatch.kuwo.cn,musicpay.kuwo.cn,mobilebasedata.kuwo.cn,vip1.kuwo.cn,rich.kuwo.cn,mobilead.kuwo.cn,*.kuwo.cn
 *

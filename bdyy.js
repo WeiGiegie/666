@@ -13,9 +13,9 @@
 [rewrite_local]
 # > 波点音乐 会员调试 + 去广告 + 下载功能 + 付费专辑解锁
 ^https?:\/\/(?:(?:bd-api|h5app|bodianyin|ab-bodian)\.kuwo\.cn\/(?:api\/(?:ucenter\/users\/(?:pub|login)|play\/(?:music\/v2\/(?:audioUrl|checkRight)|advert\/info)|service\/(?:music\/(?:info|download\/(?:info|config))|home\/module|global\/config\/(?:scene|vipEnter)|banner\/positions|advert\/config)|search\/topic\/word\/list|pay\/(?:vip\/(?:invitation\/(?:assist\/popup|swell)|lowPriceText)|sp\/actVip|audition\/url)|advert\/free\/config|popup\/start\/info|abtest\/ui\/info|rec\/feed)|abtest\/ui\/info)|us\.l\.qq\.com\/exapp|xs\.gdt\.qq\.com\/style_factory\/template_list) url script-response-body https://raw.githubusercontent.com/WeiGiegie/666/main/bdyy.js
-
+^https?:\/\/tmeadcomm.y.qq.com\/ url reject-200
 [mitm]
-hostname = bd-api.kuwo.cn,*.kuwo.*,ad.tencentmusic.com,*.l.qq.com,39.156.123.46:443,bd-api.kuwo.com,39.156.123.46,39.156.12*.*:443,h5app.kuwo.cn,bodianimgcdn.kuwo.cn,h5s.kuwo.cn,39.156.121.20:443,111.30.171.170:443,39.156.121.21:443,h5s.kuwo.cn,39.156.121.20:443,101.42.133.54:443,ab-bodian.kuwo.cn,39.156.121.65:443,39.156.121.*:443,bd-api.kuwo.cn:443,ab-bodian.kuwo.cn:443,39.156.121.60:80,xs.gdt.qq.com
+hostname = tmeadcomm.y.qq.com,bd-api.kuwo.cn,*.kuwo.*,ad.tencentmusic.com,*.l.qq.com,39.156.123.46:443,bd-api.kuwo.com,39.156.123.46,39.156.12*.*:443,h5app.kuwo.cn,bodianimgcdn.kuwo.cn,h5s.kuwo.cn,39.156.121.20:443,111.30.171.170:443,39.156.121.21:443,h5s.kuwo.cn,39.156.121.20:443,101.42.133.54:443,ab-bodian.kuwo.cn,39.156.121.65:443,39.156.121.*:443,bd-api.kuwo.cn:443,ab-bodian.kuwo.cn:443,39.156.121.60:80,xs.gdt.qq.com
 *
 *
 */

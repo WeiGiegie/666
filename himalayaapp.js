@@ -14,16 +14,16 @@
 # > 喜马拉雅国际版(himalaya) 会员调试
 
 #节目目录解锁
-https?:\/\/apisg.himalaya.com\/imobile\/album\/v2\/track\/ url script-request-header https://raw.githubusercontent.com/WeiGiegie/666/main/himalayaapp.js
+^https?:\/\/apisg.himalaya.com\/imobile\/album\/v2\/track\/ url script-request-header https://raw.githubusercontent.com/WeiGiegie/666/main/himalayaapp.js
 
 #播放地址解锁
-https?:\/\/apisg.himalaya.com\/imobile-track\/track\/urlEncode url script-request-header https://raw.githubusercontent.com/WeiGiegie/666/main/himalayaapp.js
+^https?:\/\/apisg.himalaya.com\/imobile-track\/track\/urlEncode url script-request-header https://raw.githubusercontent.com/WeiGiegie/666/main/himalayaapp.js
 
 #重进点播放/播放界面解锁
-https?:\/\/apisg.himalaya.com\/imobile-track\/track\/detail url script-request-header https://raw.githubusercontent.com/WeiGiegie/666/main/himalayaapp.js
+^https?:\/\/apisg.himalaya.com\/imobile-track\/track\/detail url script-request-header https://raw.githubusercontent.com/WeiGiegie/666/main/himalayaapp.js
 
 #个人页面会员
-https?:\/\/apisg.himalaya.com\/hipoints-web\/member\/userInfo\/get url script-request-header https://raw.githubusercontent.com/WeiGiegie/666/main/himalayaapp.js
+^https?:\/\/apisg.himalaya.com\/hipoints-web\/member\/userInfo\/get url script-request-header https://raw.githubusercontent.com/WeiGiegie/666/main/himalayaapp.js
 
 #播放页面小窗口会员广告按钮
 ^https?:\/\/apisg.himalaya.com\/intl-promotion-web\/play\/redeem\/simple\/config url reject

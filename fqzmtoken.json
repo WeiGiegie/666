@@ -2,23 +2,23 @@
   "errorCode": 0,
   "msg": "登录成功",
   "data": {
-    "token": "nBDPvDK5v5xg-rPxUmNTXuio1sOBCjX6_1761051617",
+    "token": "CbmGX7QZ-WwLzfTfwQiBnpAUi1SXyheD_1761062417",
     "user": {
-      "id": 136013,
+      "id": 136039,
       "nickname": "",
       "mobile": "",
-      "email": "0q9y3wd@snapbx.com",
+      "email": "ugry46p@snapbx.com",
       "gender": "男",
       "location": "",
       "birthday": null,
       "birth_sign": "",
       "avatar": "",
-      "code": "aGYaXK",
+      "code": "Ql0Gt5",
       "total_money": "0.00",
-      "expire_at": "2025-10-22 21:00:16",
+      "expire_at": "2025-10-23 00:00:16",
       "is_vip": true
     }
   },
-  "upload_time": "2025-10-21T13:00:19.501Z",
-  "email": "0q9y3wd@snapbx.com"
+  "upload_time": "2025-10-21T16:00:18.108Z",
+  "email": "ugry46p@snapbx.com"
 }

@@ -26,7 +26,7 @@ https?:\/\/apisg.himalaya.com\/imobile-track\/track\/detail url script-request-h
 https?:\/\/apisg.himalaya.com\/hipoints-web\/member\/userInfo\/get url script-request-header https://raw.githubusercontent.com/WeiGiegie/666/main/himalayaapp.js
 
 #播放页面小窗口会员广告按钮
-https://apisg.himalaya.com/intl-promotion-web/play/redeem/simple/config url reject
+^https?:\/\/apisg.himalaya.com\/intl-promotion-web\/play\/redeem\/simple\/config url reject
 
 [mitm]
 hostname = apisg.himalaya.com

@@ -14,10 +14,10 @@
 # > 喜马拉雅国际版(himalaya) 会员调试
 
 #节目目录解锁
-^https?:\/\/.+himalaya.com\/imobile\/album\/v2\/track\/ url script-request-header https://raw.githubusercontent.com/WeiGiegie/666/main/himalayack.js
-^https?:\/\/.+himalaya.com\/imobile-track\/track\/urlEncode url script-request-header https://raw.githubusercontent.com/WeiGiegie/666/main/himalayack.js
-^https?:\/\/.+himalaya.com\/imobile-track\/track\/detail url script-request-header https://raw.githubusercontent.com/WeiGiegie/666/main/himalayack.js
-^https?:\/\/.+himalaya.com\/hipoints-web\/member\/userInfo\/get url script-request-header https://raw.githubusercontent.com/WeiGiegie/666/main/himalayack.js
+^https?:\/\/.+himalaya.com\/imobile\/album\/v2\/track\/ url script-response-body https://raw.githubusercontent.com/WeiGiegie/666/main/himalayaapps.js
+^https?:\/\/.+himalaya.com\/imobile-track\/track\/urlEncode url script-response-body https://raw.githubusercontent.com/WeiGiegie/666/main/himalayaapps.js
+^https?:\/\/.+himalaya.com\/imobile-track\/track\/detail url script-response-body https://raw.githubusercontent.com/WeiGiegie/666/main/himalayaapps.js
+^https?:\/\/.+himalaya.com\/hipoints-web\/member\/userInfo\/get url script-response-body https://raw.githubusercontent.com/WeiGiegie/666/main/himalayaapps.js
 ^https?:\/\/.+himalaya.com\/intl-promotion-web\/play\/redeem\/simple\/config url reject
 
 [mitm]

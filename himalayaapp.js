@@ -14,14 +14,14 @@
 # > 喜马拉雅国际版(himalaya) 会员调试
 
 #节目目录解锁
-^https?:\/\/apisg.himalaya.com\/imobile\/album\/v2\/track\/ url script-request-header https://raw.githubusercontent.com/WeiGiegie/666/main/himalayack.js
-^https?:\/\/apisg.himalaya.com\/imobile-track\/track\/urlEncode url script-request-header https://raw.githubusercontent.com/WeiGiegie/666/main/himalayack.js
-^https?:\/\/apisg.himalaya.com\/imobile-track\/track\/detail url script-request-header https://raw.githubusercontent.com/WeiGiegie/666/main/himalayack.js
-^https?:\/\/apisg.himalaya.com\/hipoints-web\/member\/userInfo\/get url script-request-header https://raw.githubusercontent.com/WeiGiegie/666/main/himalayack.js
-^https?:\/\/apisg.himalaya.com\/intl-promotion-web\/play\/redeem\/simple\/config url reject
+^https?:\/\/.+himalaya.com\/imobile\/album\/v2\/track\/ url script-request-header https://raw.githubusercontent.com/WeiGiegie/666/main/himalayack.js
+^https?:\/\/.+himalaya.com\/imobile-track\/track\/urlEncode url script-request-header https://raw.githubusercontent.com/WeiGiegie/666/main/himalayack.js
+^https?:\/\/.+himalaya.com\/imobile-track\/track\/detail url script-request-header https://raw.githubusercontent.com/WeiGiegie/666/main/himalayack.js
+^https?:\/\/.+himalaya.com\/hipoints-web\/member\/userInfo\/get url script-request-header https://raw.githubusercontent.com/WeiGiegie/666/main/himalayack.js
+^https?:\/\/.+himalaya.com\/intl-promotion-web\/play\/redeem\/simple\/config url reject
 
 [mitm]
-hostname = apisg.himalaya.com
+hostname = apisg.himalaya.com,api.himalaya.com
 *
 *
 */

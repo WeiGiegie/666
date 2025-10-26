@@ -1,9 +1,9 @@
 {
   "extraInfoMap": {},
   "model": {
-    "ticket": "1761364801089zlido",
-    "uid": 2997439,
-    "registerTime": 1761364801052,
+    "ticket": "1761451200898bzckd",
+    "uid": 2998136,
+    "registerTime": 1761451200862,
     "vipExpiration": "",
     "vipLevel": 0,
     "vip": false,
@@ -16,6 +16,6 @@
   "redirectUrl": null,
   "resultCodeBean": "SUCCESS",
   "pickParams": {},
-  "upload_time": "2025-10-25T04:00:03.189Z",
-  "equipId": "cce3fc998de1484b83c7f1c91a19658e"
+  "upload_time": "2025-10-26T04:00:03.005Z",
+  "equipId": "85d260aa9ac44e0fa34638aabdba8c65"
 }

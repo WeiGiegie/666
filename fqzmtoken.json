@@ -2,23 +2,23 @@
   "errorCode": 0,
   "msg": "登录成功",
   "data": {
-    "token": "vUFY1wrCooc8inc3kHqpJXn8r7YOp4PU_1761692421",
+    "token": "5zeb_2EWUS3Dd6xeWRFyJMT_LpbfBpa7_1761717617",
     "user": {
-      "id": 137045,
+      "id": 137067,
       "nickname": "",
       "mobile": "",
-      "email": "3c3iru7p@temailz.com",
+      "email": "lnie0ul@temailz.com",
       "gender": "男",
       "location": "",
       "birthday": null,
       "birth_sign": "",
       "avatar": "",
-      "code": "FGTDeq",
+      "code": "SbrBGB",
       "total_money": "0.00",
-      "expire_at": "2025-10-30 07:00:20",
-      "is_vip": true
+      "expire_at": "2025-10-29 14:00:16",
+      "is_vip": false
     }
   },
-  "upload_time": "2025-10-28T23:00:23.446Z",
-  "email": "3c3iru7p@temailz.com"
+  "upload_time": "2025-10-29T06:00:19.272Z",
+  "email": "lnie0ul@temailz.com"
 }

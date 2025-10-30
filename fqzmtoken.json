@@ -2,23 +2,23 @@
   "errorCode": 0,
   "msg": "登录成功",
   "data": {
-    "token": "p2EPBSEoUWpocln1QbP7EmEwgFLw6z-G_1761829218",
+    "token": "zGQ5FAD1LG4Z8RUoG2Ucqm_a3SGnskhD_1761840018",
     "user": {
-      "id": 137204,
+      "id": 137223,
       "nickname": "",
       "mobile": "",
-      "email": "fedhef06@snapbx.com",
+      "email": "sjguwala@snapbx.com",
       "gender": "男",
       "location": "",
       "birthday": null,
       "birth_sign": "",
       "avatar": "",
-      "code": "8WvjUx",
+      "code": "QD5h1T",
       "total_money": "0.00",
-      "expire_at": "2025-10-30 21:00:17",
+      "expire_at": "2025-10-31 00:00:17",
       "is_vip": false
     }
   },
-  "upload_time": "2025-10-30T13:00:20.661Z",
-  "email": "fedhef06@snapbx.com"
+  "upload_time": "2025-10-30T16:00:20.770Z",
+  "email": "sjguwala@snapbx.com"
 }

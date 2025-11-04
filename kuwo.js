@@ -15,6 +15,7 @@
 ^https?:\/\/(?:musicpay|nmobi|vip1|audiobookpay|tingshu|anymatch|mobilebasedata|rich|mobilead|wapi)\.kuwo\.cn\/(?:music\.pay\?newver=\d+|mobi.s\?f=kwxs|vip\/(?:enc\/user\/vip\?op=ui&uid=|v2\/theme\?op=gd)|a\.p|v2\/api\/pay\/user\/info|api\/music\/info|AdService\/kaiping\/adinfo|EcomResourceServer\/(?:adEarnGuajian\/adinfo|getMotor\.do)|openapi\/v1\/(?:operate\/homePage|user\/freeMode\/h5\/text|operate\/message\/info|user\/dolby\/text)|commercia\/(?:vipTab\/myTab\/base|userAssets\/downloadCoupon\/reduce|recall\/pop\/jxhGearInfo|vip\/(?:dressCenter\/getResourceList|player\/getStyleListByModel))|api\/v2\/pay\/app\/getConfigInfo(?:\?configType)?|vip\/v2\/sysinfo|commercia\/recall\/pop\/jxhMultiGearInfo) url script-response-body https://raw.githubusercontent.com/WeiGiegie/666/main/kuwo.js
 # > 酷我音乐 播放器解锁
 ^https?:\/\/vip1\.kuwo\.cn\/commercia\/vip\/player\/getStyleListByModel url script-request-header https://raw.githubusercontent.com/WeiGiegie/666/main/kuwo.js
+^.*?(ad(.*)?\.tencentmusic\.com|kuwo\.cn\/((EcomResource|(Mobile)?Ad)Serv(er|ice)|(vip|(open)?api)?\/(setting\/sidebar\/menus|v\d\/(operate\/((adVip\/)?text|pop\/info)|online\/homepage\/homepageBanner|user\/freeMode|album\/adBar|app\/(newMenuList\/menuListInfo|pasterAdvert\/config)))|kuwopay\/vip-tab\/page\/floatbox|commercia\/eproxy\/boot\/recommend\/fee\/config)) url reject-200
 # > 底部弹窗 测试会弹空白页
 ;^https?:\/\/h5s.kuwo.cn\/pay\/vip_recall_popup\/ url reject
 [mitm]

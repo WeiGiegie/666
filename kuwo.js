@@ -19,8 +19,8 @@
 # > 底部弹窗 测试会弹空白页
 ;^https?:\/\/h5s.kuwo.cn\/pay\/vip_recall_popup\/ url reject
 [mitm]
-hostname = h5s.kuwo.cn,anymatch.kuwo.cn,musicpay.kuwo.cn,mobilebasedata.kuwo.cn,vip1.kuwo.cn,rich.kuwo.cn,mobilead.kuwo.cn,*.kuwo.cn
-*
+hostname = *.kuwo.cn, abt-kuwo.tencentmusic.com
+
 *
 */
 

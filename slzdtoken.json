@@ -1,9 +1,9 @@
 {
   "extraInfoMap": {},
   "model": {
-    "ticket": "1762401601188okdrt",
-    "uid": 3006436,
-    "registerTime": 1762401601149,
+    "ticket": "1762488001225tavys",
+    "uid": 3007035,
+    "registerTime": 1762488001183,
     "vipExpiration": "",
     "vipLevel": 0,
     "vip": false,
@@ -16,6 +16,6 @@
   "redirectUrl": null,
   "resultCodeBean": "SUCCESS",
   "pickParams": {},
-  "upload_time": "2025-11-06T04:00:02.651Z",
-  "equipId": "fb3c65dc09c64efb850242fe7ac2b3dc"
+  "upload_time": "2025-11-07T04:00:02.771Z",
+  "equipId": "3c5a8d6ff8154d519778d7a6589baeef"
 }

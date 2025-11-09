@@ -12,7 +12,7 @@
 *******************************
 [rewrite_local]
 # > get笔记-你只管说-ai-帮你记下来
-^https:\/\/get-notes\.luojilab\.com\/voicenotes\/app\/v1\/user\/info script-response-body https://raw.githubusercontent.com/WeiGiegie/666/main/getbiji.js
+^https:\/\/get-notes\.luojilab\.com\/voicenotes\/app\/v1\/user\/info url script-response-body https://raw.githubusercontent.com/WeiGiegie/666/main/getbiji.js
 
 [mitm]
 hostname = get-notes.luojilab.com

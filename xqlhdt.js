@@ -12,7 +12,7 @@
 *******************************
 [rewrite_local]
 # > 小区楼号地图-快递外卖极速导航
-^https:\/\/mp\.zhuzixi\.cn\/api\/users\/getAppleUserInfo\?userId=[^&]+$ url script-response-body https://raw.githubusercontent.com/WeiGiegie/666/main/xqlhdt.js
+^https:\/\/mp\.zhuzixi\.cn\/api\/users\/(getAppleUserInfo|getUserById) url script-response-body https://raw.githubusercontent.com/WeiGiegie/666/main/xqlhdt.js
 
 [mitm]
 hostname = mp.zhuzixi.cn

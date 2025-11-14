@@ -12,10 +12,10 @@
 *******************************
 [rewrite_local]
 # > 历史年轮
-^https:\/\/www\.yearsmap\.com url script-response-body https://raw.githubusercontent.com/WeiGiegie/666/main/lsnl.js
+^https:\/\/www\.(yearsmap|wordvector)\.com url script-response-body https://raw.githubusercontent.com/WeiGiegie/666/main/lsnl.js
 
 [mitm]
-hostname = www.yearsmap.com:443,www.yearsmap.com,
+hostname = www.yearsmap.com:443,www.yearsmap.com,www.wordvector.com
 *
 *
 */

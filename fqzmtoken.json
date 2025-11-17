@@ -2,23 +2,23 @@
   "errorCode": 0,
   "msg": "登录成功",
   "data": {
-    "token": "E8CFCuS0HT5voWDn_nq0ltQotX1CGPJb_1763359216",
+    "token": "5El7hJVsijKKvOheVtrSgZkzQ1S4RRMU_1763395221",
     "user": {
-      "id": 139780,
+      "id": 139851,
       "nickname": "",
       "mobile": "",
-      "email": "kyeqre7@snapbx.com",
+      "email": "3dxt5zro@temailz.com",
       "gender": "男",
       "location": "",
       "birthday": null,
       "birth_sign": "",
       "avatar": "",
-      "code": "BUmnCX",
+      "code": "ezyjv0",
       "total_money": "0.00",
-      "expire_at": "2025-11-17 14:00:15",
+      "expire_at": "2025-11-18 00:00:20",
       "is_vip": false
     }
   },
-  "upload_time": "2025-11-17T06:00:17.332Z",
-  "email": "kyeqre7@snapbx.com"
+  "upload_time": "2025-11-17T16:00:22.642Z",
+  "email": "3dxt5zro@temailz.com"
 }

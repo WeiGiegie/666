@@ -12,7 +12,7 @@
 *******************************
 [rewrite_local]
 # > 日语趣配音-零基础学日语
-^https?:\/\/japaneselar.qupeiyin.com\/member\/index url script-response-body https://raw.githubusercontent.com/WeiGiegie/666/main/ryqpy.js
+^https?:\/\/japaneselar.qupeiyin.com\/ url script-response-body https://raw.githubusercontent.com/WeiGiegie/666/main/ryqpy.js
 
 [mitm]
 hostname = japaneselar.qupeiyin.com

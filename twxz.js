@@ -13,6 +13,7 @@
 [rewrite_local]
 # > 探味闲置
 ^https:\/\/admin\.tanweixianzhi\.com\/prod\/api\/centre\/userInfo url script-response-body https://raw.githubusercontent.com/WeiGiegie/666/main/twxz.js
+^https:\/\/admin\.tanweixianzhi\.com\/prod\/api\/video\/info url script-response-body https://raw.githubusercontent.com/WeiGiegie/666/main/twxz.js
 
 [mitm]
 hostname = admin.tanweixianzhi.com
@@ -41,5 +42,8 @@ obj.data.nickname = "https://t.me/GieGie777";
 obj.data.is_vip = 1;
 obj.data.vip_level = 1;
 obj.data.vip_validity = "2099-11-23 00:00:00";
+
+obj.data.is_free = 1;
+obj.data.is_buy = 1;
 
 $done({body: JSON.stringify(obj)});

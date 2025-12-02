@@ -15,7 +15,7 @@
 ^https:\/\/app\.gaohaozuowen\.com\/index\.php\?s=\/api\/index\/getUserinfo url script-response-body https://raw.githubusercontent.com/WeiGiegie/666/main/ghyw.js
 
 [mitm]
-hostname = new.tianjinzhitongdaohe.com
+hostname = app.gaohaozuowen.com
 *
 *
 */

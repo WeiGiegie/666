@@ -23,13 +23,17 @@ hostname = idp2api.netpock.com
 
 
 
+
+
+
+
 let obj = JSON.parse($response.body);
 
 if (obj.data) {
   
   obj.data.is_vip = 1;
   obj.data.vip_expiration_time = 4102444799000; 
-  obj.data.user_name = "https://t.me/GieGie777";
+  obj.data.user_name = "t.me/GieGie777";
 }
 
 $done({body: JSON.stringify(obj)});

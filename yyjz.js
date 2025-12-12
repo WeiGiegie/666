@@ -11,7 +11,7 @@
 使用声明：此脚本仅供学习与交流，请在下载使用24小时内删除！请勿在中国大陆转载与贩卖！
 *******************************
 [rewrite_local]
-# > 一寸证件照
+# > 元元记账-ai极速语音记账
 ^https?:\/\/gs.gateway.gameley.cn\/ai-book-user\/user\/refresh\/token url script-response-body https://raw.githubusercontent.com/WeiGiegie/666/main/yyjz.js
 
 [mitm]

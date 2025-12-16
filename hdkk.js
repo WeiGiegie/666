@@ -29,7 +29,7 @@ hostname = api.jingyuanw.top
 let obj = JSON.parse($response.body);
 
 if (obj.data) {
-  obj.data.vipEndDate = 4102444799000; 
+  obj.data.vipEndDate = "4102444799000"; 
   obj.data.nickname = "https://t.me/GieGie777";
   obj.data.vip = true;
   

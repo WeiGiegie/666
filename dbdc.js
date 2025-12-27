@@ -12,7 +12,7 @@
 *******************************
 [rewrite_local]
 # > 多背单词-英语学习-考研英语-英语单词-记单词必备软件
-^http:\/\/www\.duobeidanci\.com url script-response-body https://raw.githubusercontent.com/WeiGiegie/666/main/dbdc.js
+^http:\/\/www\.duobeidanci\.com\/MobileDevice url script-response-body https://raw.githubusercontent.com/WeiGiegie/666/main/dbdc.js
 
 [mitm]
 hostname = www.duobeidanci.com

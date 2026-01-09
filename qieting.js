@@ -15,7 +15,7 @@
 ^https?:\/\/api\.erduoshuku\.cn\/api\/pay\/free-membership reject
 
 [Script]
-http-response ^https?:\/\/api\.erduoshuku\.cn\/api\/(pay\/subscription\/(info|expiry-popup)|account\/user-profile) script-path=Qelisten.js, requires-body=true, timeout=60, tag=会员
+http-response ^https?:\/\/api\.erduoshuku\.cn\/api\/(pay\/subscription\/(info|expiry-popup)|account\/user-profile) script-path=https://raw.githubusercontent.com/WeiGiegie/666/main/qieting.js, requires-body=true, timeout=60, tag=会员
 
 [Mitm]
 hostname = *.erduoshuku.cn

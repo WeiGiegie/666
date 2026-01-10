@@ -70,7 +70,7 @@ function generateVlessNode(serverInfo, isPro = false) {
     const publicKey = "OyGxax1037g3nQrsIW0PtXHik3WI1ikOT2pxm9c7fxw";
     const shortId = "6ba85179e30d4fc2";
 
-    return `vless://${uuid}@${host}:${port}?encryption=none&flow=xtls-rprx-vision&security=tls&sni=${tlsServerName}&allowInsecure=1&fp=chrome&pbk=${publicKey}&sid=${shortId}#${remarks}`;
+    return `vless://${uuid}@${host}:${port}?encryption=none&flow=xtls-rprx-vision&security=reality&sni=${tlsServerName}&allowInsecure=1&fp=chrome&pbk=${publicKey}&sid=${shortId}#${remarks}`;
   } catch (e) {
     return null;
   }

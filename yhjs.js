@@ -16,7 +16,7 @@
 ^https?:\/\/api\.dailyworkout\.cn\/fitness\/user\/common\/info url script-response-body https://raw.githubusercontent.com/WeiGiegie/666/main/yhjs.js
 
 [mitm]
-hostname = api.dailyworkout.cn
+hostname = api.dailyworkout.cn,121.41.11.0
 *
 *
 */

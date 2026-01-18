@@ -16,7 +16,7 @@
 ^https://.+com/ad/wapad.js url reject
 
 [mitm]
-hostname = hxxx51.com,www.hxxxaa.com,hxxx52.com
+hostname = hxxx51.com,www.hxxxaa.com,hxxx52.com,app.hxxxaa.com
 
 *
 *

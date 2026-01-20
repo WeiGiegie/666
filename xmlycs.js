@@ -13,7 +13,7 @@
 [rewrite_local]
 
 # > 喜马拉雅音频地址解析+会员解锁
-^https?:\/\/.+((ximalaya)|(xmcdn)).+(mobile-user\/v2\/homePage|product\/detail\/v1|v1\/album\/track\/ts|mobile-playpage\/track\/v4\/baseInfo\/ts|mobile-playpage\/playpage\/tabs\/v2|mobile-playpage\/playpage\/track\/qualityAndEffect) url script-response-body https://raw.githubusercontent.com/WeiGiegie/666/main/ximalaya.js
+^https?:\/\/.+((ximalaya)|(xmcdn)).+(mobile-user\/v2\/homePage|product\/detail\/v1|v1\/album\/track\/ts|mobile-playpage\/track\/v4\/baseInfo\/ts|mobile-playpage\/playpage\/tabs\/v2|mobile-playpage\/playpage\/track\/qualityAndEffect) url script-response-body https://raw.githubusercontent.com/WeiGiegie/666/main/xmlycs.js
 # > 去广告
 ^https?://passport\.ximalaya\.com/friendship-mobile/v1/findFriendsBanner/show/ url reject
 ^https?://xdcs-collector\.ximalaya\.com/api/v1/realtime url reject

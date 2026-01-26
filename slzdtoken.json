@@ -1,9 +1,9 @@
 {
   "extraInfoMap": {},
   "model": {
-    "ticket": "1769313600878enplm",
-    "uid": 3076290,
-    "registerTime": 1769313600592,
+    "ticket": "1769400000835ipogb",
+    "uid": 3076870,
+    "registerTime": 1769400000798,
     "vipExpiration": "",
     "vipLevel": 0,
     "vip": false,
@@ -16,6 +16,6 @@
   "redirectUrl": null,
   "resultCodeBean": "SUCCESS",
   "pickParams": {},
-  "upload_time": "2026-01-25T04:00:02.994Z",
-  "equipId": "81e79c182b6b4ef6b75cf35380a93a68"
+  "upload_time": "2026-01-26T04:00:03.137Z",
+  "equipId": "bf004262773e4efc88a86f2e34910a21"
 }

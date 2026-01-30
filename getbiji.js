@@ -31,44 +31,65 @@ hostname = get-notes.luojilab.com
 
 let obj = JSON.parse($response.body);
 
-if (obj.c && obj.c.data) {
-    // 修改VIP信息
-    let vip = obj.c.data.vip_info;
-    if (vip) {
-        vip.is_vip = true;                       // 改为VIP
-        vip.is_expire = false;                   // 未过期
-        let now = Math.floor(Date.now() / 1000);
-        vip.begin_time = now - 86400 * 30;      // 会员开始时间，30天前
-        vip.end_time = now + 86400 * 365;       // 会员结束时间，1年后
-        vip.expire_time = vip.end_time;
-        vip.surplus_days = 365;                  // 剩余天数
-        vip.is_ever_subscribed = true;           // 曾经订阅过
-        vip.equity_intro = "尊贵VIP会员，享受专属权益"; // 会员权益描述
-        obj.c.data.vip_info = vip;
+if (obj.c) {
+    // 修改 knowledge_topic 和 local_audio 字段
+    if (obj.c.knowledge_topic) {
+        obj.c.knowledge_topic.granted = "500GB";
+        obj.c.knowledge_topic.remaining = "500GB";
+        obj.c.knowledge_topic.should_hide = false;
     }
+    if (obj.c.local_audio) {
+        obj.c.local_audio.granted = "999999分钟";
+        obj.c.local_audio.remaining = "999999分钟";
+        obj.c.local_audio.should_hide = false;
+    }
+    
+    // 修改 data 下的 vip_info、rights_info、quota_info 等
+    if (obj.c.data) {
+        let vip = obj.c.data.vip_info;
+        if (vip) {
+            vip.is_vip = true;
+            vip.is_expire = false;
+            let now = Math.floor(Date.now() / 1000);
+            vip.begin_time = now - 86400 * 30;
+            vip.end_time = now + 86400 * 365;
+            vip.expire_time = vip.end_time;
+            vip.surplus_days = 365;
+            vip.is_ever_subscribed = true;
+            vip.equity_intro = "尊贵VIP会员，享受专属权益";
+            obj.c.data.vip_info = vip;
+        }
 
-    // 修改音频相关配置
-    let rights = obj.c.data.rights_info;
-    if (rights) {
-        rights.audio_duration_ms = 3600000;        // 普通音频 1小时 (3600秒*1000ms)
-        rights.meeting_audio_duration_ms = 10800000; // 会议音频 3小时
-        rights.ai_trial_count = 9999;               // AI试用次数 9999
-        obj.c.data.rights_info = rights;
-    }
+        let rights = obj.c.data.rights_info;
+        if (rights) {
+            rights.audio_duration_ms = 3600000;
+            rights.meeting_audio_duration_ms = 10800000;
+            rights.class_duration_ms = 10800000;
+            rights.local_audio_max_duration_ms = 10800000;
+            rights.ai_trial_count = 9999;
+            obj.c.data.rights_info = rights;
+        }
 
-    // 修改配额信息
-    let quota = obj.c.data.quota_info;
-    if (quota && quota.local_audio_quota) {
-        quota.local_audio_quota.granted_duration = 360000000;   // 已授权总时长 6000分钟 (6000*60*1000)
-        quota.local_audio_quota.remained_duration = 360000000;  // 剩余时长同步改成同样的
-       quota.local_audio_quota.granted_count=100;
-        obj.c.data.quota_info.local_audio_quota = quota.local_audio_quota;
+        let quota = obj.c.data.quota_info;
+        if (quota) {
+            if (quota.local_audio_quota) {
+                quota.local_audio_quota.granted_duration = 6000 * 60 * 1000;
+                quota.local_audio_quota.remained_duration = quota.local_audio_quota.granted_duration;
+                quota.local_audio_quota.guide_user_get_more = true;
+                quota.local_audio_quota.general_user_usage_hint = "音频转写时长，普通用户600分钟/月，PRO会员6000分钟/月";
+                quota.local_audio_quota.granted_count = 100;
+            }
+            if (quota.asr_hot_words_quota) {
+                quota.asr_hot_words_quota.granted_count = 100;
+                quota.asr_hot_words_quota.general_user_usage_hint = "普通用户20个，PRO会员100个";
+            }
+            obj.c.data.quota_info = quota;
+        }
+
+        obj.c.data.knowledge_base_count = -1;
+        obj.c.data.knowledge_base_capacity_gb = 500;
+        obj.c.data.knowledge_base_limit = "unlimited";
     }
-    if (quota && quota.asr_hot_words_quota) {
-        quota.asr_hot_words_quota.granted_count = 100;          // 授权热词100个
-        obj.c.data.quota_info.asr_hot_words_quota = quota.asr_hot_words_quota;
-    }
-    obj.c.data.quota_info = quota;
 }
 
 $done({body: JSON.stringify(obj)});

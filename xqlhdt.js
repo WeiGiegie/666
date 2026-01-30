@@ -28,24 +28,7 @@ hostname = mp.zhuzixi.cn
 
 
 
-let obj = JSON.parse($response.body);
-
-function padZero(num) {
-  return num < 10 ? '0' + num : num;
-}
-
-let now = new Date();
-
-now = new Date(now.getTime() - 24*60*60*1000);
-
-let formattedDate = now.getFullYear() + '/' +
-                    padZero(now.getMonth() + 1) + '/' +
-                    padZero(now.getDate()) + ' ' +
-                    padZero(now.getHours()) + ':' +
-                    padZero(now.getMinutes()) + ':' +
-                    padZero(now.getSeconds());
-
-obj.createdDate = formattedDate;
-obj.createdDateApp = formattedDate;
-
+var obj = JSON.parse($response.body);
+obj.isActive = true;
+obj.data.trialEnd = "2099/01/01 00:00:00";
 $done({body: JSON.stringify(obj)});

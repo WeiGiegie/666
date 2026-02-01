@@ -4,7 +4,7 @@
 脚本功能：京东比价
 软件版本：15.3.30
 下载地址：
-脚本作者：
+脚本作者：#https://raw.githubusercontent.com/mw418/Loon/main/script/jd_price.js#
 更新时间：2025年
 电报频道：https://t.me/GieGie777
 问题反馈：

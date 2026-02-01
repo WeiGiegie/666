@@ -1,12 +1,12 @@
 {
   "fingerprint": "45836eb399dc2cf82b8974f68ef90de4",
-  "vip_expiry": "2026-02-03T17:31:55.000Z",
-  "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTEzNiwidXNlcm5hbWUiOiJHMTU2NTQ1NjQ1NiIsInBob25lIjpudWxsLCJlbWFpbCI6bnVsbCwicmVmZXJyYWxfY29kZSI6IjM3Mzk0YyIsInJlZmVycmVkX2J5IjpudWxsLCJ2aXBfZXhwaXJ5IjoiMjAyNi0wMi0wM1QxNzozMTo1NS4wMDBaIiwiaW52aXRlZF9jb3VudCI6NiwiZmluZ2VycHJpbnQiOiI0NTgzNmViMzk5ZGMyY2Y4MmI4OTc0ZjY4ZWY5MGRlNCIsImlwX2FkZHJlc3MiOiIxNTIuNzAuMTEyLjIwOSIsImxhc3RfbG9naW4iOiIyMDI2LTAyLTAxVDE3OjUyOjQ3LjAwMFoiLCJjcmVhdGVkX2F0IjoiMjAyNi0wMS0yM1QwOTozMzozNy4wMDBaIiwidXBkYXRlZF9hdCI6IjIwMjYtMDItMDFUMTc6NTI6NDcuMDAwWiIsImlhdCI6MTc2OTk2ODgwMywiZXhwIjoxNzcwNTczNjAzfQ.lFLiE55zT_EPO32qm6d-sh6Ot7bSnLRv-4qBJVwD3Q4",
+  "vip_expiry": "2026-02-05T17:31:55.000Z",
+  "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTEzNiwidXNlcm5hbWUiOiJHMTU2NTQ1NjQ1NiIsInBob25lIjpudWxsLCJlbWFpbCI6bnVsbCwicmVmZXJyYWxfY29kZSI6IjM3Mzk0YyIsInJlZmVycmVkX2J5IjpudWxsLCJ2aXBfZXhwaXJ5IjoiMjAyNi0wMi0wNVQxNzozMTo1NS4wMDBaIiwiaW52aXRlZF9jb3VudCI6OCwiZmluZ2VycHJpbnQiOiI0NTgzNmViMzk5ZGMyY2Y4MmI4OTc0ZjY4ZWY5MGRlNCIsImlwX2FkZHJlc3MiOiIxMy4yMjguMTY4LjE1NiIsImxhc3RfbG9naW4iOiIyMDI2LTAyLTAxVDE4OjEwOjI3LjAwMFoiLCJjcmVhdGVkX2F0IjoiMjAyNi0wMS0yM1QwOTozMzozNy4wMDBaIiwidXBkYXRlZF9hdCI6IjIwMjYtMDItMDFUMTg6MTA6NDguMDAwWiIsImlhdCI6MTc2OTk2OTQ1MCwiZXhwIjoxNzcwNTc0MjUwfQ.TiRF8lqrjZisCZEqsZWRXBMVYq1_7VR7ow_LY8rOveU",
   "username": "G1565456456",
   "referral_code": "37394c",
-  "invited_count": 6,
-  "last_login": "2026-02-01T17:52:47.000Z",
-  "upload_time": "2026-02-01T18:00:04.201Z",
-  "update_time": "2026-02-01T18:00:04.981Z",
+  "invited_count": 8,
+  "last_login": "2026-02-01T18:10:27.000Z",
+  "upload_time": "2026-02-01T18:10:50.599Z",
+  "update_time": "2026-02-01T18:10:51.612Z",
   "note": "糖心刷邀请自动更新脚本生成"
 }

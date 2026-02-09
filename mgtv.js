@@ -18,7 +18,7 @@
 ^https?://mobile.da.mgtv.com\/m\/page url reject
 
 [mitm] 
-hostname = *mgtv.com,hb-boom.api.mgtv.com,*.api.mgtv.com:443
+hostname = *mgtv.com,hb-boom.api.mgtv.com,*.api.mgtv.com,mobile-stream.api.mgtv.com
 *
 *
 

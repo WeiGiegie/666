@@ -12,7 +12,7 @@
 *******************************
 [rewrite_local]
 
-# >网上厨房-家常菜谱美食烘焙教程
+# >kada阅读-儿童绘本故事启蒙大全
 ^https:\/\/service\.hhdd\.com\/book2 url script-response-body https://raw.githubusercontent.com/WeiGiegie/666/main/kada.js
 
 [mitm] 

@@ -1,9 +1,9 @@
 {
   "extraInfoMap": {},
   "model": {
-    "ticket": "1770782401472jisds",
-    "uid": 3083558,
-    "registerTime": 1770782401436,
+    "ticket": "1770868800855licco",
+    "uid": 3083814,
+    "registerTime": 1770868800681,
     "vipExpiration": "",
     "vipLevel": 0,
     "vip": false,
@@ -16,6 +16,6 @@
   "redirectUrl": null,
   "resultCodeBean": "SUCCESS",
   "pickParams": {},
-  "upload_time": "2026-02-11T04:00:03.085Z",
-  "equipId": "168ae8864c5149309a1d3ac0e64c7834"
+  "upload_time": "2026-02-12T04:00:02.352Z",
+  "equipId": "22355a6a04894a8ab0a046c7c7aaeaa8"
 }

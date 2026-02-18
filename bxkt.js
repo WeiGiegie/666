@@ -25,51 +25,34 @@ hostname = api.banxueketang.com
 
 
 let body = $response.body;
-let obj = JSON.parse(body);
-if (!obj || obj.code !== "200") return $done({ body: JSON.stringify(obj) });
+if (!body) return $done({});
 
-let url = $request.url;
-let data = obj.data;
-if (!data) return $done({ body: JSON.stringify(obj) });
+try {
+    let obj = JSON.parse(body);
+    if (obj.data) {
+        let data = obj.data;
+        
+        // 全局VIP
+        data.isVip = true;
+        data.isHave = true;
+        data.isLock = false;
+        data.isSale = true;
+        data.isVipExpire = false;
+        data.originalPrice = 0;
+        data.salePrice = 0;
+        data.trialTopNum = 999;
 
-// 用户/VIP信息处理
-if (/user|vip|status|info/.test(url)) {
-    let fields = ["isVip", "vipStatus", "vipLevel", "hasOwned", "isHave"];
-    fields.forEach(f => data[f] !== undefined && (data[f] = 1));
-    data.isVipExpire = false;
-    data.vipExpireTime = data.expireTime = "4102415999";
-}
-
-// 资料/课程列表处理
-if (Array.isArray(data)) {
-    data.forEach(item => {
-        item.salePrice = 0;
-        item.saleMode = 0;
-        item.isVip = item.isHave = true;
-        if (item.hasOwned !== undefined) item.hasOwned = 1;
-        if (item.vipStatus !== undefined) item.vipStatus = 1;
-        if (Array.isArray(item.courseList)) {
-            item.courseList.forEach(c => {
-                c.isVip = c.isHave = true;
-                c.isVipExpire = c.isSale = false;
-                c.salePrice = 0;
-            });
+        // 解锁所有视频
+        if (Array.isArray(data.refBusinessList)) {
+            data.refBusinessList.forEach(i => i.isLock = false);
         }
-    });
-} else if (data.libraryUrl) {
-    data.salePrice = 0;
-    data.saleMode = 0;
-    data.hasOwned = 1;
-} else if (Array.isArray(data.refBusinessList)) {
-    if (data.trialCount !== undefined) data.trialCount = 999;
-    data.refBusinessList.forEach(item => item.isLock = false);
-} else if (typeof data === "object") {
-    data.salePrice = 0;
-    data.saleMode = 0;
-    data.hasOwned = 1;
-    data.vipStatus = data.isVip = 1;
-    data.expireTime = "4102415999";
+        
+        body = JSON.stringify(obj);
+    }
+} catch(e) {
+    body = body.replace(/"isVip":false/g, '"isVip":true');
+    body = body.replace(/"isHave":false/g, '"isHave":true');
+    body = body.replace(/"isLock":true/g, '"isLock":false');
 }
 
-$done({ body: JSON.stringify(obj) });
-
+$done({ body });

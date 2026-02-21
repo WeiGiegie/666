@@ -17,7 +17,7 @@
 
 
 [mitm]
-hostname = api.gotokeep.com,kit.gotokeep.com,*.gotokeep.*,120.53.74.*
+hostname = api.gotokeep.com,kit.gotokeep.com,*.gotokeep.*,120.53.74.*,162.14.5.*,42.187.199.*,101.42.124.*
 
 *
 *

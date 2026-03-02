@@ -1,7 +1,7 @@
 /*
  *
  *
-脚本功能：
+脚本功能：神庙逃亡2(微信小程序)
 软件版本：
 下载地址：
 脚本作者：
@@ -20,10 +20,20 @@ hostname = temple-release.dskystudio.com
 */
 
 
+
+
+
 let body = $response.body;
 
-// 批量替换金币、钻石
-body = body.replace(/"coinCount":\d+/g, '"coinCount":99999999');
-body = body.replace(/"specialCurrencyCount":\d+/g, '"specialCurrencyCount":99999');
+// 金币
+body = body.replace(/\\"coinCount\\":\d+/g, '\\"coinCount\\":999999880');
+// 珠宝/钻石
+body = body.replace(/\\"specialCurrencyCount\\":\d+/g, '\\"specialCurrencyCount\\":999880');
+// 元宝/特殊代币1
+body = body.replace(/\\"THBCurrencyCount\\":\d+/g, '\\"THBCurrencyCount\\":999880');
+// 其他货币2
+body = body.replace(/\\"ECC\\":\d+/g, '\\"ECC\\":999880');
+// 其他货币3
+body = body.replace(/\\"OCC\\":\d+/g, '\\"OCC\\":999880');
 
 $done({ body });

@@ -26,7 +26,7 @@ hostname = temple-release.dskystudio.com
 let body = $response.body;
 
 // 金币
-body = body.replace(/\\"coinCount\\":\d+/g, '\\"coinCount\\":99988000');
+body = body.replace(/\\"coinCount\\":\d+/g, '\\"coinCount\\":9998800');
 // 珠宝/钻石
 body = body.replace(/\\"specialCurrencyCount\\":\d+/g, '\\"specialCurrencyCount\\":999880');
 // 元宝/特殊代币1

@@ -26,14 +26,14 @@ hostname = temple-release.dskystudio.com
 let body = $response.body;
 
 // 金币
-body = body.replace(/\\"coinCount\\":\d+/g, '\\"coinCount\\":999880');
+body = body.replace(/\\"coinCount\\":\d+/g, '\\"coinCount\\":9999880');
 // 珠宝/钻石
-body = body.replace(/\\"specialCurrencyCount\\":\d+/g, '\\"specialCurrencyCount\\":999880');
+body = body.replace(/\\"specialCurrencyCount\\":\d+/g, '\\"specialCurrencyCount\\":900000');
 // 元宝/特殊代币1
-body = body.replace(/\\"THBCurrencyCount\\":\d+/g, '\\"THBCurrencyCount\\":999880');
+body = body.replace(/\\"THBCurrencyCount\\":\d+/g, '\\"THBCurrencyCount\\":900000');
 // 其他货币2
-body = body.replace(/\\"ECC\\":\d+/g, '\\"ECC\\":999880');
+body = body.replace(/\\"ECC\\":\d+/g, '\\"ECC\\":900000');
 // 其他货币3
-body = body.replace(/\\"OCC\\":\d+/g, '\\"OCC\\":999880');
+body = body.replace(/\\"OCC\\":\d+/g, '\\"OCC\\":900000');
 
 $done({ body });

@@ -1,9 +1,9 @@
 {
   "extraInfoMap": {},
   "model": {
-    "ticket": "1773028806119cafpu",
-    "uid": 3094163,
-    "registerTime": 1773028806081,
+    "ticket": "1773115201199tmcbh",
+    "uid": 3094634,
+    "registerTime": 1773115201163,
     "vipExpiration": "",
     "vipLevel": 0,
     "vip": false,
@@ -16,6 +16,6 @@
   "redirectUrl": null,
   "resultCodeBean": "SUCCESS",
   "pickParams": {},
-  "upload_time": "2026-03-09T04:00:02.713Z",
-  "equipId": "6fab9d5e43644fc092f10d8538b9b997"
+  "upload_time": "2026-03-10T04:00:04.480Z",
+  "equipId": "bbdd8d1448514d01a12ffc79f0849b39"
 }

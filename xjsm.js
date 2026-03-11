@@ -50,7 +50,7 @@ if (obj && obj.objects) {
             }
         }
         
-        // 2. 修改背包：确保所有武器碎片存在且数量为9999
+        // 2. 修改背包：确保所有武器碎片存在且数量为999988990
         if (item.collection === "Common" && item.key === "Bag") {
             try {
                 let bag = JSON.parse(item.value);
@@ -68,14 +68,14 @@ if (obj && obj.objects) {
                     // 查找是否已存在该ID的物品
                     for (let it of bag.m_ItemList) {
                         if (it.ItemID === id) {
-                            it.Count = 9999;  // 修改数量
+                            it.Count = 999988990;  // 修改数量
                             found = true;
                             break;
                         }
                     }
                     // 如果不存在，则添加新条目
                     if (!found) {
-                        bag.m_ItemList.push({ Count: 9999, ItemID: id });
+                        bag.m_ItemList.push({ Count: 999988990, ItemID: id });
                     }
                 }
                 

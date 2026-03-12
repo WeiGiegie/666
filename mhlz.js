@@ -29,23 +29,24 @@ hostname = ss.landintheair.com
 
 
 
-
 var body = $response.body;
 let obj = JSON.parse(body);
 
-// 修改所有货币的持有量和累计收集量（最大数值）
 if (obj && obj.currencies && obj.currencies.list) {
     for (let key in obj.currencies.list) {
         let currency = obj.currencies.list[key];
-        if (currency.amount !== undefined) {
-            currency.amount = "9999999999999988888888";      // 当前持有量
+        if (key.startsWith("Quest_")) {
+            // 任务进度设为1
+            if (currency.amount !== undefined) currency.amount = "1";
+            if (currency.total_collected !== undefined) currency.total_collected = "1";
+        } else if (!key.startsWith("Event_")) {
+            // 货币设为超大值（可根据需要调整）
+            if (currency.amount !== undefined) currency.amount = "9999999999999988888888";
+            if (currency.total_collected !== undefined) currency.total_collected = "9999999999999988888888";
         }
-        if (currency.total_collected !== undefined) {
-            currency.total_collected = "9999999999999988888888"; // 总收集量
-        }
-       
+    
     }
 }
 
-
 $done({ body: JSON.stringify(obj) });
+

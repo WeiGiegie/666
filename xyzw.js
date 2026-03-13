@@ -20,12 +20,13 @@ hostname = xxz-xyzw-res.hortorgames.com
 *
 */
 
+
+
 var body = $response.body;
 if (!body) {
     $done({});
-    return;
-}
-let obj = JSON.parse(body);
+} else {
+    let obj = JSON.parse(body);
 
 // 递归修改函数
 (function modify(node) {
@@ -56,6 +57,7 @@ let obj = JSON.parse(body);
     for (let key in node) {
         modify(node[key]);
     }
-})(obj);
+    })(obj);
 
-$done({ body: JSON.stringify(obj) });
+    $done({ body: JSON.stringify(obj) });
+}

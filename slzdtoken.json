@@ -1,9 +1,9 @@
 {
   "extraInfoMap": {},
   "model": {
-    "ticket": "1784865601664utbkz",
-    "uid": 3164237,
-    "registerTime": 1784865601624,
+    "ticket": "1784952001747govcm",
+    "uid": 3164692,
+    "registerTime": 1784952001334,
     "vipExpiration": "",
     "vipLevel": 0,
     "vip": false,
@@ -16,6 +16,6 @@
   "redirectUrl": null,
   "resultCodeBean": "SUCCESS",
   "pickParams": {},
-  "upload_time": "2026-07-24T04:00:03.070Z",
-  "equipId": "e9f67c53ba6a4b11b86d9b3ca4c3d2bb"
+  "upload_time": "2026-07-25T04:00:03.071Z",
+  "equipId": "e2d2bb0737c944bda666a36f3c9c41fd"
 }

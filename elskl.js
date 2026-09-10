@@ -130,7 +130,7 @@ if (jsonData && jsonData.data) {
     // ---------- 个人页面 ----------
     if (url.indexOf('/java/user/my') !== -1) {
         jsonData.data.vip = 1;
-        jsonData.data.exp = true;
+        jsonData.data.exp = false;
         jsonData.data.expdate = "2099.09.09";
         jsonData.data.unclaimed = 999;
         jsonData.data.today_max = 999;

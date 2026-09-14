@@ -2,7 +2,7 @@
  *
  *
 脚本功能：俄罗斯克拉 去会员+广告🔞
-软件版本：1.1.1
+软件版本：1.1.10
 下载地址：
 脚本作者：
 更新时间：2026年9月10日
@@ -27,6 +27,8 @@ hostname = sixth.xxcjpt.com
 
 
 
+
+
 (function () {
   'use strict';
 
@@ -35,21 +37,29 @@ hostname = sixth.xxcjpt.com
   var FALLBACK_MAX = 3;
   var MAX_REGISTER_RETRY = 3;
 
-  var TOOL = (typeof $httpClient !== 'undefined') ? 'Loon/Surge'
-           : (typeof $task !== 'undefined') ? 'QX' : 'Unknown';
+  // ---------- 环境检测 ----------
+  var isQX = (typeof $task !== 'undefined');
+  var isLoon = (typeof $loon !== 'undefined');
+  var isSurge = (typeof $httpClient !== 'undefined');
+  var TOOL = isQX ? 'Quantumult X' : (isLoon ? 'Loon' : (isSurge ? 'Surge' : 'Unknown'));
 
+  // ---------- 存储兼容层 ----------
   function storeGet(k) {
-    try {
-      if (typeof $persistentStore !== 'undefined' && $persistentStore && typeof $persistentStore.read === 'function') return $persistentStore.read(k);
-      if (typeof $prefs !== 'undefined' && $prefs && typeof $prefs.valueForKey === 'function') return $prefs.valueForKey(k);
-    } catch (e) {}
+    if (isQX && typeof $prefs !== 'undefined') {
+      try { return $prefs.valueForKey(k); } catch (e) {}
+    }
+    if (typeof $persistentStore !== 'undefined') {
+      try { return $persistentStore.read(k); } catch (e) {}
+    }
     return null;
   }
   function storeSet(k, v) {
-    try {
-      if (typeof $persistentStore !== 'undefined' && $persistentStore && typeof $persistentStore.write === 'function') return $persistentStore.write(v, k);
-      if (typeof $prefs !== 'undefined' && $prefs && typeof $prefs.setValueForKey === 'function') return $prefs.setValueForKey(v, k);
-    } catch (e) {}
+    if (isQX && typeof $prefs !== 'undefined') {
+      try { return $prefs.setValueForKey(v, k); } catch (e) {}
+    }
+    if (typeof $persistentStore !== 'undefined') {
+      try { return $persistentStore.write(v, k); } catch (e) {}
+    }
     return null;
   }
 
@@ -65,7 +75,9 @@ hostname = sixth.xxcjpt.com
     console.log(parts.join(' '));
   }
 
-  // ---------- HTTP 请求（核心修复：params 对象 + body 为对象）----------
+  // ---------- HTTP 兼容层（核心）----------
+  // QX:   $task.fetch(options)  返回 Promise
+  // Loon/Surge: $httpClient[method](options, callback)
   function http(request) {
     request.headers = request.headers || {};
     request.headers[INNER_HEADER] = '1';
@@ -80,62 +92,74 @@ hostname = sixth.xxcjpt.com
         if (!finished) { log('http: TIMEOUT'); fail(new Error('http timeout')); }
       }, 4000);
 
-      function handleResp(err, resp, data) {
-        clearTimeout(timer);
-        if (err) {
-          log('http callback err: ' + err);
-          return fail(new Error('http: ' + (typeof err === 'string' ? err : JSON.stringify(err))));
-        }
-        var sc = resp ? (resp.status || resp.statusCode) : 0;
-        log('http ok status=' + sc + ' len=' + (data ? String(data).length : 0));
-        ok({ statusCode: sc, body: data, headers: resp ? resp.headers : null });
+      // ========== Quantumult X ==========
+      if (isQX) {
+        var qxOptions = {
+          url: request.url,
+          method: method,
+          headers: request.headers
+        };
+        if (request.body != null) qxOptions.body = request.body;
+        log('http -> $task.fetch');
+        $task.fetch(qxOptions).then(
+          function (resp) {
+            clearTimeout(timer);
+            var sc = resp.status || resp.statusCode || 0;
+            log('http ok status=' + sc + ' len=' + (resp.body ? String(resp.body).length : 0));
+            ok({ statusCode: sc, body: resp.body, headers: resp.headers });
+          },
+          function (err) {
+            clearTimeout(timer);
+            log('http err: ' + JSON.stringify(err));
+            fail(new Error('http: ' + JSON.stringify(err)));
+          }
+        );
+        return;
       }
 
-      if (typeof $httpClient === 'undefined' || !$httpClient) {
-        return fail(new Error('no $httpClient'));
-      }
+      // ========== Loon / Surge ==========
+      if (typeof $httpClient !== 'undefined' && $httpClient) {
+        var params = {
+          url: request.url,
+          headers: request.headers
+        };
+        if (request.body != null) params.body = request.body;
 
-      // 构建请求参数对象（Loon/Surge 标准签名：$httpClient.post(params, callback)）
-      var params = {
-        url: request.url,
-        headers: request.headers
-      };
+        var cb = function (err, resp, data) {
+          clearTimeout(timer);
+          if (err) {
+            log('http err: ' + JSON.stringify(err));
+            return fail(new Error('http: ' + JSON.stringify(err)));
+          }
+          var sc = resp ? (resp.status || resp.statusCode) : 0;
+          log('http ok status=' + sc + ' len=' + (data ? String(data).length : 0));
+          ok({ statusCode: sc, body: data, headers: resp ? resp.headers : null });
+        };
 
-      // body 优先使用对象形式（Loon 会自动 JSON 编码）
-      // 如果没有提供对象 body，再回退到字符串
-      if (request.bodyObject) {
-        params.body = request.bodyObject;   // 对象形式，Loon 自动编码为 JSON
-      } else if (request.body) {
-        params.body = request.body;         // 字符串形式（urlencoded）
-      }
-
-      try {
-        if (method === 'POST' && typeof $httpClient.post === 'function') {
-          log('http -> $httpClient.post(params, cb) bodyType=' + (request.bodyObject ? 'object' : 'string'));
-          $httpClient.post(params, handleResp);
-          return;
-        }
-        if (typeof $httpClient.get === 'function') {
-          log('http -> $httpClient.get(params, cb)');
-          $httpClient.get(params, handleResp);
-          return;
-        }
-      } catch (e) {
-        log('$httpClient 调用异常: ' + e);
-      }
-
-      // 回退到 $task.fetch（QX）
-      if (typeof $task !== 'undefined' && $task && typeof $task.fetch === 'function') {
+        var httpMethod = method.toLowerCase();
         try {
-          log('http -> $task.fetch');
-          $task.fetch(request).then(
-            function (r) { ok({ statusCode: r.statusCode || r.status, body: r.body, headers: r.headers }); },
-            function (e) { fail(e); }
-          );
-          return;
-        } catch (e) { log('$task.fetch 异常: ' + e); }
+          if (typeof $httpClient[httpMethod] === 'function') {
+            log('http -> $httpClient.' + httpMethod + '(params, cb)');
+            $httpClient[httpMethod](params, cb);
+            return;
+          }
+        } catch (e) {
+          log('$httpClient.' + httpMethod + ' 异常: ' + e);
+        }
+
+        // 回退到 get
+        try {
+          if (typeof $httpClient.get === 'function') {
+            log('http -> $httpClient.get(params, cb) [fallback]');
+            $httpClient.get(params, cb);
+            return;
+          }
+        } catch (e) {
+          log('$httpClient.get 异常: ' + e);
+        }
       }
 
+      clearTimeout(timer);
       fail(new Error('no working http method'));
     });
   }
@@ -250,32 +274,44 @@ hostname = sixth.xxcjpt.com
   }
   function randPass() { return randStr(8 + Math.floor(Math.random() * 4)); }
 
+  // 统一使用 urlencoded 格式，避免 multipart 在不同平台上的兼容性问题
+  function buildUrlEncoded(fields) {
+    var parts = [];
+    for (var k in fields) {
+      parts.push(encodeURIComponent(k) + '=' + encodeURIComponent(fields[k]));
+    }
+    return parts.join('&');
+  }
+
   var UA_TPL = 'Mozilla/5.0 (iPhone; CPU iPhone OS 16_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 abab/';
   function ua(device) { return UA_TPL + device; }
 
   function baseHeaders(device) {
-    return {
+    var h = {
       'Origin': 'https://' + HOST,
       'Cookie': 'device=' + device,
       'Accept': '*/*',
       'User-Agent': ua(device),
       'Accept-Language': 'zh-CN,zh-Hans;q=0.9'
-      // 注意：不再手动设置 Content-Type，让 Loon 根据 body 类型自动处理
     };
+    // QX 需要显式设置 Content-Type
+    if (isQX) {
+      h['Content-Type'] = 'application/x-www-form-urlencoded; charset=UTF-8';
+    }
+    return h;
   }
 
   // ---------- 注册 ----------
   function register(attempt) {
     attempt = attempt || 1;
     var device = randStr(21);
-    // 使用对象形式的 body，让 Loon 自动 JSON 编码并设置 Content-Type
-    var bodyObj = { username: randUser(), password: randPass() };
+    var body = buildUrlEncoded({ username: randUser(), password: randPass() });
     log('发起注册 register（第' + attempt + '次）');
     return http({
       url: 'https://' + HOST + '/java/v2/register',
       method: 'POST',
       headers: baseHeaders(device),
-      bodyObject: bodyObj
+      body: body
     }).then(function (r) {
       var j = safeJson(r.body);
       if (j && j.code === 1 && j.data && j.data.token) {
@@ -310,12 +346,12 @@ hostname = sixth.xxcjpt.com
   // ---------- 重拉 ----------
   function fetchShow(token, vid) {
     var device = storeGet('xxcjpt_device') || randStr(21);
-    var bodyObj = { token: token, vid: vid, spm: 'home.latest' };
+    var body = buildUrlEncoded({ token: token, vid: vid, spm: 'home.latest' });
     return http({
       url: 'https://' + HOST + '/java/show/' + vid,
       method: 'POST',
       headers: baseHeaders(device),
-      bodyObject: bodyObj
+      body: body
     }).then(function (r) {
       var data = decodeBody(r.body);
       if (data && data.data) modifyShow(data.data);

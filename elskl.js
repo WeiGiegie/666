@@ -24,25 +24,35 @@ hostname = sixth.xxcjpt.com
 
 
 
+
 (function () {
   'use strict';
 
   const HOST = 'sixth.xxcjpt.com';
-  const INNER_HEADER = 'x-xxcjpt-inner';   // 内部请求标记，防自递归
-  const FALLBACK_MAX = 3;                  // 查不到额度时的回退上限
-  const MAX_REGISTER_RETRY = 3;            // 注册失败最多换号重试次数
+  const INNER_HEADER = 'x-xxcjpt-inner';
+  const FALLBACK_MAX = 3;
+  const MAX_REGISTER_RETRY = 3;
 
-  // ---------- 运行环境 & 存储兼容层 ----------
-  const TOOL = (typeof $task !== 'undefined') ? 'QX'
-            : (typeof $loon !== 'undefined') ? 'Loon'
-            : (typeof $surge !== 'undefined') ? 'Surge' : 'Unknown';
+  const TOOL = (typeof $httpClient !== 'undefined') ? 'Loon/Surge'
+            : (typeof $task !== 'undefined') ? 'QX' : 'Unknown';
 
   const store = {
-    get(k) { return (typeof $prefs !== 'undefined') ? $prefs.valueForKey(k) : (typeof $persistentStore !== 'undefined') ? $persistentStore.read(k) : null; },
-    set(k, v) { return (typeof $prefs !== 'undefined') ? $prefs.setValueForKey(v, k) : (typeof $persistentStore !== 'undefined') ? $persistentStore.write(v, k) : null; }
+    get(k) {
+      try {
+        if (typeof $persistentStore !== 'undefined' && $persistentStore && typeof $persistentStore.read === 'function') return $persistentStore.read(k);
+        if (typeof $prefs !== 'undefined' && $prefs && typeof $prefs.valueForKey === 'function') return $prefs.valueForKey(k);
+      } catch (e) {}
+      return null;
+    },
+    set(k, v) {
+      try {
+        if (typeof $persistentStore !== 'undefined' && $persistentStore && typeof $persistentStore.write === 'function') return $persistentStore.write(v, k);
+        if (typeof $prefs !== 'undefined' && $prefs && typeof $prefs.setValueForKey === 'function') return $prefs.setValueForKey(v, k);
+      } catch (e) {}
+      return null;
+    }
   };
 
-  // ---------- 日志 console.log----------
   function log() {
     let s = '[啪啪搜]';
     for (let i = 0; i < arguments.length; i++) {
@@ -53,21 +63,60 @@ hostname = sixth.xxcjpt.com
     console.log(s);
   }
 
-  // ---------- HTTP 兼容层（QX $task.fetch / Surge·Loon $httpClient）----------
+  // ---------- HTTP 兼容层（修复版）----------
+  // Loon $httpClient.post 正确签名：$httpClient.post(params, callback)
+  // params 为对象，包含 url / headers / body / method 等
   function http(req) {
     req.headers = req.headers || {};
     req.headers[INNER_HEADER] = '1';
+    const method = (req.method || 'GET').toUpperCase();
+
     return new Promise((resolve, reject) => {
-      if (typeof $task !== 'undefined') { $task.fetch(req).then(r => resolve(r), e => reject(e)); return; }
-      if (typeof $httpClient !== 'undefined') {
-        const cb = (err, resp, data) => err ? reject(err) : resolve({ statusCode: resp.status, body: data, headers: resp.headers });
-        const opts = { headers: req.headers };
-        const m = (req.method || 'GET').toUpperCase();
-        if (m === 'POST' || req.body) { opts.body = req.body || ''; $httpClient.post(req.url, opts, cb); }
-        else $httpClient.get(req.url, opts, cb);
-        return;
+      const cb = (err, resp, data) => {
+        if (err) return reject(new Error(typeof err === 'string' ? err : JSON.stringify(err)));
+        resolve({
+          statusCode: resp && (resp.status || resp.statusCode),
+          body: data,
+          headers: resp && resp.headers
+        });
+      };
+
+      // ---- Loon / Surge：$httpClient ----
+      if (typeof $httpClient !== 'undefined' && $httpClient) {
+        // 将请求参数整合为单个对象
+        const params = {
+          url: req.url,
+          headers: req.headers
+        };
+        if (req.body != null) params.body = req.body;
+
+        try {
+          if (method === 'POST' && typeof $httpClient.post === 'function') {
+            log('http -> $httpClient.post(params,cb)');
+            $httpClient.post(params, cb);
+            return;
+          }
+          if (typeof $httpClient.get === 'function') {
+            log('http -> $httpClient.get(params,cb)');
+            $httpClient.get(params, cb);
+            return;
+          }
+        } catch (e) { log('$httpClient 调用失败: ' + e); }
       }
-      reject(new Error('no http client'));
+
+      // ---- QX：$task.fetch ----
+      if (typeof $task !== 'undefined' && $task && typeof $task.fetch === 'function') {
+        try {
+          log('http -> $task.fetch');
+          $task.fetch(req).then(
+            r => resolve({ statusCode: r.statusCode || r.status, body: r.body, headers: r.headers }),
+            e => reject(e)
+          );
+          return;
+        } catch (e) { log('$task.fetch 调用失败: ' + e); }
+      }
+
+      reject(new Error('no http client available'));
     });
   }
 
@@ -119,21 +168,20 @@ hostname = sixth.xxcjpt.com
     while (i < binStr.length) {
       const c = binStr.charCodeAt(i++);
       if (c < 0x80) out += String.fromCharCode(c);
-      else if (c < 0xC0) { /* 跳过非法续字节 */ }
+      else if (c < 0xC0) { }
       else if (c < 0xE0) { const c2 = binStr.charCodeAt(i++); out += String.fromCharCode(((c & 0x1F) << 6) | (c2 & 0x3F)); }
       else if (c < 0xF0) { const c2 = binStr.charCodeAt(i++), c3 = binStr.charCodeAt(i++); out += String.fromCharCode(((c & 0x0F) << 12) | ((c2 & 0x3F) << 6) | (c3 & 0x3F)); }
       else { const c2 = binStr.charCodeAt(i++), c3 = binStr.charCodeAt(i++), c4 = binStr.charCodeAt(i++); let cp = ((c & 0x07) << 18) | ((c2 & 0x3F) << 12) | ((c3 & 0x3F) << 6) | (c4 & 0x3F); cp -= 0x10000; out += String.fromCharCode(0xD800 + (cp >> 10), 0xDC00 + (cp & 0x3FF)); }
     }
     return out;
   }
-  // 中文转 \uXXXX（纯 ASCII）—— 客户端解码期望此格式，直接 UTF-8 编码中文会显示乱符号
   function stringifyASCII(obj) {
     return JSON.stringify(obj).replace(/[\u007f-\uffff]/g, c => '\\u' + ('0000' + c.charCodeAt(0).toString(16)).slice(-4));
   }
   function decodeBody(body) {
     const t = String(body == null ? '' : body).trim();
     if (t.length === 0) throw new Error('body 为空');
-    if (t.startsWith('{') || t.startsWith('[')) return JSON.parse(t);   
+    if (t.startsWith('{') || t.startsWith('[')) return JSON.parse(t);
     let rev = reverseStr(t), pad = '';
     while (rev.startsWith('=')) { pad += '='; rev = rev.slice(1); }
     rev = rev.replace(/-/g, '+').replace(/_/g, '/').replace(/[^A-Za-z0-9+/]/g, '');
@@ -144,10 +192,9 @@ hostname = sixth.xxcjpt.com
   }
   function encodeBody(json, original) {
     const t = String(original == null ? '' : original).trim();
-    if (t.startsWith('{') || t.startsWith('[')) return JSON.stringify(json);  
+    if (t.startsWith('{') || t.startsWith('[')) return JSON.stringify(json);
     return reverseStr(base64Encode(utf8Encode(stringifyASCII(json))).replace(/=+$/, ''));
   }
-  // 解密失败再尝试明文 JSON；都失败返回 null（供 register 判断重试）
   function safeJson(body) {
     try { return decodeBody(body); }
     catch (e) { try { return JSON.parse(String(body).trim()); } catch (e2) { return null; } }
@@ -166,18 +213,17 @@ hostname = sixth.xxcjpt.com
     d.popup = null; d.banner = []; d.button = [];
   }
 
-  // ---------- 随机工具（账号/密码/设备/boundary）----------
+  // ---------- 随机工具 ----------
   const ALNUM = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
   const LOWER = 'abcdefghijklmnopqrstuvwxyz';
   function randStr(n) { let s = ''; for (let i = 0; i < n; i++) s += ALNUM[Math.floor(Math.random() * ALNUM.length)]; return s; }
-  // 用户名：字母开头、严格 4–11 位（服务端校验：用户名需字母开头 4-11个字符）
   function randUser() {
-    const total = 4 + Math.floor(Math.random() * 8);   // 4-11
-    let s = LOWER[Math.floor(Math.random() * 26)];      // 首字母
+    const total = 4 + Math.floor(Math.random() * 8);
+    let s = LOWER[Math.floor(Math.random() * 26)];
     for (let i = 1; i < total; i++) s += ALNUM[Math.floor(Math.random() * ALNUM.length)];
     return s;
   }
-  function randPass() { return randStr(8 + Math.floor(Math.random() * 4)); }   // 8-11 位（服务端要求密码最少 8 位）
+  function randPass() { return randStr(8 + Math.floor(Math.random() * 4)); }
   function buildMultipart(boundary, fields) {
     let b = '';
     for (const k in fields) b += `--${boundary}\r\nContent-Disposition: form-data; name="${k}"\r\n\r\n${fields[k]}\r\n`;
@@ -186,15 +232,17 @@ hostname = sixth.xxcjpt.com
   const ua = device => `Mozilla/5.0 (iPhone; CPU iPhone OS 16_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 abab/${device}`;
   function baseHeaders(device, boundary) {
     const h = {
-      'Origin': `https://${HOST}`, 'Cookie': `device=${device}`, 'Connection': 'keep-alive',
-      'Accept': '*/*', 'Host': HOST, 'User-Agent': ua(device),
-      'Accept-Language': 'zh-CN,zh-Hans;q=0.9', 'Accept-Encoding': 'gzip, deflate, br'
+      'Origin': `https://${HOST}`,
+      'Cookie': `device=${device}`,
+      'Accept': '*/*',
+      'User-Agent': ua(device),
+      'Accept-Language': 'zh-CN,zh-Hans;q=0.9'
     };
     if (boundary) h['Content-Type'] = `multipart/form-data; boundary=${boundary}`;
     return h;
   }
 
-  // ---------- 注册（额度探测 + 失败重试）----------
+  // ---------- 注册 ----------
   function register(attempt) {
     attempt = attempt || 1;
     const boundary = '----WebKitFormBoundary' + randStr(16);
@@ -207,9 +255,8 @@ hostname = sixth.xxcjpt.com
         const token = j.data.token;
         store.set('xxcjpt_token', token);
         store.set('xxcjpt_device', device);
-        store.set('xxcjpt_used', '0');    
+        store.set('xxcjpt_used', '0');
         log('注册成功 uid=' + j.data.uid);
-        // 注册后内部查一次 /user/my，拿本账号准确的每日免费额度
         return fetchUserMyJson(token).then(um => {
           const max = (um && um.data && um.data.today_max) ? parseInt(um.data.today_max, 10) : 0;
           const limit = (max && max > 0) ? max : FALLBACK_MAX;
@@ -223,7 +270,6 @@ hostname = sixth.xxcjpt.com
           return token;
         });
       }
-      // 未被接受（用户名格式/已存在/其他）→ 换号重试，避免偶发失败废掉本次播放
       if (attempt < MAX_REGISTER_RETRY) {
         log('注册被拒(' + (j && j.message ? j.message : '无数据') + ')，换号重试 ' + (attempt + 1) + '/' + MAX_REGISTER_RETRY);
         return register(attempt + 1);
@@ -244,7 +290,7 @@ hostname = sixth.xxcjpt.com
     return register();
   }
 
-  // ---------- 重拉（带 token）----------
+  // ---------- 重拉 ----------
   function fetchShow(token, vid) {
     const boundary = '----WebKitFormBoundary' + randStr(16);
     const device = store.get('xxcjpt_device') || randStr(21);
@@ -255,7 +301,6 @@ hostname = sixth.xxcjpt.com
       return encodeBody(data, r.body);
     });
   }
-  // 内部用：返回 /user/my 解析对象（不回写），供注册后探额度 & user/my 分支重拉
   function fetchUserMyJson(token) {
     const device = store.get('xxcjpt_device') || randStr(21);
     const boundary = '----WebKitFormBoundary' + randStr(16);
@@ -267,7 +312,6 @@ hostname = sixth.xxcjpt.com
   if (typeof $response === 'undefined') { $done({}); return; }
 
   const url = $request.url;
-  // 递归防护：本脚本发出的内部请求被再次命中时直接放行
   if (headerGet($request.headers, INNER_HEADER) === '1') { log('内部请求命中，放行'); $done({}); return; }
 
   log('命中 TOOL=' + TOOL + ' url=' + url + ' bodyLen=' + ($response.body ? $response.body.length : 'null'));
@@ -289,7 +333,6 @@ hostname = sixth.xxcjpt.com
   }
 
   if (url.indexOf('/java/user/my') !== -1) {
-    // 先尝试同步改写（原响应若为有效密文）；失败（空/锁定）再走 token 重拉
     try {
       const data = decodeBody($response.body);
       if (data && data.data) modifyUser(data.data);
@@ -307,4 +350,3 @@ hostname = sixth.xxcjpt.com
 
   $done({});
 })();
-
